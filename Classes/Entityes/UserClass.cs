@@ -7,10 +7,19 @@ using System.Threading.Tasks;
 
 namespace Biblioteka2.Classes.Entityes
 {
-    class UserClass
+    public class UserClass
     {
         [Key]
         public int idUser { get; set; }
-
+        [Required, MaxLength(128)]
+        public string family_name { get; set; }
+        [Required, MaxLength(128)]
+        public string first_name { get; set; }
+        [Required]
+        public int access_level { get; set; }
+        [Required, MaxLength(128)]
+        public string login { get; set; }
+        [Required, MaxLength(128)]
+        public string password { get; set; }
     }
 }
