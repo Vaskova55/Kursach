@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Biblioteka2.Forms
 {
-    public partial class BookForm : Form
+    public partial class Test : Form
     {
-        public BookForm()
+        public Test()
         {
             InitializeComponent();
             UpdateCombo();
@@ -59,21 +59,6 @@ namespace Biblioteka2.Forms
         {
             lb_author.Items.Add(cb_Author.SelectedItem);
             cb_Author.Items.Remove(cb_Author.SelectedItem);
-        }
-
-        private void tb_lastname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb_midlename_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb_firstname_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -123,6 +123,7 @@ namespace Biblioteka2.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(229, 310);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -133,7 +134,7 @@ namespace Biblioteka2.Forms
             this.Controls.Add(this.lb3_Autorization);
             this.Controls.Add(this.lb1_Autorization);
             this.Name = "AuthorizationForm";
-            this.Text = "AuthorizationForm";
+            this.Text = "Авторизация";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -26,7 +26,7 @@ namespace Biblioteka2.Forms
             {
                 if (user.access_level == 1)
                 {
-                    Home_page f_hp = new Home_page();
+                    Home_pageForm f_hp = new Home_pageForm();
                     f_hp.Show();
                     Hide();
                 }

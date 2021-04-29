@@ -19,5 +19,11 @@ namespace Biblioteka2.Classes.Entityes
         public string first_name { get; set; }
         [MaxLength(128)]
         public string middle_name { get; set; }
+        public virtual List<IssuanceClass> issuance { get; set; }
+
+        public TrainessClass()
+        {
+            issuance = new List<IssuanceClass>();
+        }
     }
 }

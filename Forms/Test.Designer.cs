@@ -1,7 +1,7 @@
 ﻿
 namespace Biblioteka2.Forms
 {
-    partial class BookForm
+    partial class Test
     {
         /// <summary>
         /// Required designer variable.
@@ -292,7 +292,6 @@ namespace Biblioteka2.Forms
             this.tb_firstname.Name = "tb_firstname";
             this.tb_firstname.Size = new System.Drawing.Size(85, 20);
             this.tb_firstname.TabIndex = 17;
-            this.tb_firstname.TextChanged += new System.EventHandler(this.tb_firstname_TextChanged);
             // 
             // tb_midlename
             // 
@@ -300,7 +299,6 @@ namespace Biblioteka2.Forms
             this.tb_midlename.Name = "tb_midlename";
             this.tb_midlename.Size = new System.Drawing.Size(85, 20);
             this.tb_midlename.TabIndex = 15;
-            this.tb_midlename.TextChanged += new System.EventHandler(this.tb_midlename_TextChanged);
             // 
             // tb_lastname
             // 
@@ -308,7 +306,6 @@ namespace Biblioteka2.Forms
             this.tb_lastname.Name = "tb_lastname";
             this.tb_lastname.Size = new System.Drawing.Size(85, 20);
             this.tb_lastname.TabIndex = 16;
-            this.tb_lastname.TextChanged += new System.EventHandler(this.tb_lastname_TextChanged);
             // 
             // bt_Autor
             // 
