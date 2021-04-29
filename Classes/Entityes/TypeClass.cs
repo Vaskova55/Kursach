@@ -14,9 +14,9 @@ namespace Biblioteka2.Classes.Entityes
         public int idType { get; set; }
         [Required, MaxLength(128), Index(IsUnique = true)]
         public string type { get; set; }
-        public virtual List<Book> Books { get; set; }
+        public virtual List<BookClass> Books { get; set; }
         public TypeClass() {
-            Books = new List<Book>();
+            Books = new List<BookClass>();
         }
         public override string ToString()
         {

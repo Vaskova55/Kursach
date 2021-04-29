@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Biblioteka2.Forms
 {
-    public partial class TestForm : Form
+    public partial class AddBookForm : Form
     {
-        public TestForm()
+        public AddBookForm()
         {
             InitializeComponent();
             UpdateCombo();
@@ -29,7 +29,7 @@ namespace Biblioteka2.Forms
 
         private void bt_add_publisher_Click(object sender, EventArgs e)
         {
-            DbModel.init().Publishers.Add(new Publisher { city = tb_publisher_city.Text, name = tb_publisher_name.Text });
+            DbModel.init().Publishers.Add(new PublisherClass { city = tb_publisher_city.Text, name = tb_publisher_name.Text });
             DbModel.init().SaveChanges();
         }
 
@@ -49,15 +49,15 @@ namespace Biblioteka2.Forms
 
         private void bt_book_Click(object sender, EventArgs e)
         {
-            Book book = new Book
+            BookClass book = new BookClass
             {
                 name_book = tb_bookname.Text,
                 classnum = (int)NUD_Class.Value,
                 publishing_year = (Int16)NUD_Year.Value,
                 type = cb_type.SelectedItem as TypeClass,
-                publisher = cb_publisher.SelectedItem as Publisher
+                publisher = cb_publisher.SelectedItem as PublisherClass
             };
-            foreach (Author author in lb_author.Items) {
+            foreach (AuthorClass author in lb_author.Items) {
                 book.Authors.Add(author);
             }
             DbModel.init().Books.Add(book);
@@ -67,14 +67,14 @@ namespace Biblioteka2.Forms
         private void bt_update_Click(object sender, EventArgs e)
         {
             dgv_books.Rows.Clear();
-            foreach (Book book in DbModel.init().Books.Include(b => b.publisher).Include(b => b.type).Include(b=>b.Authors)) {
+            foreach (BookClass book in DbModel.init().Books.Include(b => b.publisher).Include(b => b.type).Include(b=>b.Authors)) {
                 dgv_books.Rows.Add(book.name_book, String.Join(", ", book.Authors), book.publisher.ToString(), book.type.ToString(), book.publishing_year, book.publishing_year);
             }
         }
 
         private void bt_Autor_Click(object sender, EventArgs e)
         {
-            DbModel.init().Authors.Add(new Author { family_name = tb_lastname.Text, first_name = tb_firstname.Text, middle_name = tb_midlename.Text });
+            DbModel.init().Authors.Add(new AuthorClass { family_name = tb_lastname.Text, first_name = tb_firstname.Text, middle_name = tb_midlename.Text });
             DbModel.init().SaveChanges();
         }
 

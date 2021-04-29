@@ -30,10 +30,11 @@ namespace Biblioteka2.Classes
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
-        public virtual DbSet<Book> Books { get; set; }
-        public virtual DbSet<Publisher> Publishers { get; set; }
+        public virtual DbSet<BookClass> Books { get; set; }
+        public virtual DbSet<PublisherClass> Publishers { get; set; }
         public virtual DbSet<TypeClass> Types { get; set; }
-        public virtual DbSet<Author> Authors { get; set; }
+        public virtual DbSet<AuthorClass> Authors { get; set; }
+        public virtual DbSet<TrainessClass> Trainesses { get; set; }
     }
 
     //public class MyEntity

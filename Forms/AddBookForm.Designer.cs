@@ -1,7 +1,7 @@
 ﻿
 namespace Biblioteka2.Forms
 {
-    partial class TestForm
+    partial class AddBookForm
     {
         /// <summary>
         /// Required designer variable.

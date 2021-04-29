@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteka2.Classes.Entityes
 {
-    public class Publisher
+    public class PublisherClass
     {
         [Key]
         public int idPublisher { get; set; }
@@ -16,10 +16,10 @@ namespace Biblioteka2.Classes.Entityes
         public string city { get; set; }
         [Required, MaxLength(128), Index(IsUnique =true)]
         public string name { get; set; }
-        public virtual List<Book> Books { get; set; }
+        public virtual List<BookClass> Books { get; set; }
 
-        public Publisher() {
-            Books = new List<Book>();
+        public PublisherClass() {
+            Books = new List<BookClass>();
         }
 
         public override string ToString()

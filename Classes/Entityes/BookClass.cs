@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteka2.Classes.Entityes
 {
-    public class Book
+    public class BookClass
     {
         [Key]
         public int idBook { get; set; }
@@ -18,13 +18,13 @@ namespace Biblioteka2.Classes.Entityes
         [Required, MaxLength(128)]
         public string name_book { get; set; }
         [Required]
-        public virtual Publisher publisher { get; set; }
-        public virtual List<Author> Authors { get; set; }
+        public virtual PublisherClass publisher { get; set; }
+        public virtual List<AuthorClass> Authors { get; set; }
         [Required]
         public Int16 publishing_year { get; set; }
 
-        public Book() {
-            Authors = new List<Author>();
+        public BookClass() {
+            Authors = new List<AuthorClass>();
         }
 
     }

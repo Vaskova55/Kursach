@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteka2.Classes.Entityes
 {
-    public class Author
+    public class AuthorClass
     {
         [Key]
         public int idAuthor { get; set; }
@@ -17,10 +17,10 @@ namespace Biblioteka2.Classes.Entityes
         public string first_name { get; set; }
         [Required, MaxLength(128)]
         public string middle_name { get; set; }
-        public List<Book> Books { get; set; }
+        public List<BookClass> Books { get; set; }
 
-        public Author() {
-            Books = new List<Book>();
+        public AuthorClass() {
+            Books = new List<BookClass>();
         }
 
         public override string ToString()
