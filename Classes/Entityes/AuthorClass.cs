@@ -15,7 +15,7 @@ namespace Biblioteka2.Classes.Entityes
         public string family_name { get; set; }
         [Required, MaxLength(128)]
         public string first_name { get; set; }
-        [Required, MaxLength(128)]
+        [MaxLength(128)]
         public string middle_name { get; set; }
         public List<BookClass> Books { get; set; }
 

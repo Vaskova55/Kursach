@@ -32,7 +32,7 @@ namespace Biblioteka2.Forms
             this.lb2_AddTrainess = new System.Windows.Forms.Label();
             this.lb1_AddTrainess = new System.Windows.Forms.Label();
             this.Ok_AddTrainess = new System.Windows.Forms.Button();
-            this.cb_AddTrainess_noMiddle = new System.Windows.Forms.CheckBox();
+            this.cb_noMiddle = new System.Windows.Forms.CheckBox();
             this.tb_AddTrainess_name = new System.Windows.Forms.TextBox();
             this.tb_AddTrainess_middle = new System.Windows.Forms.TextBox();
             this.tb_AddTrainess_fam = new System.Windows.Forms.TextBox();
@@ -77,16 +77,16 @@ namespace Biblioteka2.Forms
             this.Ok_AddTrainess.UseVisualStyleBackColor = false;
             this.Ok_AddTrainess.Click += new System.EventHandler(this.Ok_AddTrainess_Click);
             // 
-            // cb_AddTrainess_noMiddle
+            // cb_noMiddle
             // 
-            this.cb_AddTrainess_noMiddle.AutoSize = true;
-            this.cb_AddTrainess_noMiddle.ForeColor = System.Drawing.Color.Black;
-            this.cb_AddTrainess_noMiddle.Location = new System.Drawing.Point(68, 340);
-            this.cb_AddTrainess_noMiddle.Name = "cb_AddTrainess_noMiddle";
-            this.cb_AddTrainess_noMiddle.Size = new System.Drawing.Size(96, 17);
-            this.cb_AddTrainess_noMiddle.TabIndex = 40;
-            this.cb_AddTrainess_noMiddle.Text = "Нет отчества.";
-            this.cb_AddTrainess_noMiddle.UseVisualStyleBackColor = true;
+            this.cb_noMiddle.AutoSize = true;
+            this.cb_noMiddle.ForeColor = System.Drawing.Color.Black;
+            this.cb_noMiddle.Location = new System.Drawing.Point(68, 340);
+            this.cb_noMiddle.Name = "cb_noMiddle";
+            this.cb_noMiddle.Size = new System.Drawing.Size(96, 17);
+            this.cb_noMiddle.TabIndex = 40;
+            this.cb_noMiddle.Text = "Нет отчества.";
+            this.cb_noMiddle.UseVisualStyleBackColor = true;
             // 
             // tb_AddTrainess_name
             // 
@@ -181,7 +181,7 @@ namespace Biblioteka2.Forms
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(264, 428);
             this.Controls.Add(this.Ok_AddTrainess);
-            this.Controls.Add(this.cb_AddTrainess_noMiddle);
+            this.Controls.Add(this.cb_noMiddle);
             this.Controls.Add(this.tb_AddTrainess_name);
             this.Controls.Add(this.tb_AddTrainess_middle);
             this.Controls.Add(this.tb_AddTrainess_fam);
@@ -204,7 +204,7 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.Label lb2_AddTrainess;
         private System.Windows.Forms.Label lb1_AddTrainess;
         private System.Windows.Forms.Button Ok_AddTrainess;
-        private System.Windows.Forms.CheckBox cb_AddTrainess_noMiddle;
+        private System.Windows.Forms.CheckBox cb_noMiddle;
         private System.Windows.Forms.TextBox tb_AddTrainess_name;
         private System.Windows.Forms.TextBox tb_AddTrainess_middle;
         private System.Windows.Forms.TextBox tb_AddTrainess_fam;
