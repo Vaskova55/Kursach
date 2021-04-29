@@ -21,6 +21,11 @@ namespace Biblioteka2.Classes.Entityes
         public string login { get; set; }
         [Required, MaxLength(128)]
         public string password { get; set; }
+        public virtual List<IssuanceClass> issuance { get; set; }
+
+        public UserClass()
+        {
+            issuance = new List<IssuanceClass>();
         }
     }
 }

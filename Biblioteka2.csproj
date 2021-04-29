@@ -60,7 +60,9 @@
     <Compile Include="Classes\DbModel.cs" />
     <Compile Include="Classes\Entityes\AuthorClass.cs" />
     <Compile Include="Classes\Entityes\BookClass.cs" />
+    <Compile Include="Classes\Entityes\IssuanceClass.cs" />
     <Compile Include="Classes\Entityes\PublisherClass.cs" />
+    <Compile Include="Classes\Entityes\Purchase_accountingClass.cs" />
     <Compile Include="Classes\Entityes\TrainessClass.cs" />
     <Compile Include="Classes\Entityes\TypeClass.cs" />
     <Compile Include="Classes\Entityes\UserClass.cs" />
@@ -94,6 +96,12 @@
     <Compile Include="Forms\AddTrainessForm.Designer.cs">
       <DependentUpon>AddTrainessForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Home_pageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home_pageForm.Designer.cs">
+      <DependentUpon>Home_pageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TrainessesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddTrainessForm.resx">
       <DependentUpon>AddTrainessForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home_pageForm.resx">
+      <DependentUpon>Home_pageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TrainessesForm.resx">
       <DependentUpon>TrainessesForm.cs</DependentUpon>

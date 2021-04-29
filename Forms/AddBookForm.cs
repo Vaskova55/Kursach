@@ -29,7 +29,7 @@ namespace Biblioteka2.Forms
             cb_Author.Items.AddRange(DbModel.init().Authors.ToArray());
         }
 
-        private void Ok_AddBook_Click(object sender, EventArgs e)
+        private void Ok_AddBook_Click(object sender, EventArgs e) //добавление книги
         {
             BookClass book = new BookClass
             {
@@ -39,11 +39,11 @@ namespace Biblioteka2.Forms
                 type = cb_type.SelectedItem as TypeClass,
                 publisher = cb_publisher.SelectedItem as PublisherClass
             };
-                foreach (AuthorClass author in lb_author.Items)
+                foreach (AuthorClass author in lb_author.Items) //перебор авторов и заполнение CheckBox
                 {
                     book.Authors.Add(author);
                 }
-                DbModel.init().Books.Add(book);
+                DbModel.init().Books.Add(book); //добавление книги
                 DbModel.init().SaveChanges();
         }
 
