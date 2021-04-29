@@ -21,5 +21,6 @@ namespace Biblioteka2.Classes.Entityes
         public string login { get; set; }
         [Required, MaxLength(128)]
         public string password { get; set; }
+        }
     }
 }
