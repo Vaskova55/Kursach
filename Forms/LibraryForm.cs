@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Biblioteka2.Forms
 {
-    public partial class Home_pageForm : Form
+    public partial class LibraryForm : Form
     {
-        public Home_pageForm()
+        public LibraryForm()
         {
             InitializeComponent();
-        }
-
-        private void tsmi1_Issuance_Click(object sender, EventArgs e)
-        {
-            IssuanceForm f_i = new IssuanceForm();
-        }
-
-        private void tsmi2_Library_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -261,12 +261,14 @@ namespace Biblioteka2.Forms
             this.tsmi1_Issuance.Name = "tsmi1_Issuance";
             this.tsmi1_Issuance.Size = new System.Drawing.Size(76, 34);
             this.tsmi1_Issuance.Text = "Выдача";
+            this.tsmi1_Issuance.Click += new System.EventHandler(this.tsmi1_Issuance_Click);
             // 
             // tsmi2_Library
             // 
             this.tsmi2_Library.Name = "tsmi2_Library";
             this.tsmi2_Library.Size = new System.Drawing.Size(106, 34);
             this.tsmi2_Library.Text = "Библиотека";
+            this.tsmi2_Library.Click += new System.EventHandler(this.tsmi2_Library_Click);
             // 
             // tsmi3_Treiness
             // 

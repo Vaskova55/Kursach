@@ -90,6 +90,12 @@
     <Compile Include="Forms\IssuanceForm.Designer.cs">
       <DependentUpon>IssuanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LibraryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LibraryForm.Designer.cs">
+      <DependentUpon>LibraryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\IssuanceForm.resx">
       <DependentUpon>IssuanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LibraryForm.resx">
+      <DependentUpon>LibraryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
