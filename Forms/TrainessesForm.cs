@@ -16,5 +16,10 @@ namespace Biblioteka2.Forms
         {
             InitializeComponent();
         }
+
+        private void Add_Trainess_Click(object sender, EventArgs e)
+        {
+            AddTrainessForm f_atf = new AddTrainessForm();
+        }
     }
 }
