@@ -43,6 +43,8 @@ namespace Biblioteka2.Forms
             this.Family_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.First_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Middle_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_import = new System.Windows.Forms.Button();
+            this.ofd_load = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Trainess)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,6 +142,8 @@ namespace Biblioteka2.Forms
             // 
             // dgv_Trainess
             // 
+            this.dgv_Trainess.AllowUserToAddRows = false;
+            this.dgv_Trainess.AllowUserToDeleteRows = false;
             this.dgv_Trainess.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Trainess.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Class,
@@ -149,6 +153,7 @@ namespace Biblioteka2.Forms
             this.dgv_Trainess.Location = new System.Drawing.Point(12, 91);
             this.dgv_Trainess.MultiSelect = false;
             this.dgv_Trainess.Name = "dgv_Trainess";
+            this.dgv_Trainess.ReadOnly = true;
             this.dgv_Trainess.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Trainess.Size = new System.Drawing.Size(475, 262);
             this.dgv_Trainess.TabIndex = 30;
@@ -177,12 +182,31 @@ namespace Biblioteka2.Forms
             this.Middle_name.HeaderText = "Отчество";
             this.Middle_name.Name = "Middle_name";
             // 
+            // bt_import
+            // 
+            this.bt_import.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bt_import.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_import.BackgroundImage")));
+            this.bt_import.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_import.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_import.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bt_import.Location = new System.Drawing.Point(441, 12);
+            this.bt_import.Name = "bt_import";
+            this.bt_import.Size = new System.Drawing.Size(46, 43);
+            this.bt_import.TabIndex = 39;
+            this.bt_import.UseVisualStyleBackColor = false;
+            this.bt_import.Click += new System.EventHandler(this.bt_import_Click);
+            // 
+            // ofd_load
+            // 
+            this.ofd_load.Filter = "Excel table|*.xlsx";
+            // 
             // TrainessesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(499, 363);
+            this.Controls.Add(this.bt_import);
             this.Controls.Add(this.Export_Trainess);
             this.Controls.Add(this.Search_SearchTrainess);
             this.Controls.Add(this.lb1_Trainess);
@@ -215,5 +239,7 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Family_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn First_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Middle_name;
+        private System.Windows.Forms.Button bt_import;
+        private System.Windows.Forms.OpenFileDialog ofd_load;
     }
 }

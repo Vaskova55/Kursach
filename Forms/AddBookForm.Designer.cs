@@ -79,6 +79,8 @@ namespace Biblioteka2.Forms
             // lb_author
             // 
             this.lb_author.FormattingEnabled = true;
+            this.lb_author.Items.AddRange(new object[] {
+            ""});
             this.lb_author.Location = new System.Drawing.Point(42, 458);
             this.lb_author.Name = "lb_author";
             this.lb_author.Size = new System.Drawing.Size(146, 56);
