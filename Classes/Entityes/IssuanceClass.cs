@@ -22,7 +22,7 @@ namespace Biblioteka2.Classes.Entityes
 
         public IssuanceClass()
         {
-            user = new List<UserClass>();
+            //user = new List<UserClass>();
         }
     }
 }
