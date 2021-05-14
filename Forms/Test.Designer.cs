@@ -56,6 +56,7 @@ namespace Biblioteka2.Forms
             this.tb_midlename = new System.Windows.Forms.TextBox();
             this.tb_lastname = new System.Windows.Forms.TextBox();
             this.bt_Autor = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_books)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Class)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Year)).BeginInit();
@@ -179,7 +180,6 @@ namespace Biblioteka2.Forms
             this.bt_update.TabIndex = 13;
             this.bt_update.Text = "button1";
             this.bt_update.UseVisualStyleBackColor = true;
-            this.bt_update.Click += new System.EventHandler(this.bt_update_Click);
             // 
             // tb_bookname
             // 
@@ -267,6 +267,7 @@ namespace Biblioteka2.Forms
             this.Ok_AddBook.TabIndex = 42;
             this.Ok_AddBook.Text = "Добавить";
             this.Ok_AddBook.UseVisualStyleBackColor = false;
+            this.Ok_AddBook.Click += new System.EventHandler(this.Ok_AddBook_Click);
             // 
             // bt_add_autor
             // 
@@ -316,12 +317,23 @@ namespace Biblioteka2.Forms
             this.bt_Autor.Text = "button1";
             this.bt_Autor.UseVisualStyleBackColor = true;
             // 
-            // BookForm
+            // delete
+            // 
+            this.delete.Location = new System.Drawing.Point(600, 273);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(75, 23);
+            this.delete.TabIndex = 43;
+            this.delete.Text = "button1";
+            this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
+            // 
+            // Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 556);
+            this.Controls.Add(this.delete);
             this.Controls.Add(this.Ok_AddBook);
             this.Controls.Add(this.bt_add_autor);
             this.Controls.Add(this.lb_author);
@@ -343,7 +355,7 @@ namespace Biblioteka2.Forms
             this.Controls.Add(this.tb_publisher_city);
             this.Controls.Add(this.tb_type);
             this.Controls.Add(this.bt_addtype);
-            this.Name = "BookForm";
+            this.Name = "Test";
             this.Text = "TestForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_books)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Class)).EndInit();
@@ -382,5 +394,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.TextBox tb_midlename;
         private System.Windows.Forms.TextBox tb_lastname;
         private System.Windows.Forms.Button bt_Autor;
+        private System.Windows.Forms.Button delete;
     }
 }

@@ -79,8 +79,9 @@
     <Compile Include="Classes\Entityes\AuthorClass.cs" />
     <Compile Include="Classes\Entityes\BookClass.cs" />
     <Compile Include="Classes\Entityes\IssuanceClass.cs" />
+    <Compile Include="Classes\Entityes\LiteratureTurnoverClass.cs" />
     <Compile Include="Classes\Entityes\PublisherClass.cs" />
-    <Compile Include="Classes\Entityes\Purchase_accountingClass.cs" />
+    <Compile Include="Classes\Entityes\PurchaseAccountingClass.cs" />
     <Compile Include="Classes\Entityes\TrainessClass.cs" />
     <Compile Include="Classes\Entityes\TypeClass.cs" />
     <Compile Include="Classes\Entityes\UserClass.cs" />

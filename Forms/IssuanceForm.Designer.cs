@@ -59,6 +59,7 @@ namespace Biblioteka2.Forms
             this.Export_Issuance.Size = new System.Drawing.Size(46, 43);
             this.Export_Issuance.TabIndex = 39;
             this.Export_Issuance.UseVisualStyleBackColor = false;
+            this.Export_Issuance.Click += new System.EventHandler(this.Export_Issuance_Click);
             // 
             // Search_SearchIssuance
             // 
