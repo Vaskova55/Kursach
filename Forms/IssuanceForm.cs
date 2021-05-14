@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Entity;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -51,5 +52,30 @@ namespace Biblioteka2.Forms
                 ExcelClass.saveExcel(dialog.FileName, "Выдача", values);
             }
         }
+
+        private void bt_Import_Issuance_Click(object sender, EventArgs e)
+        {
+            /*if (ofd_load.ShowDialog() == DialogResult.OK)//Вызываем диалог выбора файла и проверяем, что полльзователь выбрал файл
+            {
+                DataTable table;
+                if (ExcelClass.loadExcel(ofd_load.FileName, out table))//Если загрузка данных(ИмяФайла,ТаблицаСРезультатом) прошел успешно
+                {
+                    foreach (DataRow row in table.Rows)//перебираем полученные строки
+                    {
+                         DbModel.init().Issuances.Add( //Заполняем строки таблицы Trainesses значениями
+                           DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.book),
+                        new IssuanceClass()
+                        {
+                            trainess = Convert.ToInt32(row["класс"], row["фамилия"], row["имя"]),
+                            book = Convert.ToString(row["название книги"]),
+                            user = Convert.ToString(row["1"]),
+                            date_of_issue = Convert.ToDateTime(row["дата выдачи"])
+                        }
+                    ); ;
+                    }
+                    DbModel.init().SaveChanges();//сохраняем
+                }
+            }        */
+        }
     }
-}
+    }

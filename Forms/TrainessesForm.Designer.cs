@@ -42,7 +42,7 @@ namespace Biblioteka2.Forms
             this.Family_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.First_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Middle_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_import_Trainess = new System.Windows.Forms.Button();
+            this.bt_Import_Trainess = new System.Windows.Forms.Button();
             this.ofd_load = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Trainess)).BeginInit();
             this.SuspendLayout();
@@ -59,12 +59,11 @@ namespace Biblioteka2.Forms
             this.Export_Trainess.Size = new System.Drawing.Size(46, 43);
             this.Export_Trainess.TabIndex = 38;
             this.Export_Trainess.UseVisualStyleBackColor = false;
-            this.Export_Trainess.Click += new System.EventHandler(this.Export_Trainess_Click);
             // 
             // lb1_Trainess
             // 
             this.lb1_Trainess.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb1_Trainess.Location = new System.Drawing.Point(333, 17);
+            this.lb1_Trainess.Location = new System.Drawing.Point(334, 16);
             this.lb1_Trainess.Name = "lb1_Trainess";
             this.lb1_Trainess.Size = new System.Drawing.Size(151, 27);
             this.lb1_Trainess.TabIndex = 36;
@@ -74,7 +73,7 @@ namespace Biblioteka2.Forms
             // tb_SearchTrainess
             // 
             this.tb_SearchTrainess.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tb_SearchTrainess.Location = new System.Drawing.Point(334, 47);
+            this.tb_SearchTrainess.Location = new System.Drawing.Point(334, 46);
             this.tb_SearchTrainess.Name = "tb_SearchTrainess";
             this.tb_SearchTrainess.Size = new System.Drawing.Size(147, 20);
             this.tb_SearchTrainess.TabIndex = 35;
@@ -178,19 +177,19 @@ namespace Biblioteka2.Forms
             this.Middle_name.Name = "Middle_name";
             this.Middle_name.ReadOnly = true;
             // 
-            // bt_import_Trainess
+            // bt_Import_Trainess
             // 
-            this.bt_import_Trainess.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.bt_import_Trainess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_import_Trainess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_import_Trainess.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_import_Trainess.Location = new System.Drawing.Point(282, 24);
-            this.bt_import_Trainess.Name = "bt_import_Trainess";
-            this.bt_import_Trainess.Size = new System.Drawing.Size(46, 43);
-            this.bt_import_Trainess.TabIndex = 39;
-            this.bt_import_Trainess.Text = "импорт";
-            this.bt_import_Trainess.UseVisualStyleBackColor = false;
-            this.bt_import_Trainess.Click += new System.EventHandler(this.bt_import_Click);
+            this.bt_Import_Trainess.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bt_Import_Trainess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_Import_Trainess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Import_Trainess.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bt_Import_Trainess.Location = new System.Drawing.Point(282, 24);
+            this.bt_Import_Trainess.Name = "bt_Import_Trainess";
+            this.bt_Import_Trainess.Size = new System.Drawing.Size(46, 43);
+            this.bt_Import_Trainess.TabIndex = 39;
+            this.bt_Import_Trainess.Text = "импорт";
+            this.bt_Import_Trainess.UseVisualStyleBackColor = false;
+            this.bt_Import_Trainess.Click += new System.EventHandler(this.bt_import_Click);
             // 
             // ofd_load
             // 
@@ -202,7 +201,7 @@ namespace Biblioteka2.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(499, 363);
-            this.Controls.Add(this.bt_import_Trainess);
+            this.Controls.Add(this.bt_Import_Trainess);
             this.Controls.Add(this.Export_Trainess);
             this.Controls.Add(this.lb1_Trainess);
             this.Controls.Add(this.tb_SearchTrainess);
@@ -233,7 +232,7 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Family_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn First_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Middle_name;
-        private System.Windows.Forms.Button bt_import_Trainess;
+        private System.Windows.Forms.Button bt_Import_Trainess;
         private System.Windows.Forms.OpenFileDialog ofd_load;
     }
 }

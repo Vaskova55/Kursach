@@ -43,7 +43,8 @@ namespace Biblioteka2.Forms
             this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_book = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_of_issue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_import_Issuance = new System.Windows.Forms.Button();
+            this.bt_Import_Issuance = new System.Windows.Forms.Button();
+            this.ofd_load = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Issuance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,18 +184,23 @@ namespace Biblioteka2.Forms
             this.date_of_issue.Name = "date_of_issue";
             this.date_of_issue.ReadOnly = true;
             // 
-            // bt_import_Issuance
+            // bt_Import_Issuance
             // 
-            this.bt_import_Issuance.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.bt_import_Issuance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_import_Issuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_import_Issuance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_import_Issuance.Location = new System.Drawing.Point(282, 24);
-            this.bt_import_Issuance.Name = "bt_import_Issuance";
-            this.bt_import_Issuance.Size = new System.Drawing.Size(46, 43);
-            this.bt_import_Issuance.TabIndex = 40;
-            this.bt_import_Issuance.Text = "импорт";
-            this.bt_import_Issuance.UseVisualStyleBackColor = false;
+            this.bt_Import_Issuance.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bt_Import_Issuance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_Import_Issuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Import_Issuance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bt_Import_Issuance.Location = new System.Drawing.Point(282, 24);
+            this.bt_Import_Issuance.Name = "bt_Import_Issuance";
+            this.bt_Import_Issuance.Size = new System.Drawing.Size(46, 43);
+            this.bt_Import_Issuance.TabIndex = 40;
+            this.bt_Import_Issuance.Text = "импорт";
+            this.bt_Import_Issuance.UseVisualStyleBackColor = false;
+            this.bt_Import_Issuance.Click += new System.EventHandler(this.bt_Import_Issuance_Click);
+            // 
+            // ofd_load
+            // 
+            this.ofd_load.FileName = "openFileDialog1";
             // 
             // IssuanceForm
             // 
@@ -202,7 +208,7 @@ namespace Biblioteka2.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(516, 364);
-            this.Controls.Add(this.bt_import_Issuance);
+            this.Controls.Add(this.bt_Import_Issuance);
             this.Controls.Add(this.Export_Issuance);
             this.Controls.Add(this.lb1_SearchIssuance);
             this.Controls.Add(this.tb_SearchIssuance);
@@ -234,6 +240,7 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn first_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_book;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_of_issue;
-        private System.Windows.Forms.Button bt_import_Issuance;
+        private System.Windows.Forms.Button bt_Import_Issuance;
+        private System.Windows.Forms.OpenFileDialog ofd_load;
     }
 }

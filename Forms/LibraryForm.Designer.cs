@@ -31,7 +31,6 @@ namespace Biblioteka2.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibraryForm));
             this.Export_Library = new System.Windows.Forms.Button();
-            this.Search_SearchLibrary = new System.Windows.Forms.Label();
             this.lb1_SearchLibrary = new System.Windows.Forms.Label();
             this.tb_SearchLibrary = new System.Windows.Forms.TextBox();
             this.Update_Library = new System.Windows.Forms.Button();
@@ -45,6 +44,7 @@ namespace Biblioteka2.Forms
             this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Publisher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Publishing_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_import_Library = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Library)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,22 +62,12 @@ namespace Biblioteka2.Forms
             this.Export_Library.UseVisualStyleBackColor = false;
             this.Export_Library.Click += new System.EventHandler(this.Export_Library_Click);
             // 
-            // Search_SearchLibrary
-            // 
-            this.Search_SearchLibrary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Search_SearchLibrary.Location = new System.Drawing.Point(374, 62);
-            this.Search_SearchLibrary.Name = "Search_SearchLibrary";
-            this.Search_SearchLibrary.Size = new System.Drawing.Size(147, 27);
-            this.Search_SearchLibrary.TabIndex = 36;
-            this.Search_SearchLibrary.Text = "Больше параметров для поиска";
-            this.Search_SearchLibrary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lb1_SearchLibrary
             // 
             this.lb1_SearchLibrary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb1_SearchLibrary.Location = new System.Drawing.Point(370, 8);
+            this.lb1_SearchLibrary.Location = new System.Drawing.Point(367, 18);
             this.lb1_SearchLibrary.Name = "lb1_SearchLibrary";
-            this.lb1_SearchLibrary.Size = new System.Drawing.Size(151, 28);
+            this.lb1_SearchLibrary.Size = new System.Drawing.Size(151, 27);
             this.lb1_SearchLibrary.TabIndex = 35;
             this.lb1_SearchLibrary.Text = "Поиск данных.";
             this.lb1_SearchLibrary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -85,7 +75,7 @@ namespace Biblioteka2.Forms
             // tb_SearchLibrary
             // 
             this.tb_SearchLibrary.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tb_SearchLibrary.Location = new System.Drawing.Point(374, 39);
+            this.tb_SearchLibrary.Location = new System.Drawing.Point(367, 48);
             this.tb_SearchLibrary.Name = "tb_SearchLibrary";
             this.tb_SearchLibrary.Size = new System.Drawing.Size(147, 20);
             this.tb_SearchLibrary.TabIndex = 34;
@@ -206,14 +196,27 @@ namespace Biblioteka2.Forms
             this.Publishing_year.Name = "Publishing_year";
             this.Publishing_year.ReadOnly = true;
             // 
+            // bt_import_Library
+            // 
+            this.bt_import_Library.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bt_import_Library.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_import_Library.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_import_Library.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bt_import_Library.Location = new System.Drawing.Point(315, 25);
+            this.bt_import_Library.Name = "bt_import_Library";
+            this.bt_import_Library.Size = new System.Drawing.Size(46, 43);
+            this.bt_import_Library.TabIndex = 40;
+            this.bt_import_Library.Text = "импорт";
+            this.bt_import_Library.UseVisualStyleBackColor = false;
+            // 
             // LibraryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(600, 367);
+            this.Controls.Add(this.bt_import_Library);
             this.Controls.Add(this.Export_Library);
-            this.Controls.Add(this.Search_SearchLibrary);
             this.Controls.Add(this.lb1_SearchLibrary);
             this.Controls.Add(this.tb_SearchLibrary);
             this.Controls.Add(this.Update_Library);
@@ -232,7 +235,6 @@ namespace Biblioteka2.Forms
         #endregion
 
         private System.Windows.Forms.Button Export_Library;
-        private System.Windows.Forms.Label Search_SearchLibrary;
         private System.Windows.Forms.Label lb1_SearchLibrary;
         private System.Windows.Forms.TextBox tb_SearchLibrary;
         private System.Windows.Forms.Button Update_Library;
@@ -246,5 +248,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Author;
         private System.Windows.Forms.DataGridViewTextBoxColumn Publisher;
         private System.Windows.Forms.DataGridViewTextBoxColumn Publishing_year;
+        private System.Windows.Forms.Button bt_import_Library;
     }
 }
