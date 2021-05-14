@@ -19,6 +19,7 @@ namespace Biblioteka2.Forms
         {
             InitializeComponent();
             UpdateCombo();
+            updatData();
         }
 
         private void bt_addtype_Click(object sender, EventArgs e)
@@ -45,13 +46,16 @@ namespace Biblioteka2.Forms
         private void bt_refresh_Click(object sender, EventArgs e)
         {
             UpdateCombo();
+            updatData();
         }
 
-        private void bt_update_Click(object sender, EventArgs e)
+        private void updatData()
         {
             dgv_books.Rows.Clear();
-            foreach (BookClass book in DbModel.init().Books.Include(b => b.publisher).Include(b => b.type).Include(b=>b.Authors)) {
-                dgv_books.Rows.Add(book.name_book, String.Join(", ", book.Authors), book.publisher.ToString(), book.type.ToString(), book.publishing_year, book.publishing_year);
+            foreach (BookClass book in DbModel.init().Books.Include(b => b.publisher).Include(b => b.type).Include(b => b.Authors))
+            {
+                int r = dgv_books.Rows.Add(book.name_book, String.Join(", ", book.Authors), book.publisher.ToString(), book.type.ToString(), book.publishing_year, book.publishing_year);
+                dgv_books.Rows[r].Tag = book;
             }
         }
 
@@ -59,6 +63,22 @@ namespace Biblioteka2.Forms
         {
             lb_author.Items.Add(cb_Author.SelectedItem);
             cb_Author.Items.Remove(cb_Author.SelectedItem);
+        }
+
+        private void Ok_AddBook_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            if (dgv_books.Rows.Count > 0)
+            {
+                BookClass book = dgv_books.Rows[0].Tag as BookClass;
+                DbModel.init().Books.Remove(book);
+                DbModel.init().SaveChanges();
+                updatData();
+            }
         }
     }
 }

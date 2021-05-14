@@ -31,7 +31,6 @@ namespace Biblioteka2.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IssuanceForm));
             this.Export_Issuance = new System.Windows.Forms.Button();
-            this.Search_SearchIssuance = new System.Windows.Forms.Label();
             this.lb1_SearchIssuance = new System.Windows.Forms.Label();
             this.tb_SearchIssuance = new System.Windows.Forms.TextBox();
             this.Update_Issuance = new System.Windows.Forms.Button();
@@ -44,6 +43,7 @@ namespace Biblioteka2.Forms
             this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_book = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_of_issue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_import_Issuance = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Issuance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,23 +59,14 @@ namespace Biblioteka2.Forms
             this.Export_Issuance.Size = new System.Drawing.Size(46, 43);
             this.Export_Issuance.TabIndex = 39;
             this.Export_Issuance.UseVisualStyleBackColor = false;
-            // 
-            // Search_SearchIssuance
-            // 
-            this.Search_SearchIssuance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Search_SearchIssuance.Location = new System.Drawing.Point(320, 61);
-            this.Search_SearchIssuance.Name = "Search_SearchIssuance";
-            this.Search_SearchIssuance.Size = new System.Drawing.Size(147, 27);
-            this.Search_SearchIssuance.TabIndex = 38;
-            this.Search_SearchIssuance.Text = "Больше параметров для поиска";
-            this.Search_SearchIssuance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Export_Issuance.Click += new System.EventHandler(this.Export_Issuance_Click);
             // 
             // lb1_SearchIssuance
             // 
             this.lb1_SearchIssuance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb1_SearchIssuance.Location = new System.Drawing.Point(319, 7);
+            this.lb1_SearchIssuance.Location = new System.Drawing.Point(330, 17);
             this.lb1_SearchIssuance.Name = "lb1_SearchIssuance";
-            this.lb1_SearchIssuance.Size = new System.Drawing.Size(151, 28);
+            this.lb1_SearchIssuance.Size = new System.Drawing.Size(151, 27);
             this.lb1_SearchIssuance.TabIndex = 37;
             this.lb1_SearchIssuance.Text = "Поиск данных.";
             this.lb1_SearchIssuance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -83,7 +74,7 @@ namespace Biblioteka2.Forms
             // tb_SearchIssuance
             // 
             this.tb_SearchIssuance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tb_SearchIssuance.Location = new System.Drawing.Point(320, 38);
+            this.tb_SearchIssuance.Location = new System.Drawing.Point(334, 47);
             this.tb_SearchIssuance.Name = "tb_SearchIssuance";
             this.tb_SearchIssuance.Size = new System.Drawing.Size(147, 20);
             this.tb_SearchIssuance.TabIndex = 36;
@@ -192,14 +183,27 @@ namespace Biblioteka2.Forms
             this.date_of_issue.Name = "date_of_issue";
             this.date_of_issue.ReadOnly = true;
             // 
+            // bt_import_Issuance
+            // 
+            this.bt_import_Issuance.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bt_import_Issuance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_import_Issuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_import_Issuance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bt_import_Issuance.Location = new System.Drawing.Point(282, 24);
+            this.bt_import_Issuance.Name = "bt_import_Issuance";
+            this.bt_import_Issuance.Size = new System.Drawing.Size(46, 43);
+            this.bt_import_Issuance.TabIndex = 40;
+            this.bt_import_Issuance.Text = "импорт";
+            this.bt_import_Issuance.UseVisualStyleBackColor = false;
+            // 
             // IssuanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(516, 364);
+            this.Controls.Add(this.bt_import_Issuance);
             this.Controls.Add(this.Export_Issuance);
-            this.Controls.Add(this.Search_SearchIssuance);
             this.Controls.Add(this.lb1_SearchIssuance);
             this.Controls.Add(this.tb_SearchIssuance);
             this.Controls.Add(this.Update_Issuance);
@@ -218,7 +222,6 @@ namespace Biblioteka2.Forms
         #endregion
 
         private System.Windows.Forms.Button Export_Issuance;
-        private System.Windows.Forms.Label Search_SearchIssuance;
         private System.Windows.Forms.Label lb1_SearchIssuance;
         private System.Windows.Forms.TextBox tb_SearchIssuance;
         private System.Windows.Forms.Button Update_Issuance;
@@ -231,5 +234,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn first_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_book;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_of_issue;
+        private System.Windows.Forms.Button bt_import_Issuance;
     }
 }

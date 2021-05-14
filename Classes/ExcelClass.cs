@@ -40,7 +40,6 @@ namespace Biblioteka2.Classes
             {
                 return false;
             }
-
         }
 
         private static bool isCellNotEmpty(ICell cell)

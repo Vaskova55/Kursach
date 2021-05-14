@@ -39,12 +39,13 @@ namespace Biblioteka2.Forms
                 type = cb_type.SelectedItem as TypeClass,
                 publisher = cb_publisher.SelectedItem as PublisherClass
             };
-                foreach (AuthorClass author in lb_author.Items) //перебор авторов и заполнение CheckBox
-                {
-                    book.Authors.Add(author);
-                }
-                DbModel.init().Books.Add(book); //добавление книги
-                DbModel.init().SaveChanges();
+            foreach (AuthorClass author in lb_author.Items) //перебор авторов и заполнение CheckBox
+            {
+                book.Authors.Add(author);
+            }
+            DbModel.init().Books.Add(book); //добавление книги
+            DbModel.init().SaveChanges();
+            Hide();
         }
 
         private void cb_NoAvtor_CheckedChanged(object sender, EventArgs e)

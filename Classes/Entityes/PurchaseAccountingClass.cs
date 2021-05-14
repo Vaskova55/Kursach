@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteka2.Classes.Entityes
 {
-    public class Purchase_accountingClass
+    public class PurchaseAccountingClass
     {
         [Key]
         public int idPurchase_accounting { get; set; }
@@ -15,5 +15,11 @@ namespace Biblioteka2.Classes.Entityes
         public decimal price { get; set; }
         [Required]
         public int count { get; set; }
+        public virtual List<LiteratureTurnoverClass> literatureTurnover { get; set; }
+
+        public PurchaseAccountingClass()
+        {
+            literatureTurnover = new List<LiteratureTurnoverClass>();
+        }
     }
 }

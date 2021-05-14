@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace Biblioteka2.Classes.Entityes
 {
-    public class IssuanceClass
+    public class LiteratureTurnoverClass
     {
         [Key]
-        public int idIssuance { get; set; }
+        public int idTurnover { get; set; }
         [Required]
-        public virtual TrainessClass trainess { get; set; }
+        public Int16 year { get; set; }
         [Required]
         public virtual BookClass book { get; set; }
+        public virtual PurchaseAccountingClass purchaseAccounting { get; set; }
         [Required]
-        public virtual UserClass user { get; set; }
-        [Required]
-        public DateTime date_of_issue { get; set; } 
+        public int status { get; set; }
     }
 }

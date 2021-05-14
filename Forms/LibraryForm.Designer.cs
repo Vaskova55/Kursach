@@ -60,6 +60,7 @@ namespace Biblioteka2.Forms
             this.Export_Library.Size = new System.Drawing.Size(46, 43);
             this.Export_Library.TabIndex = 37;
             this.Export_Library.UseVisualStyleBackColor = false;
+            this.Export_Library.Click += new System.EventHandler(this.Export_Library_Click);
             // 
             // Search_SearchLibrary
             // 
@@ -100,6 +101,7 @@ namespace Biblioteka2.Forms
             this.Update_Library.Size = new System.Drawing.Size(46, 43);
             this.Update_Library.TabIndex = 33;
             this.Update_Library.UseVisualStyleBackColor = false;
+            this.Update_Library.Click += new System.EventHandler(this.Update_Library_Click);
             // 
             // Delete_Library
             // 
@@ -113,6 +115,7 @@ namespace Biblioteka2.Forms
             this.Delete_Library.Size = new System.Drawing.Size(46, 43);
             this.Delete_Library.TabIndex = 32;
             this.Delete_Library.UseVisualStyleBackColor = false;
+            this.Delete_Library.Click += new System.EventHandler(this.Delete_Library_Click);
             // 
             // Edit_Library
             // 
@@ -126,6 +129,7 @@ namespace Biblioteka2.Forms
             this.Edit_Library.Size = new System.Drawing.Size(46, 43);
             this.Edit_Library.TabIndex = 31;
             this.Edit_Library.UseVisualStyleBackColor = false;
+            this.Edit_Library.Click += new System.EventHandler(this.Edit_Library_Click);
             // 
             // Add_Library
             // 
@@ -138,6 +142,7 @@ namespace Biblioteka2.Forms
             this.Add_Library.Size = new System.Drawing.Size(46, 43);
             this.Add_Library.TabIndex = 30;
             this.Add_Library.UseVisualStyleBackColor = true;
+            this.Add_Library.Click += new System.EventHandler(this.Add_Library_Click);
             // 
             // dgv_Library
             // 

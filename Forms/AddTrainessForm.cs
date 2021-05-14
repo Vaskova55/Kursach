@@ -21,6 +21,7 @@ namespace Biblioteka2.Forms
 
         private void Ok_AddTrainess_Click(object sender, EventArgs e)
         {
+          //  if ()
             if (cb_noMiddle.Checked)
             {
                 DbModel.init().Trainesses.Add(new TrainessClass { classTrainess = (int)nud_AddTrainess_class.Value, family_name = tb_AddTrainess_fam.Text, first_name = tb_AddTrainess_name.Text});
@@ -31,6 +32,7 @@ namespace Biblioteka2.Forms
                 DbModel.init().Trainesses.Add(new TrainessClass { classTrainess = (int)nud_AddTrainess_class.Value, family_name = tb_AddTrainess_fam.Text, first_name = tb_AddTrainess_name.Text, middle_name = tb_AddTrainess_middle.Text });
                 DbModel.init().SaveChanges();
             }
+            Hide();
         }
     }
 }

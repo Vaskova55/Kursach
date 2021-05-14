@@ -21,6 +21,7 @@ namespace Biblioteka2.Classes.Entityes
         public string middle_name { get; set; }
         public virtual List<IssuanceClass> issuance { get; set; }
 
+
         public TrainessClass()
         {
             issuance = new List<IssuanceClass>();
