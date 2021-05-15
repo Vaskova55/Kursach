@@ -107,5 +107,6 @@ namespace Biblioteka2.Forms
                 Update();
             }
         }
+>>>>>>>>> Temporary merge branch 2
     }
 }
