@@ -180,6 +180,7 @@ namespace Biblioteka2.Forms
             // bt_Import_Trainess
             // 
             this.bt_Import_Trainess.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bt_Import_Trainess.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_Import_Trainess.BackgroundImage")));
             this.bt_Import_Trainess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_Import_Trainess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Import_Trainess.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -187,7 +188,6 @@ namespace Biblioteka2.Forms
             this.bt_Import_Trainess.Name = "bt_Import_Trainess";
             this.bt_Import_Trainess.Size = new System.Drawing.Size(46, 43);
             this.bt_Import_Trainess.TabIndex = 39;
-            this.bt_Import_Trainess.Text = "импорт";
             this.bt_Import_Trainess.UseVisualStyleBackColor = false;
             this.bt_Import_Trainess.Click += new System.EventHandler(this.bt_import_Click);
             // 

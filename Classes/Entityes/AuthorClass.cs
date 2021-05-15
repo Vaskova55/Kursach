@@ -19,7 +19,8 @@ namespace Biblioteka2.Classes.Entityes
         public string middle_name { get; set; }
         public List<BookClass> Books { get; set; }
 
-        public AuthorClass() {
+        public AuthorClass()
+        {
             Books = new List<BookClass>();
         }
 

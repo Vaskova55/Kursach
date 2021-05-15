@@ -26,5 +26,10 @@ namespace Biblioteka2.Classes.Entityes
         {
             issuance = new List<IssuanceClass>();
         }
+
+        public override string ToString()
+        {
+            return family_name + " " + first_name;
+        }
     }
 }

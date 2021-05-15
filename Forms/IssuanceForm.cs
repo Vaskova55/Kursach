@@ -77,5 +77,12 @@ namespace Biblioteka2.Forms
                 }
             }        */
         }
+
+        private void Add_Issuance_Click(object sender, EventArgs e)
+        {
+            AddIssuanceForm f_aif = new AddIssuanceForm();
+            f_aif.ShowDialog();
+            /* updateDate();*/  //СДЕЛАТЬ!!!!!!
+        }
     }
     }

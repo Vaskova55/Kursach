@@ -129,6 +129,7 @@ namespace Biblioteka2.Forms
             this.Add_Issuance.Size = new System.Drawing.Size(46, 43);
             this.Add_Issuance.TabIndex = 32;
             this.Add_Issuance.UseVisualStyleBackColor = true;
+            this.Add_Issuance.Click += new System.EventHandler(this.Add_Issuance_Click);
             // 
             // dgv_Issuance
             // 
@@ -187,6 +188,7 @@ namespace Biblioteka2.Forms
             // bt_Import_Issuance
             // 
             this.bt_Import_Issuance.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bt_Import_Issuance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_Import_Issuance.BackgroundImage")));
             this.bt_Import_Issuance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_Import_Issuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Import_Issuance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -194,7 +196,6 @@ namespace Biblioteka2.Forms
             this.bt_Import_Issuance.Name = "bt_Import_Issuance";
             this.bt_Import_Issuance.Size = new System.Drawing.Size(46, 43);
             this.bt_Import_Issuance.TabIndex = 40;
-            this.bt_Import_Issuance.Text = "импорт";
             this.bt_Import_Issuance.UseVisualStyleBackColor = false;
             this.bt_Import_Issuance.Click += new System.EventHandler(this.bt_Import_Issuance_Click);
             // 

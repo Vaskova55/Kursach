@@ -174,7 +174,7 @@ namespace Biblioteka2.Forms
             // lb1_AddTrainess
             // 
             this.lb1_AddTrainess.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb1_AddTrainess.Location = new System.Drawing.Point(11, 9);
+            this.lb1_AddTrainess.Location = new System.Drawing.Point(12, 9);
             this.lb1_AddTrainess.Name = "lb1_AddTrainess";
             this.lb1_AddTrainess.Size = new System.Drawing.Size(205, 50);
             this.lb1_AddTrainess.TabIndex = 52;
@@ -257,7 +257,7 @@ namespace Biblioteka2.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(238, 571);
+            this.ClientSize = new System.Drawing.Size(228, 571);
             this.Controls.Add(this.cb_NoAvtor);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -277,7 +277,7 @@ namespace Biblioteka2.Forms
             this.Controls.Add(this.NUD_Class);
             this.Controls.Add(this.tb_bookname);
             this.Name = "AddBookForm";
-            this.Text = "Новая литература";
+            this.Text = "Новые данные";
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Year)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Class)).EndInit();
             this.ResumeLayout(false);

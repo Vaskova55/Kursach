@@ -102,8 +102,8 @@ namespace Biblioteka2.Forms
             if (dgv_Trainess.SelectedRows.Count > 0)
             {
                 TrainessClass trainess = dgv_Trainess.SelectedRows[0].Tag as TrainessClass;
-                //AddTrainessForm f_at = new AddTrainessForm(trainess);
-                //f_at.Show();
+                AddTrainessForm f_at = new AddTrainessForm(trainess);
+                f_at.Show();
                 Update();
             }
         }

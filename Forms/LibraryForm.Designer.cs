@@ -199,6 +199,7 @@ namespace Biblioteka2.Forms
             // bt_import_Library
             // 
             this.bt_import_Library.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bt_import_Library.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_import_Library.BackgroundImage")));
             this.bt_import_Library.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_import_Library.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_import_Library.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -206,7 +207,6 @@ namespace Biblioteka2.Forms
             this.bt_import_Library.Name = "bt_import_Library";
             this.bt_import_Library.Size = new System.Drawing.Size(46, 43);
             this.bt_import_Library.TabIndex = 40;
-            this.bt_import_Library.Text = "импорт";
             this.bt_import_Library.UseVisualStyleBackColor = false;
             // 
             // LibraryForm
