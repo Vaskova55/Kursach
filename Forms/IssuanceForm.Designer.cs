@@ -44,7 +44,7 @@ namespace Biblioteka2.Forms
             this.name_book = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_of_issue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bt_Import_Issuance = new System.Windows.Forms.Button();
-            this.ofd_load = new System.Windows.Forms.OpenFileDialog();
+            this.ofd_load_Issuance = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Issuance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,6 +91,7 @@ namespace Biblioteka2.Forms
             this.Update_Issuance.Size = new System.Drawing.Size(46, 43);
             this.Update_Issuance.TabIndex = 35;
             this.Update_Issuance.UseVisualStyleBackColor = false;
+            this.Update_Issuance.Click += new System.EventHandler(this.Update_Issuance_Click);
             // 
             // Delete_Issuance
             // 
@@ -200,9 +201,9 @@ namespace Biblioteka2.Forms
             this.bt_Import_Issuance.UseVisualStyleBackColor = false;
             this.bt_Import_Issuance.Click += new System.EventHandler(this.bt_Import_Issuance_Click);
             // 
-            // ofd_load
+            // ofd_load_Issuance
             // 
-            this.ofd_load.FileName = "openFileDialog1";
+            this.ofd_load_Issuance.FileName = "openFileDialog1";
             // 
             // IssuanceForm
             // 
@@ -243,6 +244,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn name_book;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_of_issue;
         private System.Windows.Forms.Button bt_Import_Issuance;
-        private System.Windows.Forms.OpenFileDialog ofd_load;
+        private System.Windows.Forms.OpenFileDialog ofd_load_Issuance;
     }
 }

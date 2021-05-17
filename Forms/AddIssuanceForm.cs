@@ -39,7 +39,7 @@ namespace Biblioteka2.Forms
 
             DbModel.init().Issuances.Add(issuance);
             DbModel.init().SaveChanges();
-            Hide();
+            Close();
         }
     }
 }

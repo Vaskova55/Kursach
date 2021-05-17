@@ -45,6 +45,7 @@ namespace Biblioteka2.Forms
             this.Publisher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Publishing_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bt_import_Library = new System.Windows.Forms.Button();
+            this.ofd_load_Library = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Library)).BeginInit();
             this.SuspendLayout();
             // 
@@ -208,6 +209,11 @@ namespace Biblioteka2.Forms
             this.bt_import_Library.Size = new System.Drawing.Size(46, 43);
             this.bt_import_Library.TabIndex = 40;
             this.bt_import_Library.UseVisualStyleBackColor = false;
+            this.bt_import_Library.Click += new System.EventHandler(this.bt_import_Library_Click);
+            // 
+            // ofd_load_Library
+            // 
+            this.ofd_load_Library.FileName = "openFileDialog1";
             // 
             // LibraryForm
             // 
@@ -249,5 +255,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Publisher;
         private System.Windows.Forms.DataGridViewTextBoxColumn Publishing_year;
         private System.Windows.Forms.Button bt_import_Library;
+        private System.Windows.Forms.OpenFileDialog ofd_load_Library;
     }
 }

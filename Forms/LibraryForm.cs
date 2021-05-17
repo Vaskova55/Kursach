@@ -3,6 +3,7 @@ using Biblioteka2.Classes.Entityes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
@@ -24,7 +25,6 @@ namespace Biblioteka2.Forms
         {
             AddBookForm f_ab = new AddBookForm();
             f_ab.ShowDialog();
-            DbModel.init().SaveChanges();
             updatData();
         }
         private void updatData()
@@ -32,11 +32,12 @@ namespace Biblioteka2.Forms
             dgv_Library.Rows.Clear();
             foreach (BookClass book in DbModel.init().Books.Include(b => b.publisher).Include(b => b.type).Include(b => b.Authors)
                 .Where(
-                    b=>b.name_book.Contains(tb_SearchLibrary.Text) ||
-                    b.publisher.name.Contains(tb_SearchLibrary.Text) || 
-                    b.classnum.ToString().Contains(tb_SearchLibrary.Text) || 
+                    b => b.name_book.Contains(tb_SearchLibrary.Text) ||
+                    b.publisher.name.Contains(tb_SearchLibrary.Text) ||
+                    b.classnum.ToString().Contains(tb_SearchLibrary.Text) ||
                     b.publishing_year.ToString().Contains(tb_SearchLibrary.Text) ||
-                    b.type.type.Contains(tb_SearchLibrary.Text)
+                    b.type.type.Contains(tb_SearchLibrary.Text) /*||
+                    b.Authors.Contains(tb_SearchLibrary.Text)*/
                 )
             )
             {
@@ -80,7 +81,106 @@ namespace Biblioteka2.Forms
 
         private void Export_Library_Click(object sender, EventArgs e)
         {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Файлы excel|*.xlsx";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                List<BookClass> listBook = DbModel.init().Books.Include(b => b.publisher).Include(b => b.type).Include(b => b.Authors).ToList();
+                string[,] values = new string[listBook.Count + 1, 6];
 
+                values[0, 0] = "Тип";
+                values[0, 1] = "Класс";
+                values[0, 2] = "Название";
+                values[0, 3] = "Автор";
+                values[0, 4] = "Издательство";
+                values[0, 5] = "Год публикации";
+
+                {
+                    for (int i = 0; i < listBook.Count; i++)
+                    {
+                        {
+                            values[i + 1, 0] = listBook[i].type.type;
+                            values[i + 1, 1] = listBook[i].classnum.ToString();
+                            values[i + 1, 2] = listBook[i].name_book;
+                            values[i + 1, 3] = listBook[i].Authors.ToString();
+                            values[i + 1, 4] = listBook[i].publisher.ToString();
+                            values[i + 1, 5] = listBook[i].publishing_year.ToString();
+
+                        }
+                    }
+
+                }
+                ExcelClass.saveExcel(dialog.FileName, "Книги", values);
+            }
+        }
+
+        private void bt_import_Library_Click(object sender, EventArgs e)
+        {
+            if (ofd_load_Library.ShowDialog() == DialogResult.OK)//Вызываем диалог выбора файла и проверяем, что полльзователь выбрал файл
+            {
+                DataTable table;
+                if (ExcelClass.loadExcel(ofd_load_Library.FileName, out table))//Если загрузка данных(ИмяФайла,ТаблицаСРезультатом) прошел успешно
+                {
+                    foreach (DataRow row in table.Rows)//перебираем полученные строки
+                    {
+                        //Проверка на наличие такого типа литературы с такими данными
+                        TypeClass type = DbModel.init().Types.Where(t =>
+                            t.type == Convert.ToString(row["Тип"])
+                         ).FirstOrDefault();
+
+                        //Проверка на наличие авторов с такими данными
+                        AuthorClass author = DbModel.init().Authors.Where(a => a.family_name == Convert.ToString(row["Фамилия автора"]) || a.first_name == Convert.ToString(row["Имя автора"]) || a.middle_name == Convert.ToString(row["Отчество автора"])).FirstOrDefault(); ////?????
+
+                        PublisherClass publisher = DbModel.init().Publishers.Where(p =>
+                            p.city == Convert.ToString(row["Тип"])
+                         ).FirstOrDefault();
+
+                        //Если книга не существует, то выдается сообщение об ошибке 
+                        if (type == null)
+                        {
+                            type = new TypeClass { type = Convert.ToString(row["Тип"]) };
+                        }
+                        /*  //Если такого обучающегося не существует, то он создаётся
+                        if (trainess == null)
+                        {
+                            trainess = new TrainessClass
+                            {
+                                classTrainess = Convert.ToInt32(row["Класс"]),
+                                family_name = Convert.ToString(row["Фамилия"]),
+                                first_name = Convert.ToString(row["Имя"])
+                            };
+                        }
+
+                        //Когда подбор данных осуществлен, происходит импорт (добавление данных)
+                        DbModel.init().Issuances.Add(
+                            new IssuanceClass
+                            {
+                                user = Authmanager.user,
+                                date_of_issue = Convert.ToDateTime(row["Дата выдачи"]),
+                                trainess = trainess,
+                                book = book
+                            }
+                        );
+                    }
+
+                    //Если найдена ошибка, то выдается сообщение и обращение к ползователю, где спрашивается его согласие на сохранение данных с ошибкой
+                    if (stringBuilder.Length > 0)
+                    {
+                        MessageBox.Show(stringBuilder.ToString());
+                        if (MessageBox.Show("Save?", "save", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            DbModel.init().SaveChanges();
+                            updatData();
+                        }
+                    }
+                    else
+                    {
+                        DbModel.init().SaveChanges();
+                        updatData();
+                    }   */
+                    }
+                }
+            }
         }
     }
 }

@@ -18,6 +18,31 @@ namespace Biblioteka2.Forms
         public IssuanceForm()
         {
             InitializeComponent();
+            updatData();
+        }
+
+        private void updatData()
+        {
+            dgv_Issuance.Rows.Clear();
+            foreach (IssuanceClass issuance in DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.book).Include(i => i.user)
+                .Where(
+                    i => i.trainess.classTrainess.ToString().Contains(tb_SearchIssuance.Text) ||
+                    i.trainess.family_name.Contains(tb_SearchIssuance.Text) ||
+                    i.trainess.family_name.Contains(tb_SearchIssuance.Text) ||
+                    i.book.name_book.Contains(tb_SearchIssuance.Text) ||
+                    i.date_of_issue.ToString().Contains(tb_SearchIssuance.Text)
+                )
+            )
+            {
+                int r = dgv_Issuance.Rows.Add(
+                    issuance.trainess.classTrainess.ToString(),
+                    issuance.trainess.family_name.ToString(),
+                    issuance.trainess.first_name.ToString(),
+                    issuance.book.name_book.ToString(),
+                    issuance.date_of_issue
+                ); ;
+                dgv_Issuance.Rows[r].Tag = issuance;
+            }
         }
 
         private void Export_Issuance_Click(object sender, EventArgs e)
@@ -26,7 +51,7 @@ namespace Biblioteka2.Forms
             dialog.Filter = "Файлы excel|*.xlsx";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                List<IssuanceClass> listIssuance = DbModel.init().Issuances.Include(i=>i.trainess).Include(i=>i.book).ToList();
+                List<IssuanceClass> listIssuance = DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.book).ToList();
                 string[,] values = new string[listIssuance.Count + 1, 5];
 
                 values[0, 0] = "Класс";
@@ -42,12 +67,12 @@ namespace Biblioteka2.Forms
                             values[i + 1, 0] = listIssuance[i].trainess.classTrainess.ToString();
                             values[i + 1, 1] = listIssuance[i].trainess.family_name;
                             values[i + 1, 2] = listIssuance[i].trainess.first_name;
-                            values[i+1,3] = listIssuance[i].book.name_book;
-                            values[i+1, 4] = listIssuance[i].date_of_issue.ToString("F");
+                            values[i + 1, 3] = listIssuance[i].book.name_book;
+                            values[i + 1, 4] = listIssuance[i].date_of_issue.ToString("F");
 
                         }
                     }
-                    
+
                 }
                 ExcelClass.saveExcel(dialog.FileName, "Выдача", values);
             }
@@ -55,10 +80,10 @@ namespace Biblioteka2.Forms
 
         private void bt_Import_Issuance_Click(object sender, EventArgs e)
         {
-            if (ofd_load.ShowDialog() == DialogResult.OK)//Вызываем диалог выбора файла и проверяем, что полльзователь выбрал файл
+            if (ofd_load_Issuance.ShowDialog() == DialogResult.OK)//Вызываем диалог выбора файла и проверяем, что полльзователь выбрал файл
             {
                 DataTable table;
-                if (ExcelClass.loadExcel(ofd_load.FileName, out table))//Если загрузка данных(ИмяФайла,ТаблицаСРезультатом) прошел успешно
+                if (ExcelClass.loadExcel(ofd_load_Issuance.FileName, out table))//Если загрузка данных(ИмяФайла,ТаблицаСРезультатом) прошел успешно
                 {
                     StringBuilder stringBuilder = new StringBuilder(); //конструктор ошибок
                     foreach (DataRow row in table.Rows)//перебираем полученные строки
@@ -79,7 +104,7 @@ namespace Biblioteka2.Forms
                             stringBuilder.AppendLine(String.Format("Book with name {0} not found!", Convert.ToString(row["Название книги"])));
                             continue;
                         }
-                         //Если такого обучающегося не существует, то он создаётся
+                        //Если такого обучающегося не существует, то он создаётся
                         if (trainess == null)
                         {
                             trainess = new TrainessClass
@@ -106,12 +131,16 @@ namespace Biblioteka2.Forms
                     if (stringBuilder.Length > 0)
                     {
                         MessageBox.Show(stringBuilder.ToString());
-                        if(MessageBox.Show("Save?", "save", MessageBoxButtons.YesNo)== DialogResult.Yes) {
-                            DbModel.init().SaveChanges();                            
+                        if (MessageBox.Show("Save?", "save", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            DbModel.init().SaveChanges();
+                            updatData();
                         }
                     }
-                    else {
-                        DbModel.init().SaveChanges();    
+                    else
+                    {
+                        DbModel.init().SaveChanges();
+                        updatData();
                     }
                 }
             }
@@ -121,12 +150,23 @@ namespace Biblioteka2.Forms
         {
             AddIssuanceForm f_aif = new AddIssuanceForm();
             f_aif.ShowDialog();
-            /* updateDate();*/  //СДЕЛАТЬ!!!!!!
+            updatData();
         }
 
         private void Delete_Issuance_Click(object sender, EventArgs e)
         {
+            if (dgv_Issuance.Rows.Count > 0)
+            {
+                IssuanceClass issuance = dgv_Issuance.Rows[0].Tag as IssuanceClass;
+                DbModel.init().Issuances.Remove(issuance);
+                DbModel.init().SaveChanges();
+                updatData();
+            }
+        }
 
+        private void Update_Issuance_Click(object sender, EventArgs e)
+        {
+            updatData();
         }
     }
-    }
+}

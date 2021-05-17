@@ -43,7 +43,7 @@ namespace Biblioteka2.Forms
             this.First_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Middle_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bt_Import_Trainess = new System.Windows.Forms.Button();
-            this.ofd_load = new System.Windows.Forms.OpenFileDialog();
+            this.ofd_load_Trainess = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Trainess)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,9 +191,9 @@ namespace Biblioteka2.Forms
             this.bt_Import_Trainess.UseVisualStyleBackColor = false;
             this.bt_Import_Trainess.Click += new System.EventHandler(this.bt_import_Click);
             // 
-            // ofd_load
+            // ofd_load_Trainess
             // 
-            this.ofd_load.Filter = "Excel table|*.xlsx";
+            this.ofd_load_Trainess.Filter = "Excel table|*.xlsx";
             // 
             // TrainessesForm
             // 
@@ -233,6 +233,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn First_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Middle_name;
         private System.Windows.Forms.Button bt_Import_Trainess;
-        private System.Windows.Forms.OpenFileDialog ofd_load;
+        private System.Windows.Forms.OpenFileDialog ofd_load_Trainess;
     }
 }

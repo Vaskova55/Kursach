@@ -23,7 +23,12 @@ namespace Biblioteka2.Forms
         private void updatData()
         {
             dgv_Trainess.Rows.Clear();
-            foreach (TrainessClass trainess in DbModel.init().Trainesses)
+            foreach (TrainessClass trainess in DbModel.init().Trainesses.Where(
+                t=>t.classTrainess.ToString().Contains(tb_SearchTrainess.Text)||
+                t.family_name.Contains(tb_SearchTrainess.Text)||
+                t.first_name.Contains(tb_SearchTrainess.Text)||
+                t.middle_name.Contains(tb_SearchTrainess.Text)
+                ))
             {
                 int r = dgv_Trainess.Rows.Add(trainess.classTrainess, trainess.family_name, trainess.first_name, trainess.middle_name);
                 dgv_Trainess.Rows[r].Tag = trainess;
@@ -39,10 +44,10 @@ namespace Biblioteka2.Forms
 
         private void bt_import_Click(object sender, EventArgs e)
         {
-            if (ofd_load.ShowDialog() == DialogResult.OK)//Вызываем диалог выбора файла и проверяем, что полльзователь выбрал файл
+            if (ofd_load_Trainess.ShowDialog() == DialogResult.OK)//Вызываем диалог выбора файла и проверяем, что полльзователь выбрал файл
             {
                 DataTable table;
-                if (ExcelClass.loadExcel(ofd_load.FileName, out table))//Если загрузка данных(ИмяФайла,ТаблицаСРезультатом) прошел успешно
+                if (ExcelClass.loadExcel(ofd_load_Trainess.FileName, out table))//Если загрузка данных(ИмяФайла,ТаблицаСРезультатом) прошел успешно
                 {
                     foreach (DataRow row in table.Rows)//перебираем полученные строки
                     {
@@ -67,7 +72,7 @@ namespace Biblioteka2.Forms
             dialog.Filter = "Файлы excel|*.xlsx";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                List<TrainessClass> listTrainesses = DbModel.init().Trainesses.ToList(); /////?
+                List<TrainessClass> listTrainesses = DbModel.init().Trainesses.ToList();
                 string[,] values = new string[listTrainesses.Count + 1, 5];
 
                 values[0, 0] = "Класс";

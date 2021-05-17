@@ -1114,10 +1114,10 @@
         nUF5D/4Pl2Nsfor+r3Ya1EZaH8Ez4FSbGTP+PzX0BB1a3OT6AAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="ofd_load.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="ofd_load_Trainess.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>64</value>
   </metadata>
 </root>
