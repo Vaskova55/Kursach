@@ -47,6 +47,7 @@ namespace Biblioteka2.Forms
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cb_NoAvtor = new System.Windows.Forms.CheckBox();
+            this.cb_NoUchLit = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Year)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Class)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +57,7 @@ namespace Biblioteka2.Forms
             this.Ok_AddBook.BackColor = System.Drawing.Color.Transparent;
             this.Ok_AddBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Ok_AddBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Ok_AddBook.Location = new System.Drawing.Point(51, 520);
+            this.Ok_AddBook.Location = new System.Drawing.Point(51, 548);
             this.Ok_AddBook.Name = "Ok_AddBook";
             this.Ok_AddBook.Size = new System.Drawing.Size(128, 36);
             this.Ok_AddBook.TabIndex = 51;
@@ -68,7 +69,7 @@ namespace Biblioteka2.Forms
             // 
             this.bt_add_autor.BackColor = System.Drawing.Color.Transparent;
             this.bt_add_autor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_add_autor.Location = new System.Drawing.Point(194, 396);
+            this.bt_add_autor.Location = new System.Drawing.Point(194, 418);
             this.bt_add_autor.Name = "bt_add_autor";
             this.bt_add_autor.Size = new System.Drawing.Size(26, 21);
             this.bt_add_autor.TabIndex = 50;
@@ -79,9 +80,7 @@ namespace Biblioteka2.Forms
             // lb_author
             // 
             this.lb_author.FormattingEnabled = true;
-            this.lb_author.Items.AddRange(new object[] {
-            ""});
-            this.lb_author.Location = new System.Drawing.Point(42, 458);
+            this.lb_author.Location = new System.Drawing.Point(44, 484);
             this.lb_author.Name = "lb_author";
             this.lb_author.Size = new System.Drawing.Size(146, 56);
             this.lb_author.TabIndex = 49;
@@ -89,7 +88,7 @@ namespace Biblioteka2.Forms
             // cb_Author
             // 
             this.cb_Author.FormattingEnabled = true;
-            this.cb_Author.Location = new System.Drawing.Point(42, 396);
+            this.cb_Author.Location = new System.Drawing.Point(42, 419);
             this.cb_Author.Name = "cb_Author";
             this.cb_Author.Size = new System.Drawing.Size(146, 21);
             this.cb_Author.TabIndex = 48;
@@ -97,7 +96,7 @@ namespace Biblioteka2.Forms
             // cb_publisher
             // 
             this.cb_publisher.FormattingEnabled = true;
-            this.cb_publisher.Location = new System.Drawing.Point(42, 349);
+            this.cb_publisher.Location = new System.Drawing.Point(42, 372);
             this.cb_publisher.Name = "cb_publisher";
             this.cb_publisher.Size = new System.Drawing.Size(146, 21);
             this.cb_publisher.TabIndex = 47;
@@ -105,14 +104,14 @@ namespace Biblioteka2.Forms
             // cb_type
             // 
             this.cb_type.FormattingEnabled = true;
-            this.cb_type.Location = new System.Drawing.Point(42, 302);
+            this.cb_type.Location = new System.Drawing.Point(44, 325);
             this.cb_type.Name = "cb_type";
             this.cb_type.Size = new System.Drawing.Size(146, 21);
             this.cb_type.TabIndex = 46;
             // 
             // NUD_Year
             // 
-            this.NUD_Year.Location = new System.Drawing.Point(42, 256);
+            this.NUD_Year.Location = new System.Drawing.Point(42, 279);
             this.NUD_Year.Maximum = new decimal(new int[] {
             3000,
             0,
@@ -156,7 +155,7 @@ namespace Biblioteka2.Forms
             // 
             // tb_bookname
             // 
-            this.tb_bookname.Location = new System.Drawing.Point(42, 210);
+            this.tb_bookname.Location = new System.Drawing.Point(42, 233);
             this.tb_bookname.Name = "tb_bookname";
             this.tb_bookname.Size = new System.Drawing.Size(146, 20);
             this.tb_bookname.TabIndex = 43;
@@ -195,7 +194,7 @@ namespace Biblioteka2.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(38, 187);
+            this.label1.Location = new System.Drawing.Point(40, 210);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 20);
             this.label1.TabIndex = 55;
@@ -205,7 +204,7 @@ namespace Biblioteka2.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(38, 233);
+            this.label2.Location = new System.Drawing.Point(38, 256);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 20);
             this.label2.TabIndex = 56;
@@ -215,7 +214,7 @@ namespace Biblioteka2.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(38, 279);
+            this.label3.Location = new System.Drawing.Point(38, 302);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 20);
             this.label3.TabIndex = 57;
@@ -225,7 +224,7 @@ namespace Biblioteka2.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(38, 326);
+            this.label4.Location = new System.Drawing.Point(38, 349);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 20);
             this.label4.TabIndex = 58;
@@ -235,7 +234,7 @@ namespace Biblioteka2.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(38, 373);
+            this.label5.Location = new System.Drawing.Point(38, 396);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 20);
             this.label5.TabIndex = 59;
@@ -244,7 +243,7 @@ namespace Biblioteka2.Forms
             // cb_NoAvtor
             // 
             this.cb_NoAvtor.ForeColor = System.Drawing.Color.Black;
-            this.cb_NoAvtor.Location = new System.Drawing.Point(42, 423);
+            this.cb_NoAvtor.Location = new System.Drawing.Point(42, 446);
             this.cb_NoAvtor.Name = "cb_NoAvtor";
             this.cb_NoAvtor.Size = new System.Drawing.Size(146, 32);
             this.cb_NoAvtor.TabIndex = 71;
@@ -252,12 +251,24 @@ namespace Biblioteka2.Forms
             this.cb_NoAvtor.UseVisualStyleBackColor = true;
             this.cb_NoAvtor.CheckedChanged += new System.EventHandler(this.cb_NoAvtor_CheckedChanged);
             // 
+            // cb_NoUchLit
+            // 
+            this.cb_NoUchLit.AutoSize = true;
+            this.cb_NoUchLit.Location = new System.Drawing.Point(42, 190);
+            this.cb_NoUchLit.Name = "cb_NoUchLit";
+            this.cb_NoUchLit.Size = new System.Drawing.Size(143, 17);
+            this.cb_NoUchLit.TabIndex = 72;
+            this.cb_NoUchLit.Text = "Не учебная литература";
+            this.cb_NoUchLit.UseVisualStyleBackColor = true;
+            this.cb_NoUchLit.CheckedChanged += new System.EventHandler(this.cb_uchLit_CheckedChanged);
+            // 
             // AddBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(228, 571);
+            this.ClientSize = new System.Drawing.Size(228, 597);
+            this.Controls.Add(this.cb_NoUchLit);
             this.Controls.Add(this.cb_NoAvtor);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -305,5 +316,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cb_NoAvtor;
+        private System.Windows.Forms.CheckBox cb_NoUchLit;
     }
 }

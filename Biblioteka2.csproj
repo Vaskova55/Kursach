@@ -75,6 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Authmanager.cs" />
     <Compile Include="Classes\DbModel.cs" />
     <Compile Include="Classes\Entityes\AuthorClass.cs" />
     <Compile Include="Classes\Entityes\BookClass.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Classes\Entityes\TypeClass.cs" />
     <Compile Include="Classes\Entityes\UserClass.cs" />
     <Compile Include="Classes\ExcelClass.cs" />
+    <Compile Include="Classes\FormManager.cs" />
     <Compile Include="Forms\AddAvtorForm.cs">
       <SubType>Form</SubType>
     </Compile>

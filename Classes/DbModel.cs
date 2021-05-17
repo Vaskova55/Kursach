@@ -10,8 +10,10 @@ namespace Biblioteka2.Classes
     public class DbModel : DbContext
     {
         private static DbModel instance;
-        public static DbModel init() {
-            if (instance == null) {
+        public static DbModel init()
+        {
+            if (instance == null)
+            {
                 instance = new DbModel();
             }
             return instance;

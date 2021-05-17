@@ -116,6 +116,7 @@ namespace Biblioteka2.Forms
             this.Edit_Trainess.Size = new System.Drawing.Size(46, 43);
             this.Edit_Trainess.TabIndex = 32;
             this.Edit_Trainess.UseVisualStyleBackColor = false;
+            this.Edit_Trainess.Click += new System.EventHandler(this.Edit_Trainess_Click);
             // 
             // Add_Trainess
             // 

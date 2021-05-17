@@ -55,27 +55,66 @@ namespace Biblioteka2.Forms
 
         private void bt_Import_Issuance_Click(object sender, EventArgs e)
         {
-            /*if (ofd_load.ShowDialog() == DialogResult.OK)//Вызываем диалог выбора файла и проверяем, что полльзователь выбрал файл
+            if (ofd_load.ShowDialog() == DialogResult.OK)//Вызываем диалог выбора файла и проверяем, что полльзователь выбрал файл
             {
                 DataTable table;
                 if (ExcelClass.loadExcel(ofd_load.FileName, out table))//Если загрузка данных(ИмяФайла,ТаблицаСРезультатом) прошел успешно
                 {
+                    StringBuilder stringBuilder = new StringBuilder(); //конструктор ошибок
                     foreach (DataRow row in table.Rows)//перебираем полученные строки
                     {
-                         DbModel.init().Issuances.Add( //Заполняем строки таблицы Trainesses значениями
-                           DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.book),
-                        new IssuanceClass()
+                        //Проверка на наличие обучающегося с такими данными
+                        TrainessClass trainess = DbModel.init().Trainesses.Where(t =>
+                            t.classTrainess == Convert.ToInt32(row["Класс"])
+                            && t.family_name == Convert.ToString(row["фамилия"])
+                            && t.first_name == Convert.ToString(row["Имя"])
+                         ).FirstOrDefault();
+
+                        //Проверка на наличие книги с такими данными
+                        BookClass book = DbModel.init().Books.Where(b => b.name_book == Convert.ToString(row["Название книги"])).FirstOrDefault();
+
+                        //Если книга не существует, то выдается сообщение об ошибке 
+                        if (book == null)
                         {
-                            trainess = Convert.ToInt32(row["класс"], row["фамилия"], row["имя"]),
-                            book = Convert.ToString(row["название книги"]),
-                            user = Convert.ToString(row["1"]),
-                            date_of_issue = Convert.ToDateTime(row["дата выдачи"])
+                            stringBuilder.AppendLine(String.Format("Book with name {0} not found!", Convert.ToString(row["Название книги"])));
+                            continue;
                         }
-                    ); ;
+                         //Если такого обучающегося не существует, то он создаётся
+                        if (trainess == null)
+                        {
+                            trainess = new TrainessClass
+                            {
+                                classTrainess = Convert.ToInt32(row["Класс"]),
+                                family_name = Convert.ToString(row["Фамилия"]),
+                                first_name = Convert.ToString(row["Имя"])
+                            };
+                        }
+
+                        //Когда подбор данных осуществлен, происходит импорт (добавление данных)
+                        DbModel.init().Issuances.Add(
+                            new IssuanceClass
+                            {
+                                user = Authmanager.user,
+                                date_of_issue = Convert.ToDateTime(row["Дата выдачи"]),
+                                trainess = trainess,
+                                book = book
+                            }
+                        );
                     }
-                    DbModel.init().SaveChanges();//сохраняем
+
+                    //Если найдена ошибка, то выдается сообщение и обращение к ползователю, где спрашивается его согласие на сохранение данных с ошибкой
+                    if (stringBuilder.Length > 0)
+                    {
+                        MessageBox.Show(stringBuilder.ToString());
+                        if(MessageBox.Show("Save?", "save", MessageBoxButtons.YesNo)== DialogResult.Yes) {
+                            DbModel.init().SaveChanges();                            
+                        }
+                    }
+                    else {
+                        DbModel.init().SaveChanges();    
+                    }
                 }
-            }        */
+            }
         }
 
         private void Add_Issuance_Click(object sender, EventArgs e)

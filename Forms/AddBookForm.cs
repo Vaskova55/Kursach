@@ -19,6 +19,31 @@ namespace Biblioteka2.Forms
             InitializeComponent();
             UpdateCombo();
         }
+        private BookClass bookEdited;
+
+        public AddBookForm(BookClass bookEdit)
+        {
+            this.bookEdited = bookEdit;
+            InitializeComponent();
+            UpdateCombo();
+
+            if (bookEdit.classnum == null)
+            {
+                NUD_Class.Enabled = false;
+                cb_NoUchLit.Checked = true;
+            }
+            else
+            {
+                cb_NoUchLit.Checked = true;
+                NUD_Class.Value = (decimal)bookEdit.classnum;
+            }
+            
+            tb_bookname.Text = bookEdit.name_book;
+            NUD_Year.Value = bookEdit.publishing_year;
+            cb_type.SelectedItem = bookEdit.type;
+            cb_publisher.SelectedItem = bookEdit.publisher;
+            lb_author.Items.AddRange(bookEdit.Authors.ToArray());
+        }
         private void UpdateCombo()
         {
             cb_publisher.Items.Clear();
@@ -31,21 +56,50 @@ namespace Biblioteka2.Forms
 
         private void Ok_AddBook_Click(object sender, EventArgs e) //добавление книги
         {
-            BookClass book = new BookClass
+            if (NUD_Class.Value > 0 && tb_bookname.TextLength > 0 && NUD_Year.Value > 0 && cb_type.SelectedItem != null && cb_publisher.SelectedItem != null && lb_author.Items != null)
             {
-                name_book = tb_bookname.Text,
-                classnum = (int)NUD_Class.Value,
-                publishing_year = (Int16)NUD_Year.Value,
-                type = cb_type.SelectedItem as TypeClass,
-                publisher = cb_publisher.SelectedItem as PublisherClass
-            };
-            foreach (AuthorClass author in lb_author.Items) //перебор авторов и заполнение CheckBox
-            {
-                book.Authors.Add(author);
+                if (bookEdited == null)
+                {
+                    BookClass book = new BookClass
+                    {
+                        name_book = tb_bookname.Text,
+                        classnum = (int)NUD_Class.Value,
+                        publishing_year = (Int16)NUD_Year.Value,
+                        type = cb_type.SelectedItem as TypeClass,
+                        publisher = cb_publisher.SelectedItem as PublisherClass
+                    };
+                    foreach (AuthorClass author in lb_author.Items) //перебор авторов и заполнение CheckBox
+                    {
+                        book.Authors.Add(author);
+                    }
+                    DbModel.init().Books.Add(book); //добавление книги
+                    DbModel.init().SaveChanges();
+                    Close();
+                }
+                else
+                { //редактирование книги
+                    if (cb_NoUchLit.Checked)
+                    {
+                        NUD_Class.Enabled = false;
+                    }
+                    else
+                    {
+                        NUD_Class.Enabled = true;
+                    }
+                    bookEdited.name_book = tb_bookname.Text;
+                    bookEdited.classnum = (int)NUD_Class.Value;
+                    bookEdited.publishing_year = (Int16)NUD_Year.Value;
+                    bookEdited.type = cb_type.SelectedItem as TypeClass;
+                    bookEdited.publisher = cb_publisher.SelectedItem as PublisherClass;
+                    bookEdited.Authors.Clear();
+                    foreach (AuthorClass author in lb_author.Items) //перебор авторов и заполнение CheckBox
+                    {
+                        bookEdited.Authors.Add(author);
+                    }
+                    DbModel.init().SaveChanges();
+                    Close();
+                }
             }
-            DbModel.init().Books.Add(book); //добавление книги
-            DbModel.init().SaveChanges();
-            Hide();
         }
 
         private void cb_NoAvtor_CheckedChanged(object sender, EventArgs e)
@@ -63,6 +117,17 @@ namespace Biblioteka2.Forms
         {
             lb_author.Items.Add(cb_Author.SelectedItem);
             cb_Author.Items.Remove(cb_Author.SelectedItem);
+        }
+
+        private void cb_uchLit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_NoUchLit.Checked)
+            {
+                NUD_Class.Enabled = false;
+            }
+            else {
+                NUD_Class.Enabled = true;
+            }
         }
     }
 }

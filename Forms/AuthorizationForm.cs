@@ -21,15 +21,10 @@ namespace Biblioteka2.Forms
 
         private void Ok_Autorization_Click(object sender, EventArgs e)
         {
-            UserClass user = DbModel.init().Users.Where(u => u.login == tb_login.Text && u.password == tb_password.Text).FirstOrDefault();
-            if (user != null)
+            //вызов метода авторизации и открытие формы
+            if (Authmanager.Auth(tb_login.Text, tb_password.Text))
             {
-                if (user.access_level == 1)
-                {
-                    Home_pageForm f_hp = new Home_pageForm();
-                    f_hp.Show();
-                    Hide();
-                }
+                Authmanager.MenuMenu();
             }
         }
     }

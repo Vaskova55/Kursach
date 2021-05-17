@@ -97,15 +97,15 @@ namespace Biblioteka2.Forms
             }
         }
 
-        /*private void Edit_Trainess_Click(object sender, EventArgs e)
+        private void Edit_Trainess_Click(object sender, EventArgs e)
         {
             if (dgv_Trainess.SelectedRows.Count > 0)
             {
-                //TrainessClass trainess = dgv_Trainess.SelectedRows[0].Tag as TrainessClass;
-                //AddTrainessForm f_at = new AddTrainessForm(trainess);
-                //f_at.Show();
+                TrainessClass trainess = dgv_Trainess.SelectedRows[0].Tag as TrainessClass;
+                AddTrainessForm f_at = new AddTrainessForm(trainess);
+                f_at.ShowDialog();
                 updatData();
             }
-        }*/
+        }
     }
 }

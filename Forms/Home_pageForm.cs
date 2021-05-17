@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblioteka2.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace Biblioteka2.Forms
 
         private void tsmi1_Issuance_Click(object sender, EventArgs e)
         {
-            IssuanceForm f_i = new IssuanceForm();
+            FormManager.ChangeForm(new IssuanceForm());
         }
 
         private void tsmi2_Library_Click(object sender, EventArgs e)

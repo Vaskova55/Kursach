@@ -1,4 +1,5 @@
-﻿using Biblioteka2.Forms;
+﻿using Biblioteka2.Classes;
+using Biblioteka2.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,8 @@ namespace Biblioteka2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new IssuanceForm());
+            FormManager.ChangeForm(new LibraryForm());
+            Application.Run();
         }
     }
 }

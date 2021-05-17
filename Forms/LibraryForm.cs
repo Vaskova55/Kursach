@@ -3,7 +3,7 @@ using Biblioteka2.Classes.Entityes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,21 +23,43 @@ namespace Biblioteka2.Forms
         private void Add_Library_Click(object sender, EventArgs e)
         {
             AddBookForm f_ab = new AddBookForm();
-            f_ab.Show();
+            f_ab.ShowDialog();
+            DbModel.init().SaveChanges();
+            updatData();
         }
         private void updatData()
         {
             dgv_Library.Rows.Clear();
-            foreach (BookClass book in DbModel.init().Books)
+            foreach (BookClass book in DbModel.init().Books.Include(b => b.publisher).Include(b => b.type).Include(b => b.Authors)
+                .Where(
+                    b=>b.name_book.Contains(tb_SearchLibrary.Text) ||
+                    b.publisher.name.Contains(tb_SearchLibrary.Text) || 
+                    b.classnum.ToString().Contains(tb_SearchLibrary.Text) || 
+                    b.publishing_year.ToString().Contains(tb_SearchLibrary.Text) ||
+                    b.type.type.Contains(tb_SearchLibrary.Text)
+                )
+            )
             {
-                int r = dgv_Library.Rows.Add(book.name_book, String.Join(", ", book.Authors), book.publisher.ToString(), book.type.ToString(), book.publishing_year, book.publishing_year);
+                int r = dgv_Library.Rows.Add(
+                    book.type.ToString(),
+                    book.classnum,
+                    book.name_book,
+                    String.Join(", ", book.Authors),
+                    book.publisher.ToString(),
+                    book.publishing_year
+                );
                 dgv_Library.Rows[r].Tag = book;
             }
         }
 
         private void Edit_Library_Click(object sender, EventArgs e)
         {
-
+            if (dgv_Library.SelectedRows.Count > 0)
+            {
+                AddBookForm f_ab = new AddBookForm(dgv_Library.SelectedRows[0].Tag as BookClass);
+                f_ab.ShowDialog();
+                updatData();
+            }
         }
 
         private void Delete_Library_Click(object sender, EventArgs e)

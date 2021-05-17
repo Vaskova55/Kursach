@@ -11,8 +11,7 @@ namespace Biblioteka2.Classes.Entityes
     {
         [Key]
         public int idBook { get; set; }
-        [Required]
-        public int classnum { get; set; }
+        public int? classnum { get; set; }
         [Required]
         public virtual TypeClass type { get; set; }
         [Required, MaxLength(128)]
