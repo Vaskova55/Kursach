@@ -97,7 +97,7 @@ namespace Biblioteka2.Forms
             }
         }
 
-        private void Edit_Trainess_Click(object sender, EventArgs e)
+        /*private void Edit_Trainess_Click(object sender, EventArgs e)
         {
             if (dgv_Trainess.SelectedRows.Count > 0)
             {
@@ -106,6 +106,6 @@ namespace Biblioteka2.Forms
                 //f_at.Show();
                 updatData();
             }
-        }
+        }*/
     }
 }

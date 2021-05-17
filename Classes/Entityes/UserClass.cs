@@ -11,16 +11,22 @@ namespace Biblioteka2.Classes.Entityes
     {
         [Key]
         public int idUser { get; set; }
+
         [Required, MaxLength(128)]
         public string family_name { get; set; }
+
         [Required, MaxLength(128)]
         public string first_name { get; set; }
+
         [Required]
         public int access_level { get; set; }
+
         [Required, MaxLength(128)]
         public string login { get; set; }
+
         [Required, MaxLength(128)]
         public string password { get; set; }
+
         public virtual List<IssuanceClass> issuance { get; set; }
 
         public UserClass()

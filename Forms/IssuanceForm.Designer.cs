@@ -104,6 +104,7 @@ namespace Biblioteka2.Forms
             this.Delete_Issuance.Size = new System.Drawing.Size(46, 43);
             this.Delete_Issuance.TabIndex = 34;
             this.Delete_Issuance.UseVisualStyleBackColor = false;
+            this.Delete_Issuance.Click += new System.EventHandler(this.Delete_Issuance_Click);
             // 
             // Edit_Issuance
             // 

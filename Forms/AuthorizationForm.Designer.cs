@@ -134,7 +134,7 @@ namespace Biblioteka2.Forms
             this.Controls.Add(this.lb3_Autorization);
             this.Controls.Add(this.lb1_Autorization);
             this.Name = "AuthorizationForm";
-            this.Text = "ЫЫы";
+            this.Text = "Авторизация";
             this.ResumeLayout(false);
             this.PerformLayout();
 

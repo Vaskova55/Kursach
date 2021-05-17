@@ -84,5 +84,10 @@ namespace Biblioteka2.Forms
             f_aif.ShowDialog();
             /* updateDate();*/  //СДЕЛАТЬ!!!!!!
         }
+
+        private void Delete_Issuance_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     }

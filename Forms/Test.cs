@@ -54,8 +54,14 @@ namespace Biblioteka2.Forms
             dgv_books.Rows.Clear();
             foreach (BookClass book in DbModel.init().Books.Include(b => b.publisher).Include(b => b.type).Include(b => b.Authors))
             {
-                int r = dgv_books.Rows.Add(book.name_book, String.Join(", ", book.Authors), book.publisher.ToString(), book.type.ToString(), book.publishing_year, book.publishing_year);
-                dgv_books.Rows[r].Tag = book;
+                int r = dgv_books.Rows.Add(
+                    book.name_book,
+                    String.Join(", ", book.Authors),
+                    book.publisher.ToString(),
+                    book.type.ToString(),
+                    book.publishing_year,
+                    book.publishing_year);
+                    dgv_books.Rows[r].Tag = book;
             }
         }
 

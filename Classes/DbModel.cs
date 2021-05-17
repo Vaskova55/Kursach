@@ -23,7 +23,8 @@ namespace Biblioteka2.Classes
         // If you wish to target a different database and/or database provider, modify the 'DbModel' 
         // connection string in the application configuration file.
         public DbModel()
-            : base("server=192.168.201.12;database=ISP333_VaskovaAN_biblioteka2;user id=ISP333_VaskovaAN;port=3306;characterset=utf8;password=Vaskova333")
+            : base("server=192.168.201.12;database=ISP333_VaskovaAN_biblioteka2;" +
+                  "user id=ISP333_VaskovaAN;port=3306;characterset=utf8;password=Vaskova333")
         {
         }
 

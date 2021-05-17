@@ -18,7 +18,8 @@ namespace Biblioteka2.Classes
             try
             {
                 FileStream file = new FileStream(filename, FileMode.Create, FileAccess.Write);//Открываем файловый поток
-                                                                                              //(название файла, Режим - создание, Доступ - запись)
+                                                                                              //(название файла, Режим - создание,
+                                                                                              //Доступ - запись)
                 XSSFWorkbook workbook = new XSSFWorkbook();//Создаем документ Excel
                 ISheet sheet = workbook.CreateSheet(sheetname);//Создаем лист (название листа)
 
@@ -47,14 +48,16 @@ namespace Biblioteka2.Classes
             return cell != null && !String.IsNullOrWhiteSpace(cell.ToString());//приватный метод, проверяющий, что ячейка не пустая
         }
 
-        public static bool loadExcel(string filename, out DataTable table) //Публичный статичный метод импорта данных loadExcel (Имя файла, out ТаблицаСРезультатом)
+        public static bool loadExcel(string filename, out DataTable table) //Публичный статичный метод импорта данных loadExcel
+                                                                           //(Имя файла, out ТаблицаСРезультатом)
         {
             table = null; //изначально таблица пустая
             try
             {
                 table = new DataTable(); //инициализируем новую таблицу данных
                 FileStream file = new FileStream(filename, FileMode.Open, FileAccess.Read);//Открываем файловый поток
-                                                                                           //(название файла, режим - открытие, доступ - чтение)
+                                                                                           //(название файла, режим - открытие,
+                                                                                           //доступ - чтение)
                 XSSFWorkbook sheets = new XSSFWorkbook(file);//Создаем документ Excel
                 ISheet sheet = sheets.GetSheetAt(0); //Открываем нулевой лист (первоначальный)
                 IRow row = sheet.GetRow(0);//читаем нулевую строку листа
@@ -63,7 +66,8 @@ namespace Biblioteka2.Classes
                 {
                     if (isCellNotEmpty(row.GetCell(c))) //проверяется условие на пустую ячейку в строке
                     {
-                        table.Columns.Add(row.GetCell(c).ToString().ToLower()); //Создаем в таблице колонки, переводим название колонки в нижний регистр
+                        table.Columns.Add(row.GetCell(c).ToString().ToLower()); //Создаем в таблице колонки,
+                                                                                //переводим название колонки в нижний регистр
                     }
                 }
                 for (int r = 1; r < sheet.LastRowNum; r++)//перебираем строки листа
