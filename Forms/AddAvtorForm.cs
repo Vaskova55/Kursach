@@ -25,13 +25,13 @@ namespace Biblioteka2.Forms
             {
                 DbModel.init().Authors.Add(new AuthorClass { family_name = tb_lastname.Text, first_name = tb_firstname.Text});
                 DbModel.init().SaveChanges();
-                Hide();
+                Close();
             }
             else
             {
                 DbModel.init().Authors.Add(new AuthorClass { family_name = tb_lastname.Text, first_name = tb_firstname.Text, middle_name = tb_middlename.Text });
                 DbModel.init().SaveChanges();
-                Hide();
+                Close();
             }
         }
     }

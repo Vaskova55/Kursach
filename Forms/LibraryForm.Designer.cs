@@ -45,6 +45,7 @@ namespace Biblioteka2.Forms
             this.Publisher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Publishing_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bt_import_Library = new System.Windows.Forms.Button();
+            this.ofd_load_Library = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Library)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +65,7 @@ namespace Biblioteka2.Forms
             // 
             // lb1_SearchLibrary
             // 
+            this.lb1_SearchLibrary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb1_SearchLibrary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lb1_SearchLibrary.Location = new System.Drawing.Point(367, 18);
             this.lb1_SearchLibrary.Name = "lb1_SearchLibrary";
@@ -74,11 +76,13 @@ namespace Biblioteka2.Forms
             // 
             // tb_SearchLibrary
             // 
+            this.tb_SearchLibrary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_SearchLibrary.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tb_SearchLibrary.Location = new System.Drawing.Point(367, 48);
             this.tb_SearchLibrary.Name = "tb_SearchLibrary";
             this.tb_SearchLibrary.Size = new System.Drawing.Size(147, 20);
             this.tb_SearchLibrary.TabIndex = 34;
+            this.tb_SearchLibrary.TextChanged += new System.EventHandler(this.tb_SearchLibrary_TextChanged);
             // 
             // Update_Library
             // 
@@ -138,6 +142,9 @@ namespace Biblioteka2.Forms
             // 
             this.dgv_Library.AllowUserToAddRows = false;
             this.dgv_Library.AllowUserToDeleteRows = false;
+            this.dgv_Library.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_Library.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Library.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.type,
@@ -208,6 +215,11 @@ namespace Biblioteka2.Forms
             this.bt_import_Library.Size = new System.Drawing.Size(46, 43);
             this.bt_import_Library.TabIndex = 40;
             this.bt_import_Library.UseVisualStyleBackColor = false;
+            //this.bt_import_Library.Click += new System.EventHandler(this.bt_import_Library_Click);
+            // 
+            // ofd_load_Library
+            // 
+            this.ofd_load_Library.FileName = "openFileDialog1";
             // 
             // LibraryForm
             // 
@@ -249,5 +261,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Publisher;
         private System.Windows.Forms.DataGridViewTextBoxColumn Publishing_year;
         private System.Windows.Forms.Button bt_import_Library;
+        private System.Windows.Forms.OpenFileDialog ofd_load_Library;
     }
 }

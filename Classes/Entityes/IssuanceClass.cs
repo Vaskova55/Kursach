@@ -14,10 +14,13 @@ namespace Biblioteka2.Classes.Entityes
         [Required]
         public virtual TrainessClass trainess { get; set; }
         [Required]
-        public virtual BookClass book { get; set; }
+        public virtual LiteratureTurnoverClass literature { get; set; }
         [Required]
         public virtual UserClass user { get; set; }
         [Required]
-        public DateTime date_of_issue { get; set; } 
+        public DateTime date_of_issue { get; set; }
+        [Required]
+        public DateTime date_of_plan_return { get; set; }
+        public DateTime? date_of_realreturn { get; set; }
     }
 }

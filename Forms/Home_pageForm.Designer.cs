@@ -29,7 +29,6 @@ namespace Biblioteka2.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home_pageForm));
             this.lbl8_Home_page = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lbl7_Home_page = new System.Windows.Forms.Label();
@@ -52,9 +51,11 @@ namespace Biblioteka2.Forms
             this.tsmi1_Issuance = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi2_Library = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi3_Treiness = new System.Windows.Forms.ToolStripMenuItem();
-            this.списаннаяЛитератураToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi4_Accounting_book = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi2_Exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi4_LiteratureTurnover = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi5_Accounting_book = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi6_Exit = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Home_page)).BeginInit();
             this.ms_Home_page.SuspendLayout();
             this.SuspendLayout();
@@ -247,9 +248,11 @@ namespace Biblioteka2.Forms
             this.tsmi1_Issuance,
             this.tsmi2_Library,
             this.tsmi3_Treiness,
-            this.списаннаяЛитератураToolStripMenuItem,
-            this.tsmi4_Accounting_book,
-            this.tsmi2_Exit});
+            this.tsmi4_LiteratureTurnover,
+            this.tsmi5_Accounting_book,
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.tsmi6_Exit});
             this.ms_Home_page.Location = new System.Drawing.Point(0, 0);
             this.ms_Home_page.Name = "ms_Home_page";
             this.ms_Home_page.Size = new System.Drawing.Size(822, 38);
@@ -275,25 +278,40 @@ namespace Biblioteka2.Forms
             this.tsmi3_Treiness.Name = "tsmi3_Treiness";
             this.tsmi3_Treiness.Size = new System.Drawing.Size(126, 34);
             this.tsmi3_Treiness.Text = "Обучающиеся";
+            this.tsmi3_Treiness.Click += new System.EventHandler(this.tsmi3_Treiness_Click);
             // 
-            // списаннаяЛитератураToolStripMenuItem
+            // tsmi4_LiteratureTurnover
             // 
-            this.списаннаяЛитератураToolStripMenuItem.Name = "списаннаяЛитератураToolStripMenuItem";
-            this.списаннаяЛитератураToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
-            this.списаннаяЛитератураToolStripMenuItem.Text = "Списанная литература";
+            this.tsmi4_LiteratureTurnover.Name = "tsmi4_LiteratureTurnover";
+            this.tsmi4_LiteratureTurnover.Size = new System.Drawing.Size(184, 34);
+            this.tsmi4_LiteratureTurnover.Text = "Списанная литература";
+            this.tsmi4_LiteratureTurnover.Click += new System.EventHandler(this.tsmi4_LiteratureTurnover_Click);
             // 
-            // tsmi4_Accounting_book
+            // tsmi5_Accounting_book
             // 
-            this.tsmi4_Accounting_book.Name = "tsmi4_Accounting_book";
-            this.tsmi4_Accounting_book.Size = new System.Drawing.Size(124, 34);
-            this.tsmi4_Accounting_book.Text = "Учётная книга";
+            this.tsmi5_Accounting_book.Name = "tsmi5_Accounting_book";
+            this.tsmi5_Accounting_book.Size = new System.Drawing.Size(124, 34);
+            this.tsmi5_Accounting_book.Text = "Учётная книга";
+            this.tsmi5_Accounting_book.Click += new System.EventHandler(this.tsmi5_Accounting_book_Click);
             // 
-            // tsmi2_Exit
+            // toolStripMenuItem1
             // 
-            this.tsmi2_Exit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tsmi2_Exit.BackgroundImage")));
-            this.tsmi2_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tsmi2_Exit.Name = "tsmi2_Exit";
-            this.tsmi2_Exit.Size = new System.Drawing.Size(12, 34);
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(46, 34);
+            this.toolStripMenuItem1.Text = "      ";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(62, 34);
+            this.toolStripMenuItem2.Text = "          ";
+            // 
+            // tsmi6_Exit
+            // 
+            this.tsmi6_Exit.Name = "tsmi6_Exit";
+            this.tsmi6_Exit.Size = new System.Drawing.Size(67, 34);
+            this.tsmi6_Exit.Text = "Выход";
+            this.tsmi6_Exit.Click += new System.EventHandler(this.tsmi6_Exit_Click);
             // 
             // Home_pageForm
             // 
@@ -354,8 +372,10 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.ToolStripMenuItem tsmi1_Issuance;
         private System.Windows.Forms.ToolStripMenuItem tsmi2_Library;
         private System.Windows.Forms.ToolStripMenuItem tsmi3_Treiness;
-        private System.Windows.Forms.ToolStripMenuItem списаннаяЛитератураToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmi4_Accounting_book;
-        private System.Windows.Forms.ToolStripMenuItem tsmi2_Exit;
+        private System.Windows.Forms.ToolStripMenuItem tsmi4_LiteratureTurnover;
+        private System.Windows.Forms.ToolStripMenuItem tsmi5_Accounting_book;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tsmi6_Exit;
     }
 }

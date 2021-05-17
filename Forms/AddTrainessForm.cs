@@ -67,7 +67,7 @@ namespace Biblioteka2.Forms
                     trainessEdited.middle_name = tb_AddTrainess_middle.Text;
                 }
             }
-            Hide();
+            Close();
         }
     }
 }

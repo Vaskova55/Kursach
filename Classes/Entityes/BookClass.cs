@@ -21,12 +21,12 @@ namespace Biblioteka2.Classes.Entityes
         public virtual List<AuthorClass> Authors { get; set; }
         [Required]
         public Int16 publishing_year { get; set; }
-        public virtual IssuanceClass issuance { get; set; }
-        public virtual LiteratureTurnoverClass literatureTurnover { get; set; }
+        public virtual List<LiteratureTurnoverClass> literatureTurnovers { get; set; }
 
         public BookClass() 
         {
             Authors = new List<AuthorClass>();
+            literatureTurnovers = new List<LiteratureTurnoverClass>();
         }
 
     }
