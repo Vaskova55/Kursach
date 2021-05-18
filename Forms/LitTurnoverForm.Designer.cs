@@ -31,6 +31,7 @@ namespace Biblioteka2.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LitTurnoverForm));
             this.dgv_LitTurnover = new System.Windows.Forms.DataGridView();
+            this.bt_import_LitTurnover = new System.Windows.Forms.Button();
             this.Export_LitTurnover = new System.Windows.Forms.Button();
             this.lb1_SearchLitTurnover = new System.Windows.Forms.Label();
             this.tb_SearchLitTurnover = new System.Windows.Forms.TextBox();
@@ -70,6 +71,19 @@ namespace Biblioteka2.Forms
             this.dgv_LitTurnover.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_LitTurnover.Size = new System.Drawing.Size(764, 321);
             this.dgv_LitTurnover.TabIndex = 30;
+            // 
+            // bt_import_LitTurnover
+            // 
+            this.bt_import_LitTurnover.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bt_import_LitTurnover.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_import_LitTurnover.BackgroundImage")));
+            this.bt_import_LitTurnover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_import_LitTurnover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_import_LitTurnover.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bt_import_LitTurnover.Location = new System.Drawing.Point(294, 26);
+            this.bt_import_LitTurnover.Name = "bt_import_LitTurnover";
+            this.bt_import_LitTurnover.Size = new System.Drawing.Size(46, 43);
+            this.bt_import_LitTurnover.TabIndex = 48;
+            this.bt_import_LitTurnover.UseVisualStyleBackColor = false;
             // 
             // Export_LitTurnover
             // 
@@ -216,6 +230,7 @@ namespace Biblioteka2.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(788, 426);
+            this.Controls.Add(this.bt_import_LitTurnover);
             this.Controls.Add(this.Export_LitTurnover);
             this.Controls.Add(this.lb1_SearchLitTurnover);
             this.Controls.Add(this.tb_SearchLitTurnover);
@@ -250,5 +265,13 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Publisher;
         private System.Windows.Forms.DataGridViewTextBoxColumn Publishing_year;
         private System.Windows.Forms.DataGridViewTextBoxColumn Count;
+        private System.Windows.Forms.Button bt_import_LitTurnover;
+        private System.Windows.Forms.Button Export_LitTurnover;
+        private System.Windows.Forms.Label lb1_SearchLitTurnover;
+        private System.Windows.Forms.TextBox tb_SearchLitTurnover;
+        private System.Windows.Forms.Button Update_LitTurnover;
+        private System.Windows.Forms.Button Delete_LitTurnover;
+        private System.Windows.Forms.Button Edit_LitTurnover;
+        private System.Windows.Forms.Button Add_LitTurnover;
     }
 }

@@ -45,6 +45,30 @@ namespace Biblioteka2.Forms
             }
         }
 
+        private void updatData()
+        {
+            dgv_Issuance.Rows.Clear();
+            foreach (IssuanceClass issuance in DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.book).Include(i => i.user)
+                .Where(
+                    i => i.trainess.classTrainess.ToString().Contains(tb_SearchIssuance.Text) ||
+                    i.trainess.family_name.Contains(tb_SearchIssuance.Text) ||
+                    i.trainess.family_name.Contains(tb_SearchIssuance.Text) ||
+                    i.book.name_book.Contains(tb_SearchIssuance.Text) ||
+                    i.date_of_issue.ToString().Contains(tb_SearchIssuance.Text)
+                )
+            )
+            {
+                int r = dgv_Issuance.Rows.Add(
+                    issuance.trainess.classTrainess.ToString(),
+                    issuance.trainess.family_name.ToString(),
+                    issuance.trainess.first_name.ToString(),
+                    issuance.book.name_book.ToString(),
+                    issuance.date_of_issue
+                ); ;
+                dgv_Issuance.Rows[r].Tag = issuance;
+            }
+        }
+
         private void Export_Issuance_Click(object sender, EventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();

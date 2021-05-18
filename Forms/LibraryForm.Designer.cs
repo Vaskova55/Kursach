@@ -221,6 +221,8 @@ namespace Biblioteka2.Forms
             // 
             this.ofd_load_Library.FileName = "openFileDialog1";
             // 
+            this.ofd_load_Library.FileName = "openFileDialog1";
+            // 
             // LibraryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
