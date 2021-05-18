@@ -289,6 +289,7 @@ namespace Biblioteka2.Forms
             this.Controls.Add(this.tb_bookname);
             this.Name = "AddBookForm";
             this.Text = "Новые данные";
+            this.Load += new System.EventHandler(this.AddBookForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Year)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_Class)).EndInit();
             this.ResumeLayout(false);
