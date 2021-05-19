@@ -21,7 +21,7 @@ namespace Biblioteka2.Forms
             updateData();
         }
 
-        private void updateData()
+        private void updatData()
         {
             dgv_Issuance.Rows.Clear();
             foreach (IssuanceClass issuance in DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.literature).Include(i=>i.literature.book).Include(i => i.user)
@@ -30,17 +30,27 @@ namespace Biblioteka2.Forms
                     i.trainess.family_name.Contains(tb_SearchIssuance.Text) ||
                     i.trainess.family_name.Contains(tb_SearchIssuance.Text) ||
                     i.literature.book.name_book.Contains(tb_SearchIssuance.Text) ||
+                    i.book.name_book.Contains(tb_SearchIssuance.Text) ||
+=========
+                    i.literature.book.name_book.Contains(tb_SearchIssuance.Text) ||
+>>>>>>>>> Temporary merge branch 2
                     i.date_of_issue.ToString().Contains(tb_SearchIssuance.Text)
                 )
             )
             {
-                int r = dgv_Issuance.Rows.Add(
-                    issuance.trainess.classTrainess.ToString(),
-                    issuance.trainess.family_name.ToString(),
-                    issuance.trainess.first_name.ToString(),
                     issuance.literature.book.ToString(),
                     issuance.date_of_issue
                 );
+                    issuance.trainess.first_name.ToString(),
+<<<<<<<<< Temporary merge branch 1
+                    issuance.book.name_book.ToString(),
+                    issuance.date_of_issue
+                ); ;
+=========
+                    issuance.literature.book.ToString(),
+                    issuance.date_of_issue
+                );
+>>>>>>>>> Temporary merge branch 2
                 dgv_Issuance.Rows[r].Tag = issuance;
             }
         }
@@ -163,7 +173,7 @@ namespace Biblioteka2.Forms
         private void Delete_Issuance_Click(object sender, EventArgs e)
         {
             if (dgv_Issuance.Rows.Count > 0)
-            {
+            updateData();
                 IssuanceClass issuance = dgv_Issuance.Rows[0].Tag as IssuanceClass;
                 DbModel.init().Issuances.Remove(issuance);
                 DbModel.init().SaveChanges();
@@ -173,10 +183,12 @@ namespace Biblioteka2.Forms
 
         private void Update_Issuance_Click(object sender, EventArgs e)
         {
-            updateData();
+            updatData();
+<<<<<<<<< Temporary merge branch 1
+=========
         }
 
-        private void Edit_Issuance_Click(object sender, EventArgs e)
+            updateData();
         {/*
             if (dgv_Issuance.SelectedRows.Count > 0)
             {
@@ -188,7 +200,8 @@ namespace Biblioteka2.Forms
 
         private void tb_SearchIssuance_TextChanged(object sender, EventArgs e)
         {
-            updateData();
+            updatData();
+>>>>>>>>> Temporary merge branch 2
         }
     }
 }
