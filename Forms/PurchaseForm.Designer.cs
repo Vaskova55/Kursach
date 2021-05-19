@@ -30,15 +30,13 @@ namespace Biblioteka2.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseForm));
-            this.bt_import_Purchase = new System.Windows.Forms.Button();
             this.Export_Purchase = new System.Windows.Forms.Button();
             this.lb1_SearchPurchase = new System.Windows.Forms.Label();
             this.tb_SearchPurchase = new System.Windows.Forms.TextBox();
             this.Update_Purchase = new System.Windows.Forms.Button();
-            this.Delete_Purchase = new System.Windows.Forms.Button();
-            this.Edit_Purchase = new System.Windows.Forms.Button();
             this.Add_Purchase = new System.Windows.Forms.Button();
             this.dgv_Purchase = new System.Windows.Forms.DataGridView();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClassNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name_Book = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Publisher = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,19 +46,6 @@ namespace Biblioteka2.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Purchase)).BeginInit();
             this.SuspendLayout();
             // 
-            // bt_import_Purchase
-            // 
-            this.bt_import_Purchase.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.bt_import_Purchase.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_import_Purchase.BackgroundImage")));
-            this.bt_import_Purchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_import_Purchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_import_Purchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_import_Purchase.Location = new System.Drawing.Point(315, 26);
-            this.bt_import_Purchase.Name = "bt_import_Purchase";
-            this.bt_import_Purchase.Size = new System.Drawing.Size(46, 43);
-            this.bt_import_Purchase.TabIndex = 49;
-            this.bt_import_Purchase.UseVisualStyleBackColor = false;
-            // 
             // Export_Purchase
             // 
             this.Export_Purchase.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -68,7 +53,7 @@ namespace Biblioteka2.Forms
             this.Export_Purchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Export_Purchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Export_Purchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Export_Purchase.Location = new System.Drawing.Point(211, 26);
+            this.Export_Purchase.Location = new System.Drawing.Point(159, 26);
             this.Export_Purchase.Name = "Export_Purchase";
             this.Export_Purchase.Size = new System.Drawing.Size(46, 43);
             this.Export_Purchase.TabIndex = 48;
@@ -76,6 +61,7 @@ namespace Biblioteka2.Forms
             // 
             // lb1_SearchPurchase
             // 
+            this.lb1_SearchPurchase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb1_SearchPurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lb1_SearchPurchase.Location = new System.Drawing.Point(367, 19);
             this.lb1_SearchPurchase.Name = "lb1_SearchPurchase";
@@ -86,11 +72,13 @@ namespace Biblioteka2.Forms
             // 
             // tb_SearchPurchase
             // 
+            this.tb_SearchPurchase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_SearchPurchase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tb_SearchPurchase.Location = new System.Drawing.Point(367, 49);
             this.tb_SearchPurchase.Name = "tb_SearchPurchase";
             this.tb_SearchPurchase.Size = new System.Drawing.Size(147, 20);
             this.tb_SearchPurchase.TabIndex = 46;
+            this.tb_SearchPurchase.TextChanged += new System.EventHandler(this.tb_SearchPurchase_TextChanged);
             // 
             // Update_Purchase
             // 
@@ -105,32 +93,6 @@ namespace Biblioteka2.Forms
             this.Update_Purchase.UseVisualStyleBackColor = false;
             this.Update_Purchase.Click += new System.EventHandler(this.Update_Purchase_Click);
             // 
-            // Delete_Purchase
-            // 
-            this.Delete_Purchase.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Delete_Purchase.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Delete_Purchase.BackgroundImage")));
-            this.Delete_Purchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Delete_Purchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Delete_Purchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Delete_Purchase.Location = new System.Drawing.Point(159, 26);
-            this.Delete_Purchase.Name = "Delete_Purchase";
-            this.Delete_Purchase.Size = new System.Drawing.Size(46, 43);
-            this.Delete_Purchase.TabIndex = 44;
-            this.Delete_Purchase.UseVisualStyleBackColor = false;
-            // 
-            // Edit_Purchase
-            // 
-            this.Edit_Purchase.BackColor = System.Drawing.Color.Transparent;
-            this.Edit_Purchase.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Edit_Purchase.BackgroundImage")));
-            this.Edit_Purchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Edit_Purchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Edit_Purchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Edit_Purchase.Location = new System.Drawing.Point(107, 26);
-            this.Edit_Purchase.Name = "Edit_Purchase";
-            this.Edit_Purchase.Size = new System.Drawing.Size(46, 43);
-            this.Edit_Purchase.TabIndex = 43;
-            this.Edit_Purchase.UseVisualStyleBackColor = false;
-            // 
             // Add_Purchase
             // 
             this.Add_Purchase.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Add_Purchase.BackgroundImage")));
@@ -142,13 +104,18 @@ namespace Biblioteka2.Forms
             this.Add_Purchase.Size = new System.Drawing.Size(46, 43);
             this.Add_Purchase.TabIndex = 42;
             this.Add_Purchase.UseVisualStyleBackColor = true;
+            this.Add_Purchase.Click += new System.EventHandler(this.Add_Purchase_Click);
             // 
             // dgv_Purchase
             // 
             this.dgv_Purchase.AllowUserToAddRows = false;
             this.dgv_Purchase.AllowUserToDeleteRows = false;
+            this.dgv_Purchase.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_Purchase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Purchase.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Date,
             this.ClassNum,
             this.Name_Book,
             this.Publisher,
@@ -159,17 +126,26 @@ namespace Biblioteka2.Forms
             this.dgv_Purchase.MultiSelect = false;
             this.dgv_Purchase.Name = "dgv_Purchase";
             this.dgv_Purchase.ReadOnly = true;
+            this.dgv_Purchase.RowHeadersVisible = false;
             this.dgv_Purchase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Purchase.Size = new System.Drawing.Size(577, 262);
             this.dgv_Purchase.TabIndex = 41;
             // 
+            // Date
+            // 
+            this.Date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Date.FillWeight = 50F;
+            this.Date.HeaderText = "Дата закупки";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
             // ClassNum
             // 
-            this.ClassNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ClassNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ClassNum.FillWeight = 35F;
             this.ClassNum.HeaderText = "Класс";
             this.ClassNum.Name = "ClassNum";
             this.ClassNum.ReadOnly = true;
-            this.ClassNum.Width = 63;
             // 
             // Name_Book
             // 
@@ -180,33 +156,35 @@ namespace Biblioteka2.Forms
             // 
             // Publisher
             // 
+            this.Publisher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Publisher.FillWeight = 75.21151F;
             this.Publisher.HeaderText = "Издательство";
             this.Publisher.Name = "Publisher";
             this.Publisher.ReadOnly = true;
             // 
             // Price
             // 
-            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Price.FillWeight = 40F;
             this.Price.HeaderText = "Цена";
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
-            this.Price.Width = 58;
             // 
             // Count
             // 
-            this.Count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Count.FillWeight = 50F;
             this.Count.HeaderText = "Количество";
             this.Count.Name = "Count";
             this.Count.ReadOnly = true;
-            this.Count.Width = 91;
             // 
             // PricePurchase
             // 
-            this.PricePurchase.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.PricePurchase.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PricePurchase.FillWeight = 50F;
             this.PricePurchase.HeaderText = "Стоимость";
             this.PricePurchase.Name = "PricePurchase";
             this.PricePurchase.ReadOnly = true;
-            this.PricePurchase.Width = 87;
             // 
             // PurchaseForm
             // 
@@ -214,13 +192,10 @@ namespace Biblioteka2.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(601, 369);
-            this.Controls.Add(this.bt_import_Purchase);
             this.Controls.Add(this.Export_Purchase);
             this.Controls.Add(this.lb1_SearchPurchase);
             this.Controls.Add(this.tb_SearchPurchase);
             this.Controls.Add(this.Update_Purchase);
-            this.Controls.Add(this.Delete_Purchase);
-            this.Controls.Add(this.Edit_Purchase);
             this.Controls.Add(this.Add_Purchase);
             this.Controls.Add(this.dgv_Purchase);
             this.Name = "PurchaseForm";
@@ -232,16 +207,13 @@ namespace Biblioteka2.Forms
         }
 
         #endregion
-
-        private System.Windows.Forms.Button bt_import_Purchase;
         private System.Windows.Forms.Button Export_Purchase;
         private System.Windows.Forms.Label lb1_SearchPurchase;
         private System.Windows.Forms.TextBox tb_SearchPurchase;
         private System.Windows.Forms.Button Update_Purchase;
-        private System.Windows.Forms.Button Delete_Purchase;
-        private System.Windows.Forms.Button Edit_Purchase;
         private System.Windows.Forms.Button Add_Purchase;
         private System.Windows.Forms.DataGridView dgv_Purchase;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name_Book;
         private System.Windows.Forms.DataGridViewTextBoxColumn Publisher;

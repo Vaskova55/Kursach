@@ -21,12 +21,6 @@ namespace Biblioteka2.Forms
             updatData();
         }
 
-        private void Add_Library_Click(object sender, EventArgs e)
-        {
-            AddBookForm f_ab = new AddBookForm();
-            f_ab.ShowDialog();
-            updatData();
-        }
         private void updatData()
         {
             dgv_Library.Rows.Clear();
@@ -114,7 +108,19 @@ namespace Biblioteka2.Forms
             }
         }
 
-       /* private void bt_import_Library_Click(object sender, EventArgs e)
+        private void tb_SearchLibrary_TextChanged(object sender, EventArgs e)
+        {
+            updatData();
+        }
+
+        private void Add_Library_Click_1(object sender, EventArgs e)
+        {
+            AddBookForm f_ab = new AddBookForm();
+            f_ab.ShowDialog();
+            updatData();
+        }
+
+        private void bt_import_Library_Click(object sender, EventArgs e)
         {
             if (ofd_load_Library.ShowDialog() == DialogResult.OK)//Вызываем диалог выбора файла и проверяем, что полльзователь выбрал файл
             {
@@ -123,55 +129,85 @@ namespace Biblioteka2.Forms
                 {
                     foreach (DataRow row in table.Rows)//перебираем полученные строки
                     {
+                        StringBuilder builder = new StringBuilder();
                         //Проверка на наличие такого типа литературы с такими данными
                         TypeClass type = DbModel.init().Types.Where(t =>
-                            t.type == Convert.ToString(row["Тип"])
-                         ).FirstOrDefault();
-
-                        //Проверка на наличие авторов с такими данными
-                        AuthorClass author = DbModel.init().Authors.Where(a => a.family_name == Convert.ToString(row["Фамилия автора"]) || a.first_name == Convert.ToString(row["Имя автора"]) || a.middle_name == Convert.ToString(row["Отчество автора"])).FirstOrDefault(); ////?????
-
-                        PublisherClass publisher = DbModel.init().Publishers.Where(p =>
-                            p.city == Convert.ToString(row["Тип"])
-                         ).FirstOrDefault();
+                            t.type == Convert.ToString(row["Тип"])).FirstOrDefault();
 
                         //Если книга не существует, то выдается сообщение об ошибке 
                         if (type == null)
                         {
                             type = new TypeClass { type = Convert.ToString(row["Тип"]) };
                         }
-                        //Если такого обучающегося не существует, то он создаётся
-                        if (Author == null)
+
+                        //проверка на наличие авторов в базе
+                        List<AuthorClass> authors = new List<AuthorClass>();
+                        //разделение авторов сначала на двух разных, а затем каждого на инициалы
+                        string FIO_Authors = Convert.ToString(row["Автор"]);
+                        string[] split_Author = FIO_Authors.Split(',');
+                        //перебираем инициаллы
+                        foreach (string strF_IO in split_Author)
                         {
-                            string FIO_Authors = Convert.ToString(row["Имя автора"]);
-                            string[] split_Author = FIO_Authors.Split(',');
-                            foreach (string strF_IO in split_Author)
+                            string[] F_I_O = strF_IO.Split(' ', '.');
+                            AuthorClass author = null;
+                            //пока автора нет в базе
+                            while (author == null)
                             {
-                                strF_IO.Trim();
-                                string[] F_I_O = strF_IO.Split(' ', '.');
-                            }
-                            Author = new AuthorClass
-                            {
-                                family_name = Convert.ToString(row["Фамилия"]),
-                                first_name = Convert.ToString(row["Имя"]),
-                                middle_name = kjkj///
-                            };
+                                //сравниваем инициалы на наличие соотношениий в базе. Инициалы И.О. сверяются с первыми бууквами значений. 
+                                author = DbModel.init().Authors.Where(a => a.family_name.StartsWith(F_I_O[0]) && a.first_name.StartsWith(F_I_O[1]) && a.middle_name.StartsWith(F_I_O[1])).FirstOrDefault();
+                                //если такой автор в базе найден, то.....
+                                if (author != null)
+                                {
+                                    //в класс (таблицу) автора добавляется новой значение
+                                    authors.Add(author);
+                                }
+                                else
+                                {
+                                    //если данные не найдены, то открывается форма "AddAvtor" для того, чтобы пользователь расшифровал значение.
+                                    //От формы данные добавляются в базу
+                                    if ((new AddAvtorForm(F_I_O[0], F_I_O[1], F_I_O[2])).ShowDialog() != DialogResult.OK)
+                                    {
+                                        builder.AppendLine("Пожалуйста, расшифруйте данные.");
+                                        break;
+                                    }
+                                }
+                            } 
                         }
 
-                        //Когда подбор данных осуществлен, происходит импорт (добавление данных)
-                        DbModel.init().Issuances.Add(
-                            new IssuanceClass
+
+
+                        //Проверка на наличие издательства с такими данными. !!!!!!!!!Действия схожи с данными об авторах!!!!!!!
+                        List<PublisherClass> publishers = new List<PublisherClass>();
+                        string CityName = Convert.ToString(row["Издательство"]);
+                        string[] split_publisher = CityName.Split(':');
+                        PublisherClass publisher = null;
+                        while (publisher==null)
+                        publisher = DbModel.init().Publishers.Where(p =>
+                            p.city.StartsWith(split_publisher[0]) && p.name.StartsWith(split_publisher[1])).FirstOrDefault();
+                        if (publisher != null)
+                        {
+                            publishers.Add(publisher);
+                        }
+                        else
+                        {
+                            if ((new AddPublisherForm(split_publisher[0], split_publisher[1])).ShowDialog() != DialogResult.OK)
                             {
-                                user = Authmanager.user,
-                                date_of_issue = Convert.ToDateTime(row["Дата выдачи"]),
-                                trainess = trainess,
-                                book = book
+                                builder.AppendLine("Пожалуйста, расшифруйте данные.");
+                                break;
                             }
-                        );
-                    }
+                        }
+
+                        List<BookClass> books = new List<BookClass>();
+                        BookClass book = null;
+                       // book = DbModel.init().Books.Include(b => b.publisher).Include(b => b.type).Include(b => b.Authors).Where(b => b.classnum == Convert.ToInt32(row["Класс"]) && b.name_book = Convert.ToString(row["Название"] && b.publisher).FirstOrDefault());
+
+                        //Если такого обучающегося не существует, то он создаётся
+
+
+                    };
 
                     //Если найдена ошибка, то выдается сообщение и обращение к ползователю, где спрашивается его согласие на сохранение данных с ошибкой
-                    if (stringBuilder.Length > 0)
+                    /*if (stringBuilder.Length > 0)
                     {
                         MessageBox.Show(stringBuilder.ToString());
                         if (MessageBox.Show("Save?", "save", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -184,14 +220,9 @@ namespace Biblioteka2.Forms
                     {
                         DbModel.init().SaveChanges();
                         updatData();
-                    }
+                    }*/
                 }
             }
-        }*/
-
-        private void tb_SearchLibrary_TextChanged(object sender, EventArgs e)
-        {
-            updatData();
         }
     }
 }

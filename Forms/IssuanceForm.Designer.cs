@@ -38,13 +38,16 @@ namespace Biblioteka2.Forms
             this.Edit_Issuance = new System.Windows.Forms.Button();
             this.Add_Issuance = new System.Windows.Forms.Button();
             this.dgv_Issuance = new System.Windows.Forms.DataGridView();
+            this.bt_Import_Issuance = new System.Windows.Forms.Button();
+            this.ofd_load_Issuance = new System.Windows.Forms.OpenFileDialog();
+            this.bt_Return_Issuance = new System.Windows.Forms.Button();
             this.Сlass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.family_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_book = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UniqNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_of_issue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_Import_Issuance = new System.Windows.Forms.Button();
-            this.ofd_load_Issuance = new System.Windows.Forms.OpenFileDialog();
+            this.DatePlanReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Issuance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,8 +67,9 @@ namespace Biblioteka2.Forms
             // 
             // lb1_SearchIssuance
             // 
+            this.lb1_SearchIssuance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb1_SearchIssuance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb1_SearchIssuance.Location = new System.Drawing.Point(330, 17);
+            this.lb1_SearchIssuance.Location = new System.Drawing.Point(442, 17);
             this.lb1_SearchIssuance.Name = "lb1_SearchIssuance";
             this.lb1_SearchIssuance.Size = new System.Drawing.Size(151, 27);
             this.lb1_SearchIssuance.TabIndex = 37;
@@ -74,8 +78,9 @@ namespace Biblioteka2.Forms
             // 
             // tb_SearchIssuance
             // 
+            this.tb_SearchIssuance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_SearchIssuance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tb_SearchIssuance.Location = new System.Drawing.Point(334, 47);
+            this.tb_SearchIssuance.Location = new System.Drawing.Point(446, 47);
             this.tb_SearchIssuance.Name = "tb_SearchIssuance";
             this.tb_SearchIssuance.Size = new System.Drawing.Size(147, 20);
             this.tb_SearchIssuance.TabIndex = 36;
@@ -139,55 +144,25 @@ namespace Biblioteka2.Forms
             // 
             this.dgv_Issuance.AllowUserToAddRows = false;
             this.dgv_Issuance.AllowUserToDeleteRows = false;
+            this.dgv_Issuance.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_Issuance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Issuance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Сlass,
             this.family_name,
             this.first_name,
             this.name_book,
-            this.date_of_issue});
+            this.UniqNum,
+            this.date_of_issue,
+            this.DatePlanReturn});
             this.dgv_Issuance.Location = new System.Drawing.Point(12, 91);
             this.dgv_Issuance.MultiSelect = false;
             this.dgv_Issuance.Name = "dgv_Issuance";
             this.dgv_Issuance.ReadOnly = true;
+            this.dgv_Issuance.RowHeadersVisible = false;
             this.dgv_Issuance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Issuance.Size = new System.Drawing.Size(492, 262);
+            this.dgv_Issuance.Size = new System.Drawing.Size(652, 262);
             this.dgv_Issuance.TabIndex = 31;
-            // 
-            // Сlass
-            // 
-            this.Сlass.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Сlass.HeaderText = "Класс";
-            this.Сlass.Name = "Сlass";
-            this.Сlass.ReadOnly = true;
-            // 
-            // family_name
-            // 
-            this.family_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.family_name.HeaderText = "Фамилия";
-            this.family_name.Name = "family_name";
-            this.family_name.ReadOnly = true;
-            // 
-            // first_name
-            // 
-            this.first_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.first_name.HeaderText = "Имя";
-            this.first_name.Name = "first_name";
-            this.first_name.ReadOnly = true;
-            // 
-            // name_book
-            // 
-            this.name_book.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name_book.HeaderText = "Название книги";
-            this.name_book.Name = "name_book";
-            this.name_book.ReadOnly = true;
-            // 
-            // date_of_issue
-            // 
-            this.date_of_issue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.date_of_issue.HeaderText = "Дата выдачи";
-            this.date_of_issue.Name = "date_of_issue";
-            this.date_of_issue.ReadOnly = true;
             // 
             // bt_Import_Issuance
             // 
@@ -207,12 +182,82 @@ namespace Biblioteka2.Forms
             // 
             this.ofd_load_Issuance.FileName = "openFileDialog1";
             // 
+            // bt_Return_Issuance
+            // 
+            this.bt_Return_Issuance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_Return_Issuance.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Return_Issuance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_Return_Issuance.BackgroundImage")));
+            this.bt_Return_Issuance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_Return_Issuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Return_Issuance.Location = new System.Drawing.Point(618, 24);
+            this.bt_Return_Issuance.Name = "bt_Return_Issuance";
+            this.bt_Return_Issuance.Size = new System.Drawing.Size(46, 43);
+            this.bt_Return_Issuance.TabIndex = 41;
+            this.bt_Return_Issuance.UseVisualStyleBackColor = false;
+            this.bt_Return_Issuance.Click += new System.EventHandler(this.bt_Return_Issuance_Click);
+            // 
+            // Сlass
+            // 
+            this.Сlass.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Сlass.FillWeight = 30F;
+            this.Сlass.HeaderText = "Класс";
+            this.Сlass.Name = "Сlass";
+            this.Сlass.ReadOnly = true;
+            // 
+            // family_name
+            // 
+            this.family_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.family_name.FillWeight = 80F;
+            this.family_name.HeaderText = "Фамилия";
+            this.family_name.Name = "family_name";
+            this.family_name.ReadOnly = true;
+            // 
+            // first_name
+            // 
+            this.first_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.first_name.FillWeight = 80F;
+            this.first_name.HeaderText = "Имя";
+            this.first_name.Name = "first_name";
+            this.first_name.ReadOnly = true;
+            // 
+            // name_book
+            // 
+            this.name_book.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name_book.HeaderText = "Название книги";
+            this.name_book.Name = "name_book";
+            this.name_book.ReadOnly = true;
+            // 
+            // UniqNum
+            // 
+            this.UniqNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.UniqNum.FillWeight = 40F;
+            this.UniqNum.HeaderText = "Номер";
+            this.UniqNum.Name = "UniqNum";
+            this.UniqNum.ReadOnly = true;
+            // 
+            // date_of_issue
+            // 
+            this.date_of_issue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.date_of_issue.FillWeight = 60F;
+            this.date_of_issue.HeaderText = "Дата выдачи";
+            this.date_of_issue.Name = "date_of_issue";
+            this.date_of_issue.ReadOnly = true;
+            // 
+            // DatePlanReturn
+            // 
+            this.DatePlanReturn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DatePlanReturn.FillWeight = 60F;
+            this.DatePlanReturn.HeaderText = "Дата возврата";
+            this.DatePlanReturn.Name = "DatePlanReturn";
+            this.DatePlanReturn.ReadOnly = true;
+            // 
             // IssuanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(516, 364);
+            this.ClientSize = new System.Drawing.Size(676, 364);
+            this.Controls.Add(this.bt_Return_Issuance);
             this.Controls.Add(this.bt_Import_Issuance);
             this.Controls.Add(this.Export_Issuance);
             this.Controls.Add(this.lb1_SearchIssuance);
@@ -240,12 +285,15 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.Button Edit_Issuance;
         private System.Windows.Forms.Button Add_Issuance;
         private System.Windows.Forms.DataGridView dgv_Issuance;
+        private System.Windows.Forms.Button bt_Import_Issuance;
+        private System.Windows.Forms.OpenFileDialog ofd_load_Issuance;
+        private System.Windows.Forms.Button bt_Return_Issuance;
         private System.Windows.Forms.DataGridViewTextBoxColumn Сlass;
         private System.Windows.Forms.DataGridViewTextBoxColumn family_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn first_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn name_book;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UniqNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_of_issue;
-        private System.Windows.Forms.Button bt_Import_Issuance;
-        private System.Windows.Forms.OpenFileDialog ofd_load_Issuance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DatePlanReturn;
     }
 }

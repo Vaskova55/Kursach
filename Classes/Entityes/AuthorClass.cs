@@ -26,7 +26,14 @@ namespace Biblioteka2.Classes.Entityes
 
         public override string ToString()
         {
-            return family_name + " " + first_name.First() + "." + middle_name.First() + ".";
+            if (middle_name == null)
+            {
+                return family_name + " " + first_name.First() + ".";
+            }
+            else
+            {
+                return family_name + " " + first_name.First() + "." + middle_name.First() + ".";
+            }       
         }
 
     }

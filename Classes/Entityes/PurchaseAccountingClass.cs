@@ -11,11 +11,11 @@ namespace Biblioteka2.Classes.Entityes
     {
         [Key]
         public int idPurchase_accounting { get; set; }
-        [Required]
         public decimal price { get; set; }
         [Required]
         public int count { get; set; }
         public virtual List<LiteratureTurnoverClass> literatureTurnover { get; set; }
+        public virtual PurchaseListClass purchaseList { get; set; }
 
         public PurchaseAccountingClass()
         {

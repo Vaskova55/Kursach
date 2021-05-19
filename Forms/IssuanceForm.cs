@@ -24,22 +24,25 @@ namespace Biblioteka2.Forms
         private void updateData()
         {
             dgv_Issuance.Rows.Clear();
-            foreach (IssuanceClass issuance in DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.literature).Include(i=>i.literature.book).Include(i => i.user)
+            foreach (IssuanceClass issuance in DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.literature).Include(i => i.literature.book).Include(i => i.user)
                 .Where(
                     i => i.trainess.classTrainess.ToString().Contains(tb_SearchIssuance.Text) ||
                     i.trainess.family_name.Contains(tb_SearchIssuance.Text) ||
                     i.trainess.family_name.Contains(tb_SearchIssuance.Text) ||
+                    i.literature.book.name_book.Contains(tb_SearchIssuance.Text) ||
+                    i.literature.book.name_book.Contains(tb_SearchIssuance.Text) ||
                     i.literature.book.name_book.Contains(tb_SearchIssuance.Text) ||
                     i.date_of_issue.ToString().Contains(tb_SearchIssuance.Text)
                 )
             )
             {
                 int r = dgv_Issuance.Rows.Add(
-                    issuance.trainess.classTrainess.ToString(),
-                    issuance.trainess.family_name.ToString(),
-                    issuance.trainess.first_name.ToString(),
-                    issuance.literature.book.ToString(),
-                    issuance.date_of_issue
+                    issuance.literature.book.type.type.ToString(),
+                    issuance.date_of_issue.ToString(),
+                issuance.trainess.first_name.ToString(),
+                    issuance.literature.book.name_book.ToString(),
+                    issuance.date_of_issue.ToString(),
+                    issuance.literature.book.ToString()
                 );
                 dgv_Issuance.Rows[r].Tag = issuance;
             }
@@ -51,7 +54,7 @@ namespace Biblioteka2.Forms
             dialog.Filter = "Файлы excel|*.xlsx";
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                List<IssuanceClass> listIssuance = DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.literature).Include(i=>i.literature.book).ToList();
+                List<IssuanceClass> listIssuance = DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.literature).Include(i => i.literature.book).ToList();
                 string[,] values = new string[listIssuance.Count + 1, 5];
 
                 values[0, 0] = "Класс";
@@ -105,7 +108,7 @@ namespace Biblioteka2.Forms
                             continue;
                         }
                         LiteratureTurnoverClass literature = (book.literatureTurnovers.Where(l => l.status == LiteratureTurnoverClass.e_literature_state.storage).FirstOrDefault());
-                        if  (literature==null)
+                        if (literature == null)
                         {
                             stringBuilder.AppendLine("Book not found in storage!");
                             continue;
@@ -163,12 +166,11 @@ namespace Biblioteka2.Forms
         private void Delete_Issuance_Click(object sender, EventArgs e)
         {
             if (dgv_Issuance.Rows.Count > 0)
-            {
-                IssuanceClass issuance = dgv_Issuance.Rows[0].Tag as IssuanceClass;
-                DbModel.init().Issuances.Remove(issuance);
-                DbModel.init().SaveChanges();
                 updateData();
-            }
+            IssuanceClass issuance = dgv_Issuance.Rows[0].Tag as IssuanceClass;
+            DbModel.init().Issuances.Remove(issuance);
+            DbModel.init().SaveChanges();
+            updateData();
         }
 
         private void Update_Issuance_Click(object sender, EventArgs e)
@@ -176,19 +178,33 @@ namespace Biblioteka2.Forms
             updateData();
         }
 
-        private void Edit_Issuance_Click(object sender, EventArgs e)
-        {/*
-            if (dgv_Issuance.SelectedRows.Count > 0)
-            {
-                AddIssuanceForm f_aif = new AddIssuanceForm(dgv_Issuance.SelectedRows[0].Tag as IssuanceClass);
-                f_aif.ShowDialog();
-                updateData();
-            }*/
-        }
-
         private void tb_SearchIssuance_TextChanged(object sender, EventArgs e)
         {
             updateData();
         }
+
+        private void bt_Return_Issuance_Click(object sender, EventArgs e)
+        {
+            if (dgv_Issuance.SelectedRows.Count > 0)
+            {
+                IssuanceClass issuance = dgv_Issuance.SelectedRows[0].Tag as IssuanceClass;
+                AddTrainessForm f_at = new AddTrainessForm();
+                f_at.ShowDialog();
+                updateData();
+            }
+        }
+
+        private void Edit_Issuance_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+    /*
+        if (dgv_Issuance.SelectedRows.Count > 0)
+        {
+            AddIssuanceForm f_aif = new AddIssuanceForm(dgv_Issuance.SelectedRows[0].Tag as IssuanceClass);
+            f_aif.ShowDialog();
+            updateData();
+        }*/
+
 }

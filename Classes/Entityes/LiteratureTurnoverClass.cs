@@ -18,11 +18,11 @@ namespace Biblioteka2.Classes.Entityes
 
         [Key]
         public int idTurnover { get; set; }
-        [Required, Index(IsUnique = true), MaxLength(32)]
+        [Required, Index(IsUnique = true), MaxLength(32), Index("IDX_InventoryNum_Book", 0, IsUnique = true)]
         public string InventiryNum { get; set; }
         [Required]
         public Int16 year { get; set; }
-        [Required]
+        [Required, Index("IDX_InventoryNum_Book", 1, IsUnique = true)]
         public virtual BookClass book { get; set; }
         [Required]
         public virtual PurchaseAccountingClass purchaseAccounting { get; set; }

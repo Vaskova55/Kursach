@@ -230,10 +230,13 @@ namespace Biblioteka2.Forms
             // 
             // dgv_Home_page
             // 
+            this.dgv_Home_page.AllowUserToAddRows = false;
+            this.dgv_Home_page.AllowUserToDeleteRows = false;
             this.dgv_Home_page.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Home_page.Location = new System.Drawing.Point(264, 34);
             this.dgv_Home_page.MultiSelect = false;
             this.dgv_Home_page.Name = "dgv_Home_page";
+            this.dgv_Home_page.ReadOnly = true;
             this.dgv_Home_page.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Home_page.Size = new System.Drawing.Size(550, 423);
             this.dgv_Home_page.TabIndex = 30;
@@ -241,8 +244,11 @@ namespace Biblioteka2.Forms
             // ms_Home_page
             // 
             this.ms_Home_page.AllowMerge = false;
+            this.ms_Home_page.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ms_Home_page.AutoSize = false;
             this.ms_Home_page.BackColor = System.Drawing.Color.Transparent;
+            this.ms_Home_page.Dock = System.Windows.Forms.DockStyle.None;
             this.ms_Home_page.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ms_Home_page.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmi1_Issuance,

@@ -84,14 +84,14 @@ namespace Biblioteka2.Forms
             // 
             // tb_firstname
             // 
-            this.tb_firstname.Location = new System.Drawing.Point(49, 170);
+            this.tb_firstname.Location = new System.Drawing.Point(49, 216);
             this.tb_firstname.Name = "tb_firstname";
             this.tb_firstname.Size = new System.Drawing.Size(139, 20);
             this.tb_firstname.TabIndex = 74;
             // 
             // tb_lastname
             // 
-            this.tb_lastname.Location = new System.Drawing.Point(49, 216);
+            this.tb_lastname.Location = new System.Drawing.Point(49, 170);
             this.tb_lastname.Name = "tb_lastname";
             this.tb_lastname.Size = new System.Drawing.Size(139, 20);
             this.tb_lastname.TabIndex = 73;

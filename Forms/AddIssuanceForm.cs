@@ -18,31 +18,50 @@ namespace Biblioteka2.Forms
         {
             InitializeComponent();
             UpdateCombo();
+
+            
         }
 
         private void UpdateCombo()
         {
             cb_FIOTrIssuance.Items.Clear();
             cb_LiteratureIssuance.Items.Clear();
-            cb_FIOTrIssuance.Items.AddRange(DbModel.init().Trainesses.ToArray());
-            HashSet<BookClass> UniqueBooks = new HashSet<BookClass>();
+            cb_FIOTrIssuance.Items.AddRange(DbModel.init().Trainesses.Where(t => t.classTrainess == nud_classTrIssuance.Value).ToArray());
             cb_LiteratureIssuance.Items.AddRange(DbModel.init().LiteratureTurnover.Include(l=>l.book).
-                Where(l => l.status == LiteratureTurnoverClass.e_literature_state.storage && UniqueBooks.Add(l.book)).ToArray());
+                Where(l => l.status == LiteratureTurnoverClass.e_literature_state.storage).GroupBy(l=>l.book.idBook).Select(l=>l.FirstOrDefault()).ToArray());;
         }
         private void Ok_AddIssuance_Click(object sender, EventArgs e)
         {
-            // LiteratureTurnoverClass literature = DbModel.init().Books.Where()
             IssuanceClass issuance = new IssuanceClass
             {
                 trainess = cb_FIOTrIssuance.SelectedItem as TrainessClass,
                 literature = cb_LiteratureIssuance.SelectedItem as LiteratureTurnoverClass,
-                user = DbModel.init().Users.Where(u => u.access_level==1).FirstOrDefault(),
+                user = DbModel.init().Users.Where(u => u.access_level == 1).FirstOrDefault(),
                 date_of_issue = (DateTime)dtp_Issuance.Value,
+                date_of_plan_return = (DateTime)dtp_return.Value
             };
 
             DbModel.init().Issuances.Add(issuance);
             DbModel.init().SaveChanges();
             Close();
+        }
+
+        private void date_info_update(object sender, EventArgs e)
+        {
+            int mountcount = 0;
+            const int mountdisove = 2;
+            switch (cb_mountmax.SelectedIndex) {
+                case 0:
+                    mountcount = 12 - mountdisove;
+                    break;
+                case 1:
+                    mountcount = (2 * 12) - mountdisove;
+                    break;
+                case 2:
+                    mountcount = (3 * 12) - mountdisove;
+                    break;
+            }
+            dtp_return.Value = dtp_Issuance.Value.AddMonths(mountcount);
         }
     }
 }

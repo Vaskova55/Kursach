@@ -83,6 +83,7 @@
     <Compile Include="Classes\Entityes\LiteratureTurnoverClass.cs" />
     <Compile Include="Classes\Entityes\PublisherClass.cs" />
     <Compile Include="Classes\Entityes\PurchaseAccountingClass.cs" />
+    <Compile Include="Classes\Entityes\PurchaseListClass.cs" />
     <Compile Include="Classes\Entityes\TrainessClass.cs" />
     <Compile Include="Classes\Entityes\TypeClass.cs" />
     <Compile Include="Classes\Entityes\UserClass.cs" />
@@ -106,11 +107,23 @@
     <Compile Include="Forms\AddIssuanceForm.Designer.cs">
       <DependentUpon>AddIssuanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddPublisherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddPublisherForm.Designer.cs">
+      <DependentUpon>AddPublisherForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddPurchaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\AddPurchaseForm.Designer.cs">
       <DependentUpon>AddPurchaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddReturnIssuanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddReturnIssuanceForm.Designer.cs">
+      <DependentUpon>AddReturnIssuanceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AuthorizationForm.cs">
       <SubType>Form</SubType>
@@ -184,8 +197,14 @@
     <EmbeddedResource Include="Forms\AddIssuanceForm.resx">
       <DependentUpon>AddIssuanceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddPublisherForm.resx">
+      <DependentUpon>AddPublisherForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddPurchaseForm.resx">
       <DependentUpon>AddPurchaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddReturnIssuanceForm.resx">
+      <DependentUpon>AddReturnIssuanceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>

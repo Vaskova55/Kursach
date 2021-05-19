@@ -129,11 +129,5 @@ namespace Biblioteka2.Forms
                 NUD_Class.Enabled = true;
             }
         }
-
-        private void AddBookForm_Load(object sender, EventArgs e)
-        {
-            AddPurchaseForm f_p = new AddPurchaseForm();
-            f_p.ShowDialog();
-        }
     }
 }

@@ -29,5 +29,10 @@ namespace Biblioteka2.Classes.Entityes
             literatureTurnovers = new List<LiteratureTurnoverClass>();
         }
 
+        public override string ToString()
+        {
+            return name_book;
+        }
+
     }
 }

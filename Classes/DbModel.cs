@@ -42,6 +42,7 @@ namespace Biblioteka2.Classes
         public virtual DbSet<PurchaseAccountingClass> Purchase { get; set; }
         public virtual DbSet<IssuanceClass> Issuances { get; set; }
         public virtual DbSet<LiteratureTurnoverClass> LiteratureTurnover { get; set; }
+        public virtual DbSet<PurchaseListClass> PurchaseLists { get; set; }
     }
 
     //public class MyEntity
