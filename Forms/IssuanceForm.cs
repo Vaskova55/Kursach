@@ -21,7 +21,7 @@ namespace Biblioteka2.Forms
             updateData();
         }
 
-        private void updateData()
+        private void updatData()
         {
             dgv_Issuance.Rows.Clear();
             foreach (IssuanceClass issuance in DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.literature).Include(i => i.literature.book).Include(i => i.user)
