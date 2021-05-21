@@ -20,23 +20,29 @@ namespace Biblioteka2.Forms
             InitializeComponent();
         }
 
+        bool isSave = true;
         public AddPublisherForm(string city, string name)
         {
             InitializeComponent();
-
+            isSave = false;
             tb_City.Text = city;
             tb_NamePublisher.Text = name;
             MessageBox.Show(String.Format("Автор с инициалами {0}. {1}. не найден.", city, name));
         }
+
+        public PublisherClass GetPublisher()
+        {
+            return new PublisherClass
+            { city = tb_City.Text, name = tb_NamePublisher.Text };
+        }
         private void Ok_AddPublisher_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
-            DbModel.init().Publishers.Add(new PublisherClass
+            if (isSave)
             {
-                city = tb_City.Text,
-                name = tb_NamePublisher.Text
-            });
-            DbModel.init().SaveChanges();
+                DbModel.init().Publishers.Add(GetPublisher());
+                DbModel.init().SaveChanges();
+            }
             Close();
         }
     }

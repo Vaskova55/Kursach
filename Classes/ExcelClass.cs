@@ -70,7 +70,7 @@ namespace Biblioteka2.Classes
                                                                                 //переводим название колонки в нижний регистр
                     }
                 }
-                for (int r = 1; r < sheet.LastRowNum; r++)//перебираем строки листа
+                for (int r = 1; r <= sheet.LastRowNum; r++)//перебираем строки листа
                 {
 
                     IRow rowData = sheet.GetRow(r);//читаем каждую строку листа

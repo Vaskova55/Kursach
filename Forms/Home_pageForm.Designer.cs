@@ -45,7 +45,6 @@ namespace Biblioteka2.Forms
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.lb1_Home_page = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.dgv_Home_page = new System.Windows.Forms.DataGridView();
             this.ms_Home_page = new System.Windows.Forms.MenuStrip();
             this.tsmi1_Issuance = new System.Windows.Forms.ToolStripMenuItem();
@@ -198,7 +197,7 @@ namespace Biblioteka2.Forms
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton2.Location = new System.Drawing.Point(8, 112);
+            this.radioButton2.Location = new System.Drawing.Point(14, 87);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(91, 19);
             this.radioButton2.TabIndex = 34;
@@ -215,18 +214,6 @@ namespace Biblioteka2.Forms
             this.lb1_Home_page.TabIndex = 33;
             this.lb1_Home_page.Text = "Вывод в таблицу читателей:";
             this.lb1_Home_page.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton1.Location = new System.Drawing.Point(9, 87);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(52, 19);
-            this.radioButton1.TabIndex = 32;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Всех";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // dgv_Home_page
             // 
@@ -341,11 +328,11 @@ namespace Biblioteka2.Forms
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.lb1_Home_page);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.dgv_Home_page);
             this.Controls.Add(this.ms_Home_page);
             this.Name = "Home_pageForm";
             this.Text = "Главная страница";
+            this.Load += new System.EventHandler(this.Home_pageForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Home_page)).EndInit();
             this.ms_Home_page.ResumeLayout(false);
             this.ms_Home_page.PerformLayout();
@@ -372,7 +359,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label lb1_Home_page;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridView dgv_Home_page;
         private System.Windows.Forms.MenuStrip ms_Home_page;
         private System.Windows.Forms.ToolStripMenuItem tsmi1_Issuance;

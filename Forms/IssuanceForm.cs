@@ -18,7 +18,7 @@ namespace Biblioteka2.Forms
         public IssuanceForm()
         {
             InitializeComponent();
-            updateData();
+            updatData();
         }
 
         private void updatData()
@@ -144,13 +144,13 @@ namespace Biblioteka2.Forms
                         if (MessageBox.Show("Save?", "save", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             DbModel.init().SaveChanges();
-                            updateData();
+                            updatData();
                         }
                     }
                     else
                     {
                         DbModel.init().SaveChanges();
-                        updateData();
+                        updatData();
                     }
                 }
             }
@@ -160,38 +160,35 @@ namespace Biblioteka2.Forms
         {
             AddIssuanceForm f_aif = new AddIssuanceForm();
             f_aif.ShowDialog();
-            updateData();
+            updatData();
         }
 
         private void Delete_Issuance_Click(object sender, EventArgs e)
         {
             if (dgv_Issuance.Rows.Count > 0)
-                updateData();
-            IssuanceClass issuance = dgv_Issuance.Rows[0].Tag as IssuanceClass;
-            DbModel.init().Issuances.Remove(issuance);
+            {
+                IssuanceClass issuance = dgv_Issuance.Rows[0].Tag as IssuanceClass;
+                DbModel.init().Issuances.Remove(issuance);
             DbModel.init().SaveChanges();
-            updateData();
+            updatData();
+            }
         }
 
         private void Update_Issuance_Click(object sender, EventArgs e)
         {
-            updateData();
+            updatData();
         }
 
         private void tb_SearchIssuance_TextChanged(object sender, EventArgs e)
         {
-            updateData();
+            updatData();
         }
 
         private void bt_Return_Issuance_Click(object sender, EventArgs e)
         {
-            if (dgv_Issuance.SelectedRows.Count > 0)
-            {
-                IssuanceClass issuance = dgv_Issuance.SelectedRows[0].Tag as IssuanceClass;
-                AddTrainessForm f_at = new AddTrainessForm();
-                f_at.ShowDialog();
-                updateData();
-            }
+            TrainessesForm f_ti = new TrainessesForm();
+            f_ti.ShowDialog();
+            updatData();
         }
 
         private void Edit_Issuance_Click(object sender, EventArgs e)

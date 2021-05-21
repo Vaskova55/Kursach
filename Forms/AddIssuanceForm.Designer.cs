@@ -191,6 +191,7 @@ namespace Biblioteka2.Forms
             0,
             0,
             0});
+            this.nud_classTrIssuance.ValueChanged += new System.EventHandler(this.nud_classTrIssuance_ValueChanged);
             // 
             // dtp_return
             // 

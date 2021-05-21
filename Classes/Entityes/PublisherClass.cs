@@ -12,9 +12,9 @@ namespace Biblioteka2.Classes.Entityes
     {
         [Key]
         public int idPublisher { get; set; }
-        [Required, MaxLength(128)]
+        [Required, MaxLength(128), Index("IX_Publisher", 1, IsUnique = true)]
         public string city { get; set; }
-        [Required, MaxLength(128), Index(IsUnique =true)]
+        [Required, MaxLength(128), Index("IX_Publisher",0,IsUnique =true)]
         public string name { get; set; }
         public virtual List<BookClass> Books { get; set; }
 

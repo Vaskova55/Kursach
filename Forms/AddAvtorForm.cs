@@ -19,8 +19,10 @@ namespace Biblioteka2.Forms
             InitializeComponent();
         }
 
+        bool isSave = true;
         public AddAvtorForm(string family_name, string first_name, string middle_name)
         {
+            isSave = false;
             InitializeComponent();
 
             tb_lastname.Text = family_name;
@@ -30,21 +32,27 @@ namespace Biblioteka2.Forms
             MessageBox.Show(String.Format("Автор с инициалами {0}. {1}. {2}. не найден.", family_name, first_name, middle_name));
         }
 
-        private void Ok_AddBook_Click(object sender, EventArgs e)
+        public AuthorClass GetAuthor()
         {
-            DialogResult = DialogResult.OK;
             if (cb_noMiddle.Checked)
             {
-                DbModel.init().Authors.Add(new AuthorClass { family_name = tb_lastname.Text, first_name = tb_firstname.Text});
-                DbModel.init().SaveChanges();
-                Close();
+                return new AuthorClass { family_name = tb_lastname.Text, first_name = tb_firstname.Text };
             }
             else
             {
-                DbModel.init().Authors.Add(new AuthorClass { family_name = tb_lastname.Text, first_name = tb_firstname.Text, middle_name = tb_middlename.Text });
-                DbModel.init().SaveChanges();
-                Close();
+                return new AuthorClass { family_name = tb_lastname.Text, first_name = tb_firstname.Text, middle_name = tb_middlename.Text };
             }
+        }
+
+        private void Ok_AddBook_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            if (isSave)
+            {
+                DbModel.init().Authors.Add(GetAuthor());
+                DbModel.init().SaveChanges();
+            }
+            Close();
         }
     }
 }

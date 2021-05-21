@@ -35,17 +35,34 @@ namespace Biblioteka2.Forms
                     issuance.trainess.first_name.ToString(),
                     issuance.literature.book.name_book.ToString(),
                     issuance.literature.book.Authors.ToString(),
-                    issuance.date_of_issue.ToString(),
-                    issuance.date_of_realreturn.ToString());
+                    issuance.date_of_issue,
+                    issuance.date_of_realreturn
+                    );
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void tb_NameSearchTrainess_TextChanged(object sender, EventArgs e)
         {
+            updatData();
+        }
+
+        private void tb_FamillySearchTrainess_TextChanged(object sender, EventArgs e)
+        {
+            updatData();
+        }
+
+        private void SearchTrainessForm_Load(object sender, EventArgs e)
+        {
+            CheckBox cb_SearchTrainess = new CheckBox();
+            cb_SearchTrainess.Size = new Size(200, 42);
+            cb_SearchTrainess.Text = "Проверить наличие долга по сданной литературе";
+            pn_SearchTrainess.Controls.Add(cb_SearchTrainess);
+
             if (cb_SearchTrainess.Checked)
             {
                 dgv_SearchTrainess.Rows.Clear();
-                foreach (IssuanceClass issuance in DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.literature).Include(i => i.literature.book).Where(i => i.date_of_realreturn>i.date_of_plan_return))
+                foreach (IssuanceClass issuance in DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.literature).Include(i => i.literature.book)
+                    .Where(i => i.date_of_realreturn > i.date_of_plan_return).Where((i => i.literature.status == LiteratureTurnoverClass.e_literature_state.remove)))
                 {
                     int r = dgv_SearchTrainess.Rows.Add(
                         issuance.trainess.classTrainess.ToString(),
@@ -58,16 +75,6 @@ namespace Biblioteka2.Forms
                 }
                 updatData();
             }
-        }
-
-        private void tb_NameSearchTrainess_TextChanged(object sender, EventArgs e)
-        {
-            updatData();
-        }
-
-        private void tb_FamillySearchTrainess_TextChanged(object sender, EventArgs e)
-        {
-            updatData();
         }
     }
 }

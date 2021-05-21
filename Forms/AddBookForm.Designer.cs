@@ -29,6 +29,7 @@ namespace Biblioteka2.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBookForm));
             this.Ok_AddBook = new System.Windows.Forms.Button();
             this.bt_add_autor = new System.Windows.Forms.Button();
             this.lb_author = new System.Windows.Forms.ListBox();
@@ -68,14 +69,14 @@ namespace Biblioteka2.Forms
             // bt_add_autor
             // 
             this.bt_add_autor.BackColor = System.Drawing.Color.Transparent;
+            this.bt_add_autor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_add_autor.BackgroundImage")));
+            this.bt_add_autor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt_add_autor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_add_autor.Location = new System.Drawing.Point(194, 418);
             this.bt_add_autor.Name = "bt_add_autor";
             this.bt_add_autor.Size = new System.Drawing.Size(26, 21);
             this.bt_add_autor.TabIndex = 50;
-            this.bt_add_autor.Text = "+";
             this.bt_add_autor.UseVisualStyleBackColor = false;
-            this.bt_add_autor.Click += new System.EventHandler(this.bt_add_autor_Click);
             // 
             // lb_author
             // 
@@ -249,7 +250,6 @@ namespace Biblioteka2.Forms
             this.cb_NoAvtor.TabIndex = 71;
             this.cb_NoAvtor.Text = "Необходимый автор отсутствует в списке.";
             this.cb_NoAvtor.UseVisualStyleBackColor = true;
-            this.cb_NoAvtor.CheckedChanged += new System.EventHandler(this.cb_NoAvtor_CheckedChanged);
             // 
             // cb_NoUchLit
             // 
@@ -260,7 +260,6 @@ namespace Biblioteka2.Forms
             this.cb_NoUchLit.TabIndex = 72;
             this.cb_NoUchLit.Text = "Не учебная литература";
             this.cb_NoUchLit.UseVisualStyleBackColor = true;
-            this.cb_NoUchLit.CheckedChanged += new System.EventHandler(this.cb_uchLit_CheckedChanged);
             // 
             // AddBookForm
             // 

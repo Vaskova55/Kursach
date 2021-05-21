@@ -19,7 +19,40 @@ namespace Biblioteka2.Forms
             InitializeComponent();
             UpdateCombo();
         }
+        bool isSave = true;
         private BookClass bookEdited;
+
+        public AddBookForm(int? bookclassnum, string bookname, PublisherClass publisher, TypeClass type, List<AuthorClass> authors)
+        {
+            isSave = false;
+            InitializeComponent();
+            UpdateCombo();
+
+            if (bookclassnum == null)
+            {
+                cb_NoUchLit.Checked = true;
+            }
+            else {
+                NUD_Class.Value = Convert.ToInt32(bookclassnum);
+            }
+             
+            tb_bookname.Text = bookname;
+
+            //
+            int pI = cb_publisher.Items.Add(publisher);
+            cb_publisher.SelectedIndex = pI;
+            cb_publisher.Enabled = false;
+            
+            //
+            int tI = cb_type.Items.Add(type);
+            cb_type.SelectedIndex = tI;
+            cb_type.Enabled = false;
+
+            lb_author.Items.AddRange(authors.ToArray());
+            lb_author.Enabled = false;
+            bt_add_autor.Enabled = false;
+            cb_Author.Enabled = false;
+        }         
 
         public AddBookForm(BookClass bookEdit)
         {
@@ -54,26 +87,35 @@ namespace Biblioteka2.Forms
             cb_Author.Items.AddRange(DbModel.init().Authors.ToArray());
         }
 
+        public BookClass GetBook() {
+            BookClass book =  new BookClass
+            {
+                name_book = tb_bookname.Text,
+                classnum = (int)NUD_Class.Value,
+                publishing_year = (Int16)NUD_Year.Value,
+                type = cb_type.SelectedItem as TypeClass,
+                publisher = cb_publisher.SelectedItem as PublisherClass
+                
+            };
+            foreach (AuthorClass author in lb_author.Items) //перебор авторов и заполнение CheckBox
+            {
+                book.Authors.Add(author);
+            }
+            return book;
+        }
+
         private void Ok_AddBook_Click(object sender, EventArgs e) //добавление книги
         {
             if (NUD_Class.Value > 0 && tb_bookname.TextLength > 0 && NUD_Year.Value > 0 && cb_type.SelectedItem != null && cb_publisher.SelectedItem != null && lb_author.Items != null)
             {
+                DialogResult = DialogResult.OK;
                 if (bookEdited == null)
                 {
-                    BookClass book = new BookClass
+                    if (isSave)
                     {
-                        name_book = tb_bookname.Text,
-                        classnum = (int)NUD_Class.Value,
-                        publishing_year = (Int16)NUD_Year.Value,
-                        type = cb_type.SelectedItem as TypeClass,
-                        publisher = cb_publisher.SelectedItem as PublisherClass
-                    };
-                    foreach (AuthorClass author in lb_author.Items) //перебор авторов и заполнение CheckBox
-                    {
-                        book.Authors.Add(author);
+                        DbModel.init().Books.Add(GetBook()); //добавление книги
+                        DbModel.init().SaveChanges();
                     }
-                    DbModel.init().Books.Add(book); //добавление книги
-                    DbModel.init().SaveChanges();
                     Close();
                 }
                 else

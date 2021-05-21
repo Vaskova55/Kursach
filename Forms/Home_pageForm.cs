@@ -82,5 +82,18 @@ namespace Biblioteka2.Forms
             FormManager.ChangeForm(new AuthorizationForm());
             Close();        
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Home_pageForm_Load(object sender, EventArgs e)
+        {
+           /* RadioButton tb_Trainess = new CheckBox();
+            cb_SearchTrainess.Text = "Проверить наличие долга по сданной литературе";
+            cb_SearchTrainess.Size = new Size(200, 42);
+            pn_SearchTrainess.Controls.Add(cb_SearchTrainess);*/
+        }
     }
 }

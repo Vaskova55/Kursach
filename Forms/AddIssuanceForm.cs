@@ -63,5 +63,11 @@ namespace Biblioteka2.Forms
             }
             dtp_return.Value = dtp_Issuance.Value.AddMonths(mountcount);
         }
+
+        private void nud_classTrIssuance_ValueChanged(object sender, EventArgs e)
+        {
+            cb_FIOTrIssuance.Items.Clear();
+            cb_FIOTrIssuance.Items.AddRange(DbModel.init().Trainesses.Where(t => t.classTrainess == nud_classTrIssuance.Value).ToArray());
+        }
     }
 }

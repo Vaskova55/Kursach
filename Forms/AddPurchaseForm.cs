@@ -21,6 +21,18 @@ namespace Biblioteka2.Forms
             updateCombo();
         }
 
+        public AddPurchaseForm(PurchaseListClass purchaseList)
+        {
+            InitializeComponent();
+            updateCombo();
+            foreach (PurchaseAccountingClass purchaseAccounting in purchaseList.purchaseAccountings) {
+                int r = dgv_PurchaseList.Rows.Add(purchaseAccounting.literatureTurnover.First().book.ToString(), purchaseAccounting.count, purchaseAccounting.price, purchaseAccounting.count*purchaseAccounting.price);
+                dgv_PurchaseList.Rows[r].Tag = purchaseAccounting;
+            }
+            dtp_datePurchase.Value = purchaseList.datePurchase;
+            updateResult();
+        }
+
         private void updateCombo()
         {
             cb_BookPurchase.Items.Clear();
@@ -28,7 +40,7 @@ namespace Biblioteka2.Forms
         }
         private void Ok_AddPurchase_Click(object sender, EventArgs e)
         {
-            if (cb_BookPurchase.SelectedItem != null || tb_CountPurchase.Text.Length > 0 || tb_PricePurchase.Text.Length > 0)
+            if ( dgv_PurchaseList.Rows.Count>0)
             {
                 List<PurchaseAccountingClass> purchaseAccountings = new List<PurchaseAccountingClass>();
                 foreach (DataGridViewRow row in dgv_PurchaseList.Rows)
@@ -84,38 +96,8 @@ namespace Biblioteka2.Forms
                 count = Convert.ToInt32(tb_CountPurchase.Text),
 
             };
-            
-            int add_discriptor = 0;
-            //перебор количества книг
-            for (int i = 1; i <= purchaseAccounting.count; i++)
-            {
-                //заполнение таблицы учетной книги данными про книгу и ее статус (при закупке она получает статус на полке)
-                LiteratureTurnoverClass literature = new LiteratureTurnoverClass
-                {
-                    book = cb_BookPurchase.SelectedItem as BookClass,
-                    status = LiteratureTurnoverClass.e_literature_state.storage
-                };
-                //расчет года списания (какой сейчас год + 5 лет)
-                literature.year = Convert.ToInt16(DateTime.Now.Year + 5);
-                bool isUnique = false;
-                //пока номер уникальный....
-                while (!isUnique)
-                {
-                    //инвентарный номер (уникальный ключ) = год побликации + "-" + 
-                    literature.InventiryNum = literature.book.publishing_year.ToString() + "_" + (i + add_discriptor).ToString();
-                    //если уже есть книга с данным индивидуальным номером в базе или в списке на добавление, то цикл идёт дальше до тех пор, пока номер новой книги не переберет все неуникальные номера
-                    if (purchaseAccounting.literatureTurnover.Any(l => l.InventiryNum == literature.InventiryNum) || literature.book.literatureTurnovers.Any(l => l.InventiryNum == literature.InventiryNum))
-                    {
-                        add_discriptor++;
-                    }
-                    else
-                    {
-                        isUnique = true;
-                    }
-
-                }
-                purchaseAccounting.literatureTurnover.Add(literature);
-            }
+            //
+            purchaseAccounting.literatureTurnover = LiteratureTurnoverClass.addNewLitherature(cb_BookPurchase.SelectedItem as BookClass, purchaseAccounting.count);
             //выадим в dgv информацию о закупаемой книге: количество, цену, стоимость
             int r = dgv_PurchaseList.Rows.Add((cb_BookPurchase.SelectedItem as BookClass).ToString(), purchaseAccounting.count, purchaseAccounting.price, (purchaseAccounting.count * purchaseAccounting.price));
             //получаем тег строки (её номер)
