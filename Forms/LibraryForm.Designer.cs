@@ -43,9 +43,7 @@ namespace Biblioteka2.Forms
             this.Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Publisher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Publishing_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_import_Library = new System.Windows.Forms.Button();
             this.ofd_load_Library = new System.Windows.Forms.OpenFileDialog();
-            this.Add_Library = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Library)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +54,7 @@ namespace Biblioteka2.Forms
             this.Export_Library.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Export_Library.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Export_Library.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Export_Library.Location = new System.Drawing.Point(263, 25);
+            this.Export_Library.Location = new System.Drawing.Point(211, 25);
             this.Export_Library.Name = "Export_Library";
             this.Export_Library.Size = new System.Drawing.Size(46, 43);
             this.Export_Library.TabIndex = 37;
@@ -104,7 +102,7 @@ namespace Biblioteka2.Forms
             this.Delete_Library.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Delete_Library.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Delete_Library.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Delete_Library.Location = new System.Drawing.Point(211, 25);
+            this.Delete_Library.Location = new System.Drawing.Point(159, 25);
             this.Delete_Library.Name = "Delete_Library";
             this.Delete_Library.Size = new System.Drawing.Size(46, 43);
             this.Delete_Library.TabIndex = 32;
@@ -118,7 +116,7 @@ namespace Biblioteka2.Forms
             this.Edit_Library.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Edit_Library.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Edit_Library.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Edit_Library.Location = new System.Drawing.Point(159, 25);
+            this.Edit_Library.Location = new System.Drawing.Point(107, 25);
             this.Edit_Library.Name = "Edit_Library";
             this.Edit_Library.Size = new System.Drawing.Size(46, 43);
             this.Edit_Library.TabIndex = 31;
@@ -190,36 +188,9 @@ namespace Biblioteka2.Forms
             this.Publishing_year.Name = "Publishing_year";
             this.Publishing_year.ReadOnly = true;
             // 
-            // bt_import_Library
-            // 
-            this.bt_import_Library.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.bt_import_Library.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_import_Library.BackgroundImage")));
-            this.bt_import_Library.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_import_Library.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_import_Library.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_import_Library.Location = new System.Drawing.Point(315, 25);
-            this.bt_import_Library.Name = "bt_import_Library";
-            this.bt_import_Library.Size = new System.Drawing.Size(46, 43);
-            this.bt_import_Library.TabIndex = 40;
-            this.bt_import_Library.UseVisualStyleBackColor = false;
-            this.bt_import_Library.Click += new System.EventHandler(this.bt_import_Library_Click);
-            // 
             // ofd_load_Library
             // 
             this.ofd_load_Library.FileName = "openFileDialog1";
-            // 
-            // Add_Library
-            // 
-            this.Add_Library.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Add_Library.BackgroundImage")));
-            this.Add_Library.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Add_Library.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Add_Library.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Add_Library.Location = new System.Drawing.Point(107, 25);
-            this.Add_Library.Name = "Add_Library";
-            this.Add_Library.Size = new System.Drawing.Size(46, 43);
-            this.Add_Library.TabIndex = 41;
-            this.Add_Library.UseVisualStyleBackColor = true;
-            this.Add_Library.Click += new System.EventHandler(this.Add_Library_Click_1);
             // 
             // LibraryForm
             // 
@@ -227,8 +198,6 @@ namespace Biblioteka2.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(600, 367);
-            this.Controls.Add(this.Add_Library);
-            this.Controls.Add(this.bt_import_Library);
             this.Controls.Add(this.Export_Library);
             this.Controls.Add(this.lb1_SearchLibrary);
             this.Controls.Add(this.tb_SearchLibrary);
@@ -259,8 +228,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Author;
         private System.Windows.Forms.DataGridViewTextBoxColumn Publisher;
         private System.Windows.Forms.DataGridViewTextBoxColumn Publishing_year;
-        private System.Windows.Forms.Button bt_import_Library;
         private System.Windows.Forms.OpenFileDialog ofd_load_Library;
-        private System.Windows.Forms.Button Add_Library;
     }
 }

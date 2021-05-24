@@ -62,32 +62,8 @@ namespace Biblioteka2.Forms
                     );
                     }
                     DbModel.init().SaveChanges();//сохраняем
+                    updatData();
                 }
-            }
-        }
-
-        private void Export_Trainess_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.Filter = "Файлы excel|*.xlsx";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                List<TrainessClass> listTrainesses = DbModel.init().Trainesses.ToList();
-                string[,] values = new string[listTrainesses.Count + 1, 5];
-
-                values[0, 0] = "Класс";
-                values[0, 1] = "Фамилия";
-                values[0, 2] = "Имя";
-                values[0, 3] = "Отчество";
-
-                for (int i = 0; i < listTrainesses.Count; i++)
-                {
-                    values[i + 1, 0] = listTrainesses[i].classTrainess.ToString();
-                    values[i + 1, 1] = listTrainesses[i].family_name;
-                    values[i + 1, 2] = listTrainesses[i].first_name;
-                    values[i + 1, 3] = listTrainesses[i].middle_name;
-                }
-                ExcelClass.saveExcel(dialog.FileName, "Обучающиеся", values);
             }
         }
 
@@ -121,6 +97,31 @@ namespace Biblioteka2.Forms
         private void tb_SearchTrainess_TextChanged(object sender, EventArgs e)
         {
             updatData();
+        }
+
+        private void Export_Trainess_Click_1(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Файлы excel|*.xlsx";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                List<TrainessClass> listTrainesses = DbModel.init().Trainesses.ToList();
+                string[,] values = new string[listTrainesses.Count + 1, 5];
+
+                values[0, 0] = "Класс";
+                values[0, 1] = "Фамилия";
+                values[0, 2] = "Имя";
+                values[0, 3] = "Отчество";
+
+                for (int i = 0; i < listTrainesses.Count; i++)
+                {
+                    values[i + 1, 0] = listTrainesses[i].classTrainess.ToString();
+                    values[i + 1, 1] = listTrainesses[i].family_name;
+                    values[i + 1, 2] = listTrainesses[i].first_name;
+                    values[i + 1, 3] = listTrainesses[i].middle_name;
+                }
+                ExcelClass.saveExcel(dialog.FileName, "Обучающиеся", values);
+            }
         }
     }
 }

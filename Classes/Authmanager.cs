@@ -24,14 +24,15 @@ namespace Biblioteka2.Classes
         }
 
         //Проверка пользователя на уровень доступа (роль) и открытие соответствующей ему формы
-        public static void MenuMenu() {
+        public static void MenuMenu()
+        {
             if (user.access_level == 1)
             {
                 FormManager.ChangeForm(new Home_pageForm());
             }
-            else if (user.access_level == 0) {
-                //
-                MessageBox.Show("Form not found!");
+            else if (user.access_level == 0)
+            {
+                FormManager.ChangeForm(new SearchTrainessForm());
             }
         }
 

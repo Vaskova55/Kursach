@@ -28,21 +28,22 @@ namespace Biblioteka2.Forms
                 .Where(
                     i => i.trainess.classTrainess.ToString().Contains(tb_SearchIssuance.Text) ||
                     i.trainess.family_name.Contains(tb_SearchIssuance.Text) ||
-                    i.trainess.family_name.Contains(tb_SearchIssuance.Text) ||
+                    i.trainess.first_name.Contains(tb_SearchIssuance.Text) ||
                     i.literature.book.name_book.Contains(tb_SearchIssuance.Text) ||
-                    i.literature.book.name_book.Contains(tb_SearchIssuance.Text) ||
-                    i.literature.book.name_book.Contains(tb_SearchIssuance.Text) ||
+                    i.literature.InventiryNum.Contains(tb_SearchIssuance.Text) ||
+                    i.date_of_realreturn.ToString().Contains(tb_SearchIssuance.Text) ||
                     i.date_of_issue.ToString().Contains(tb_SearchIssuance.Text)
                 )
             )
             {
                 int r = dgv_Issuance.Rows.Add(
-                    issuance.literature.book.type.type.ToString(),
-                    issuance.date_of_issue.ToString(),
-                issuance.trainess.first_name.ToString(),
-                    issuance.literature.book.name_book.ToString(),
-                    issuance.date_of_issue.ToString(),
-                    issuance.literature.book.ToString()
+                    issuance.trainess.classTrainess,
+                    issuance.trainess.family_name,
+                    issuance.trainess.first_name,
+                    issuance.literature.book.name_book,
+                    issuance.literature.InventiryNum,
+                    issuance.date_of_issue,
+                    issuance.date_of_realreturn
                 );
                 dgv_Issuance.Rows[r].Tag = issuance;
             }
@@ -55,13 +56,14 @@ namespace Biblioteka2.Forms
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 List<IssuanceClass> listIssuance = DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.literature).Include(i => i.literature.book).ToList();
-                string[,] values = new string[listIssuance.Count + 1, 5];
+                string[,] values = new string[listIssuance.Count + 1, 6];
 
                 values[0, 0] = "Класс";
                 values[0, 1] = "Фамилия";
                 values[0, 2] = "Имя";
                 values[0, 3] = "Издание";
-                values[0, 4] = "Дата выдачи";
+                values[0, 4] = "Номер";
+                values[0, 5] = "Дата выдачи";
 
                 {
                     for (int i = 0; i < listIssuance.Count; i++)
@@ -71,7 +73,8 @@ namespace Biblioteka2.Forms
                             values[i + 1, 1] = listIssuance[i].trainess.family_name;
                             values[i + 1, 2] = listIssuance[i].trainess.first_name;
                             values[i + 1, 3] = listIssuance[i].literature.book.name_book;
-                            values[i + 1, 4] = listIssuance[i].date_of_issue.ToString("F");
+                            values[i + 1, 4] = listIssuance[i].literature.InventiryNum;
+                            values[i + 1, 5] = listIssuance[i].date_of_issue.ToString("F");
 
                         }
                     }
@@ -189,11 +192,6 @@ namespace Biblioteka2.Forms
             TrainessesForm f_ti = new TrainessesForm();
             f_ti.ShowDialog();
             updatData();
-        }
-
-        private void Edit_Issuance_Click(object sender, EventArgs e)
-        {
-
         }
     }
     /*

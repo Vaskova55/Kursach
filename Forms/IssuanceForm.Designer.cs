@@ -35,12 +35,8 @@ namespace Biblioteka2.Forms
             this.tb_SearchIssuance = new System.Windows.Forms.TextBox();
             this.Update_Issuance = new System.Windows.Forms.Button();
             this.Delete_Issuance = new System.Windows.Forms.Button();
-            this.Edit_Issuance = new System.Windows.Forms.Button();
             this.Add_Issuance = new System.Windows.Forms.Button();
             this.dgv_Issuance = new System.Windows.Forms.DataGridView();
-            this.bt_Import_Issuance = new System.Windows.Forms.Button();
-            this.ofd_load_Issuance = new System.Windows.Forms.OpenFileDialog();
-            this.bt_Return_Issuance = new System.Windows.Forms.Button();
             this.Сlass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.family_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +44,9 @@ namespace Biblioteka2.Forms
             this.UniqNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_of_issue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DatePlanReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_Import_Issuance = new System.Windows.Forms.Button();
+            this.ofd_load_Issuance = new System.Windows.Forms.OpenFileDialog();
+            this.bt_Return_Issuance = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Issuance)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +57,7 @@ namespace Biblioteka2.Forms
             this.Export_Issuance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Export_Issuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Export_Issuance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Export_Issuance.Location = new System.Drawing.Point(230, 24);
+            this.Export_Issuance.Location = new System.Drawing.Point(178, 24);
             this.Export_Issuance.Name = "Export_Issuance";
             this.Export_Issuance.Size = new System.Drawing.Size(46, 43);
             this.Export_Issuance.TabIndex = 39;
@@ -106,26 +105,12 @@ namespace Biblioteka2.Forms
             this.Delete_Issuance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Delete_Issuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Delete_Issuance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Delete_Issuance.Location = new System.Drawing.Point(178, 24);
+            this.Delete_Issuance.Location = new System.Drawing.Point(126, 24);
             this.Delete_Issuance.Name = "Delete_Issuance";
             this.Delete_Issuance.Size = new System.Drawing.Size(46, 43);
             this.Delete_Issuance.TabIndex = 34;
             this.Delete_Issuance.UseVisualStyleBackColor = false;
             this.Delete_Issuance.Click += new System.EventHandler(this.Delete_Issuance_Click);
-            // 
-            // Edit_Issuance
-            // 
-            this.Edit_Issuance.BackColor = System.Drawing.Color.Transparent;
-            this.Edit_Issuance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Edit_Issuance.BackgroundImage")));
-            this.Edit_Issuance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Edit_Issuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Edit_Issuance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Edit_Issuance.Location = new System.Drawing.Point(126, 24);
-            this.Edit_Issuance.Name = "Edit_Issuance";
-            this.Edit_Issuance.Size = new System.Drawing.Size(46, 43);
-            this.Edit_Issuance.TabIndex = 33;
-            this.Edit_Issuance.UseVisualStyleBackColor = false;
-            this.Edit_Issuance.Click += new System.EventHandler(this.Edit_Issuance_Click);
             // 
             // Add_Issuance
             // 
@@ -163,38 +148,6 @@ namespace Biblioteka2.Forms
             this.dgv_Issuance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Issuance.Size = new System.Drawing.Size(652, 262);
             this.dgv_Issuance.TabIndex = 31;
-            // 
-            // bt_Import_Issuance
-            // 
-            this.bt_Import_Issuance.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.bt_Import_Issuance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_Import_Issuance.BackgroundImage")));
-            this.bt_Import_Issuance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_Import_Issuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Import_Issuance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_Import_Issuance.Location = new System.Drawing.Point(282, 24);
-            this.bt_Import_Issuance.Name = "bt_Import_Issuance";
-            this.bt_Import_Issuance.Size = new System.Drawing.Size(46, 43);
-            this.bt_Import_Issuance.TabIndex = 40;
-            this.bt_Import_Issuance.UseVisualStyleBackColor = false;
-            this.bt_Import_Issuance.Click += new System.EventHandler(this.bt_Import_Issuance_Click);
-            // 
-            // ofd_load_Issuance
-            // 
-            this.ofd_load_Issuance.FileName = "openFileDialog1";
-            // 
-            // bt_Return_Issuance
-            // 
-            this.bt_Return_Issuance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt_Return_Issuance.BackColor = System.Drawing.Color.Transparent;
-            this.bt_Return_Issuance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_Return_Issuance.BackgroundImage")));
-            this.bt_Return_Issuance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_Return_Issuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Return_Issuance.Location = new System.Drawing.Point(618, 24);
-            this.bt_Return_Issuance.Name = "bt_Return_Issuance";
-            this.bt_Return_Issuance.Size = new System.Drawing.Size(46, 43);
-            this.bt_Return_Issuance.TabIndex = 41;
-            this.bt_Return_Issuance.UseVisualStyleBackColor = false;
-            this.bt_Return_Issuance.Click += new System.EventHandler(this.bt_Return_Issuance_Click);
             // 
             // Сlass
             // 
@@ -251,12 +204,45 @@ namespace Biblioteka2.Forms
             this.DatePlanReturn.Name = "DatePlanReturn";
             this.DatePlanReturn.ReadOnly = true;
             // 
+            // bt_Import_Issuance
+            // 
+            this.bt_Import_Issuance.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bt_Import_Issuance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_Import_Issuance.BackgroundImage")));
+            this.bt_Import_Issuance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_Import_Issuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Import_Issuance.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bt_Import_Issuance.Location = new System.Drawing.Point(230, 24);
+            this.bt_Import_Issuance.Name = "bt_Import_Issuance";
+            this.bt_Import_Issuance.Size = new System.Drawing.Size(46, 43);
+            this.bt_Import_Issuance.TabIndex = 40;
+            this.bt_Import_Issuance.UseVisualStyleBackColor = false;
+            this.bt_Import_Issuance.Click += new System.EventHandler(this.bt_Import_Issuance_Click);
+            // 
+            // ofd_load_Issuance
+            // 
+            this.ofd_load_Issuance.FileName = "openFileDialog1";
+            // 
+            // bt_Return_Issuance
+            // 
+            this.bt_Return_Issuance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bt_Return_Issuance.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Return_Issuance.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_Return_Issuance.BackgroundImage")));
+            this.bt_Return_Issuance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_Return_Issuance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Return_Issuance.Location = new System.Drawing.Point(618, 24);
+            this.bt_Return_Issuance.Name = "bt_Return_Issuance";
+            this.bt_Return_Issuance.Size = new System.Drawing.Size(46, 43);
+            this.bt_Return_Issuance.TabIndex = 41;
+            this.bt_Return_Issuance.UseVisualStyleBackColor = false;
+            this.bt_Return_Issuance.Click += new System.EventHandler(this.bt_Return_Issuance_Click);
+            // 
             // IssuanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(676, 364);
+            this.Controls.Add(this.dgv_Issuance);
             this.Controls.Add(this.bt_Return_Issuance);
             this.Controls.Add(this.bt_Import_Issuance);
             this.Controls.Add(this.Export_Issuance);
@@ -264,9 +250,7 @@ namespace Biblioteka2.Forms
             this.Controls.Add(this.tb_SearchIssuance);
             this.Controls.Add(this.Update_Issuance);
             this.Controls.Add(this.Delete_Issuance);
-            this.Controls.Add(this.Edit_Issuance);
             this.Controls.Add(this.Add_Issuance);
-            this.Controls.Add(this.dgv_Issuance);
             this.Name = "IssuanceForm";
             this.Text = "Выдача литературы";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Issuance)).EndInit();
@@ -282,7 +266,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.TextBox tb_SearchIssuance;
         private System.Windows.Forms.Button Update_Issuance;
         private System.Windows.Forms.Button Delete_Issuance;
-        private System.Windows.Forms.Button Edit_Issuance;
         private System.Windows.Forms.Button Add_Issuance;
         private System.Windows.Forms.DataGridView dgv_Issuance;
         private System.Windows.Forms.Button bt_Import_Issuance;

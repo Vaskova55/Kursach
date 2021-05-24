@@ -43,7 +43,6 @@ namespace Biblioteka2.Forms
             this.lb5_SearchTrainess = new System.Windows.Forms.Label();
             this.lb4_SearchTrainess = new System.Windows.Forms.Label();
             this.lb1_SearchTrainess = new System.Windows.Forms.Label();
-            this.pn_SearchTrainess = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SearchTrainess)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +64,7 @@ namespace Biblioteka2.Forms
             this.dgv_SearchTrainess.Name = "dgv_SearchTrainess";
             this.dgv_SearchTrainess.ReadOnly = true;
             this.dgv_SearchTrainess.RowHeadersVisible = false;
-            this.dgv_SearchTrainess.Size = new System.Drawing.Size(663, 250);
+            this.dgv_SearchTrainess.Size = new System.Drawing.Size(663, 212);
             this.dgv_SearchTrainess.TabIndex = 0;
             // 
             // Class
@@ -137,7 +136,7 @@ namespace Biblioteka2.Forms
             // tb_FamillySearchTrainess
             // 
             this.tb_FamillySearchTrainess.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tb_FamillySearchTrainess.Location = new System.Drawing.Point(52, 242);
+            this.tb_FamillySearchTrainess.Location = new System.Drawing.Point(48, 158);
             this.tb_FamillySearchTrainess.Name = "tb_FamillySearchTrainess";
             this.tb_FamillySearchTrainess.Size = new System.Drawing.Size(128, 20);
             this.tb_FamillySearchTrainess.TabIndex = 58;
@@ -146,7 +145,7 @@ namespace Biblioteka2.Forms
             // tb_NameSearchTrainess
             // 
             this.tb_NameSearchTrainess.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tb_NameSearchTrainess.Location = new System.Drawing.Point(52, 196);
+            this.tb_NameSearchTrainess.Location = new System.Drawing.Point(48, 204);
             this.tb_NameSearchTrainess.Name = "tb_NameSearchTrainess";
             this.tb_NameSearchTrainess.Size = new System.Drawing.Size(128, 20);
             this.tb_NameSearchTrainess.TabIndex = 57;
@@ -156,7 +155,7 @@ namespace Biblioteka2.Forms
             // 
             this.lb5_SearchTrainess.AutoSize = true;
             this.lb5_SearchTrainess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb5_SearchTrainess.Location = new System.Drawing.Point(48, 219);
+            this.lb5_SearchTrainess.Location = new System.Drawing.Point(44, 181);
             this.lb5_SearchTrainess.Name = "lb5_SearchTrainess";
             this.lb5_SearchTrainess.Size = new System.Drawing.Size(40, 20);
             this.lb5_SearchTrainess.TabIndex = 56;
@@ -166,7 +165,7 @@ namespace Biblioteka2.Forms
             // 
             this.lb4_SearchTrainess.AutoSize = true;
             this.lb4_SearchTrainess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb4_SearchTrainess.Location = new System.Drawing.Point(48, 173);
+            this.lb4_SearchTrainess.Location = new System.Drawing.Point(44, 135);
             this.lb4_SearchTrainess.Name = "lb4_SearchTrainess";
             this.lb4_SearchTrainess.Size = new System.Drawing.Size(81, 20);
             this.lb4_SearchTrainess.TabIndex = 55;
@@ -182,20 +181,12 @@ namespace Biblioteka2.Forms
             this.lb1_SearchTrainess.Text = "Поиск данных.";
             this.lb1_SearchTrainess.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pn_SearchTrainess
-            // 
-            this.pn_SearchTrainess.Location = new System.Drawing.Point(16, 119);
-            this.pn_SearchTrainess.Name = "pn_SearchTrainess";
-            this.pn_SearchTrainess.Size = new System.Drawing.Size(200, 42);
-            this.pn_SearchTrainess.TabIndex = 61;
-            // 
             // SearchTrainessForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(904, 274);
-            this.Controls.Add(this.pn_SearchTrainess);
+            this.ClientSize = new System.Drawing.Size(904, 242);
             this.Controls.Add(this.lb1_SearchTrainess);
             this.Controls.Add(this.tb_FamillySearchTrainess);
             this.Controls.Add(this.tb_NameSearchTrainess);
@@ -205,7 +196,6 @@ namespace Biblioteka2.Forms
             this.Controls.Add(this.dgv_SearchTrainess);
             this.Name = "SearchTrainessForm";
             this.Text = "Поиск";
-            this.Load += new System.EventHandler(this.SearchTrainessForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_SearchTrainess)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -221,7 +211,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.Label lb5_SearchTrainess;
         private System.Windows.Forms.Label lb4_SearchTrainess;
         private System.Windows.Forms.Label lb1_SearchTrainess;
-        private System.Windows.Forms.Panel pn_SearchTrainess;
         private System.Windows.Forms.DataGridViewTextBoxColumn Class;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fimilia;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameTrainess;

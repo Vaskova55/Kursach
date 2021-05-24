@@ -30,7 +30,6 @@ namespace Biblioteka2.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseForm));
-            this.Export_Purchase = new System.Windows.Forms.Button();
             this.lb1_SearchPurchase = new System.Windows.Forms.Label();
             this.tb_SearchPurchase = new System.Windows.Forms.TextBox();
             this.Update_Purchase = new System.Windows.Forms.Button();
@@ -43,21 +42,10 @@ namespace Biblioteka2.Forms
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PricePurchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bt_import_Purchase = new System.Windows.Forms.Button();
+            this.ofd_load_Purchase = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Purchase)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Export_Purchase
-            // 
-            this.Export_Purchase.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Export_Purchase.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Export_Purchase.BackgroundImage")));
-            this.Export_Purchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Export_Purchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Export_Purchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Export_Purchase.Location = new System.Drawing.Point(159, 26);
-            this.Export_Purchase.Name = "Export_Purchase";
-            this.Export_Purchase.Size = new System.Drawing.Size(46, 43);
-            this.Export_Purchase.TabIndex = 48;
-            this.Export_Purchase.UseVisualStyleBackColor = false;
             // 
             // lb1_SearchPurchase
             // 
@@ -186,13 +174,31 @@ namespace Biblioteka2.Forms
             this.PricePurchase.Name = "PricePurchase";
             this.PricePurchase.ReadOnly = true;
             // 
+            // bt_import_Purchase
+            // 
+            this.bt_import_Purchase.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.bt_import_Purchase.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_import_Purchase.BackgroundImage")));
+            this.bt_import_Purchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt_import_Purchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_import_Purchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bt_import_Purchase.Location = new System.Drawing.Point(159, 26);
+            this.bt_import_Purchase.Name = "bt_import_Purchase";
+            this.bt_import_Purchase.Size = new System.Drawing.Size(46, 43);
+            this.bt_import_Purchase.TabIndex = 49;
+            this.bt_import_Purchase.UseVisualStyleBackColor = false;
+            this.bt_import_Purchase.Click += new System.EventHandler(this.bt_import_Purchase_Click);
+            // 
+            // ofd_load_Purchase
+            // 
+            this.ofd_load_Purchase.FileName = "openFileDialog1";
+            // 
             // PurchaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(601, 369);
-            this.Controls.Add(this.Export_Purchase);
+            this.Controls.Add(this.bt_import_Purchase);
             this.Controls.Add(this.lb1_SearchPurchase);
             this.Controls.Add(this.tb_SearchPurchase);
             this.Controls.Add(this.Update_Purchase);
@@ -207,7 +213,6 @@ namespace Biblioteka2.Forms
         }
 
         #endregion
-        private System.Windows.Forms.Button Export_Purchase;
         private System.Windows.Forms.Label lb1_SearchPurchase;
         private System.Windows.Forms.TextBox tb_SearchPurchase;
         private System.Windows.Forms.Button Update_Purchase;
@@ -220,5 +225,7 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Count;
         private System.Windows.Forms.DataGridViewTextBoxColumn PricePurchase;
+        private System.Windows.Forms.Button bt_import_Purchase;
+        private System.Windows.Forms.OpenFileDialog ofd_load_Purchase;
     }
 }

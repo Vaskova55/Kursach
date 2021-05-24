@@ -59,6 +59,7 @@ namespace Biblioteka2.Forms
             this.Export_Trainess.Size = new System.Drawing.Size(46, 43);
             this.Export_Trainess.TabIndex = 38;
             this.Export_Trainess.UseVisualStyleBackColor = false;
+            this.Export_Trainess.Click += new System.EventHandler(this.Export_Trainess_Click_1);
             // 
             // lb1_Trainess
             // 
