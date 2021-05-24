@@ -24,7 +24,10 @@ namespace Biblioteka2.Forms
         {
             dgv_SearchTrainess.Rows.Clear();
 
-            foreach (IssuanceClass issuance in DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.literature).Include(i => i.literature.book).Include(i => i.literature.book.Authors)
+            foreach (IssuanceClass issuance in DbModel.init().Issuances.Include(i => i.trainess)
+                .Include(i => i.literature)
+                .Include(i => i.literature.book)
+                .Include(i => i.literature.book.Authors)
                 .Where(
                 i => i.trainess.family_name.StartsWith(tb_FamillySearchTrainess.Text) &&
                 i.trainess.first_name.StartsWith(tb_NameSearchTrainess.Text)

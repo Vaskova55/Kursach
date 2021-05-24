@@ -24,9 +24,9 @@ namespace Biblioteka2.Forms
         {
             dgv_Trainess.Rows.Clear();
             foreach (TrainessClass trainess in DbModel.init().Trainesses.Where(
-                t=>t.classTrainess.ToString().Contains(tb_SearchTrainess.Text)||
-                t.family_name.Contains(tb_SearchTrainess.Text)||
-                t.first_name.Contains(tb_SearchTrainess.Text)||
+                t => t.classTrainess.ToString().Contains(tb_SearchTrainess.Text) ||
+                t.family_name.Contains(tb_SearchTrainess.Text) ||
+                t.first_name.Contains(tb_SearchTrainess.Text) ||
                 t.middle_name.Contains(tb_SearchTrainess.Text)
                 ))
             {

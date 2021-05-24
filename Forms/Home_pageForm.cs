@@ -26,19 +26,34 @@ namespace Biblioteka2.Forms
             dgv_Home_page.Columns.Add("dg_tb_fio", "FIO");
             dgv_Home_page.Columns.Add("dg_tb_fio", "Book taked count");
 
+            FillMode();
+
             foreach (TrainessClass tirain in DbModel.init().Trainesses.Include(t=>t.issuance).Where(t=>t.issuance.Any(i=>i.date_of_realreturn==null))){
                 dgv_Home_page.Rows.Add(tirain.ToString(), tirain.issuance.Count(i => i.date_of_realreturn == null));
             }
         }
+
+        public void FillMode() {
+            for (int i=0; i<dgv_Home_page.Columns.Count; i++) {
+                dgv_Home_page.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+        }
+
         private void LoaadDoljnik()
         {
             dgv_Home_page.Columns.Clear();
             dgv_Home_page.Rows.Clear();
-            dgv_Home_page.Columns.Add("dg_tb_fio", "FIO");
-            dgv_Home_page.Columns.Add("dg_tb_fio", "Book doljen count");
+            int c0 = dgv_Home_page.Columns.Add("dg_tb_fio", "FIO");
+            int c1 = dgv_Home_page.Columns.Add("dg_tb_fio", "Book doljen count");
 
-            foreach (TrainessClass tirain in DbModel.init().Trainesses.Include(t => t.issuance).Where(t => t.issuance.Any(i => i.date_of_realreturn == null && i.date_of_plan_return<DateTime.Now))) {
-                dgv_Home_page.Rows.Add(tirain.ToString(), tirain.issuance.Count);
+            FillMode();
+
+            foreach (TrainessClass tirain in DbModel.init().Trainesses.Include(t => t.issuance)
+                .Where(t => t.issuance.Any(i => i.date_of_realreturn == null && i.date_of_plan_return<DateTime.Now)))
+            {
+                dgv_Home_page.Rows.Add(
+                    tirain.ToString(),
+                    tirain.issuance.Count(i => i.date_of_realreturn == null && i.date_of_plan_return < DateTime.Now));
             }
         }
 
@@ -48,8 +63,13 @@ namespace Biblioteka2.Forms
             dgv_Home_page.Columns.Add("dg_tb_bookname", "Book name");
             dgv_Home_page.Columns.Add("dg_tb_count", "Book count");
 
+            FillMode();
 
-
+            foreach (BookClass book in DbModel.init().Books.Include(b => b.literatureTurnovers)
+                .Where(b => b.literatureTurnovers.Any(l=>l.status == LiteratureTurnoverClass.e_literature_state.issuance)))
+            {
+                dgv_Home_page.Rows.Add(book.ToString(), book.literatureTurnovers.Count(l=>l.status == LiteratureTurnoverClass.e_literature_state.issuance));
+            }
         }
 
         private void tsmi1_Issuance_Click(object sender, EventArgs e)
@@ -83,17 +103,25 @@ namespace Biblioteka2.Forms
             Close();        
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void Home_pageForm_Load(object sender, EventArgs e)
         {
-           /* RadioButton tb_Trainess = new CheckBox();
-            cb_SearchTrainess.Text = "Проверить наличие долга по сданной литературе";
-            cb_SearchTrainess.Size = new Size(200, 42);
-            pn_SearchTrainess.Controls.Add(cb_SearchTrainess);*/
+            
+        }
+
+        private void ChangeSelected(object sender, EventArgs e)
+        {
+            if (rb_Dolg.Checked)
+            {
+                LoaadDoljnik();
+            }
+            else if (rb_Chitatel.Checked)
+            {
+                LoaadTraines();
+            }
+            else if (rb_IssLit.Checked)
+            {
+                LoaadLiterathure();
+            }
         }
     }
 }

@@ -30,20 +30,18 @@ namespace Biblioteka2.Forms
         private void InitializeComponent()
         {
             this.lbl8_Home_page = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_Nam = new System.Windows.Forms.TextBox();
             this.lbl7_Home_page = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tb_Fam = new System.Windows.Forms.TextBox();
             this.lbl6_Home_page = new System.Windows.Forms.Label();
             this.lbl5_Home_page = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_NameBook = new System.Windows.Forms.TextBox();
             this.lb4_Home_page = new System.Windows.Forms.Label();
-            this.tb1_Autorization = new System.Windows.Forms.TextBox();
+            this.tb_Avtor = new System.Windows.Forms.TextBox();
             this.lbl3_Home_page = new System.Windows.Forms.Label();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.rb_IssLit = new System.Windows.Forms.RadioButton();
             this.lbl2_Home_page = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rb_Dolg = new System.Windows.Forms.RadioButton();
             this.lb1_Home_page = new System.Windows.Forms.Label();
             this.dgv_Home_page = new System.Windows.Forms.DataGridView();
             this.ms_Home_page = new System.Windows.Forms.MenuStrip();
@@ -55,6 +53,7 @@ namespace Biblioteka2.Forms
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi6_Exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.rb_Chitatel = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Home_page)).BeginInit();
             this.ms_Home_page.SuspendLayout();
             this.SuspendLayout();
@@ -62,43 +61,43 @@ namespace Biblioteka2.Forms
             // lbl8_Home_page
             // 
             this.lbl8_Home_page.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl8_Home_page.Location = new System.Drawing.Point(10, 436);
+            this.lbl8_Home_page.Location = new System.Drawing.Point(12, 372);
             this.lbl8_Home_page.Name = "lbl8_Home_page";
             this.lbl8_Home_page.Size = new System.Drawing.Size(90, 21);
             this.lbl8_Home_page.TabIndex = 48;
             this.lbl8_Home_page.Text = "Имя:";
             // 
-            // textBox2
+            // tb_Nam
             // 
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox2.Location = new System.Drawing.Point(106, 438);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(128, 20);
-            this.textBox2.TabIndex = 47;
+            this.tb_Nam.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tb_Nam.Location = new System.Drawing.Point(108, 374);
+            this.tb_Nam.Name = "tb_Nam";
+            this.tb_Nam.Size = new System.Drawing.Size(128, 20);
+            this.tb_Nam.TabIndex = 47;
             // 
             // lbl7_Home_page
             // 
             this.lbl7_Home_page.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl7_Home_page.Location = new System.Drawing.Point(10, 411);
+            this.lbl7_Home_page.Location = new System.Drawing.Point(12, 347);
             this.lbl7_Home_page.Name = "lbl7_Home_page";
             this.lbl7_Home_page.Size = new System.Drawing.Size(90, 21);
             this.lbl7_Home_page.TabIndex = 46;
             this.lbl7_Home_page.Text = "Фамилия:";
             // 
-            // textBox3
+            // tb_Fam
             // 
-            this.textBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox3.Location = new System.Drawing.Point(106, 413);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(128, 20);
-            this.textBox3.TabIndex = 45;
+            this.tb_Fam.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tb_Fam.Location = new System.Drawing.Point(108, 347);
+            this.tb_Fam.Name = "tb_Fam";
+            this.tb_Fam.Size = new System.Drawing.Size(128, 20);
+            this.tb_Fam.TabIndex = 45;
             // 
             // lbl6_Home_page
             // 
             this.lbl6_Home_page.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl6_Home_page.Location = new System.Drawing.Point(4, 361);
+            this.lbl6_Home_page.Location = new System.Drawing.Point(9, 294);
             this.lbl6_Home_page.Name = "lbl6_Home_page";
-            this.lbl6_Home_page.Size = new System.Drawing.Size(252, 50);
+            this.lbl6_Home_page.Size = new System.Drawing.Size(239, 50);
             this.lbl6_Home_page.TabIndex = 44;
             this.lbl6_Home_page.Text = "Вывод в таблицу истории читателя:";
             this.lbl6_Home_page.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,111 +105,89 @@ namespace Biblioteka2.Forms
             // lbl5_Home_page
             // 
             this.lbl5_Home_page.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl5_Home_page.Location = new System.Drawing.Point(5, 336);
+            this.lbl5_Home_page.Location = new System.Drawing.Point(5, 263);
             this.lbl5_Home_page.Name = "lbl5_Home_page";
             this.lbl5_Home_page.Size = new System.Drawing.Size(90, 21);
             this.lbl5_Home_page.TabIndex = 43;
             this.lbl5_Home_page.Text = "Название:";
             // 
-            // textBox1
+            // tb_NameBook
             // 
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox1.Location = new System.Drawing.Point(101, 338);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 20);
-            this.textBox1.TabIndex = 42;
+            this.tb_NameBook.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tb_NameBook.Location = new System.Drawing.Point(108, 263);
+            this.tb_NameBook.Name = "tb_NameBook";
+            this.tb_NameBook.Size = new System.Drawing.Size(128, 20);
+            this.tb_NameBook.TabIndex = 42;
             // 
             // lb4_Home_page
             // 
             this.lb4_Home_page.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb4_Home_page.Location = new System.Drawing.Point(5, 311);
+            this.lb4_Home_page.Location = new System.Drawing.Point(5, 234);
             this.lb4_Home_page.Name = "lb4_Home_page";
             this.lb4_Home_page.Size = new System.Drawing.Size(90, 21);
             this.lb4_Home_page.TabIndex = 41;
             this.lb4_Home_page.Text = "Автор:";
             // 
-            // tb1_Autorization
+            // tb_Avtor
             // 
-            this.tb1_Autorization.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tb1_Autorization.Location = new System.Drawing.Point(101, 313);
-            this.tb1_Autorization.Name = "tb1_Autorization";
-            this.tb1_Autorization.Size = new System.Drawing.Size(128, 20);
-            this.tb1_Autorization.TabIndex = 40;
+            this.tb_Avtor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tb_Avtor.Location = new System.Drawing.Point(108, 237);
+            this.tb_Avtor.Name = "tb_Avtor";
+            this.tb_Avtor.Size = new System.Drawing.Size(128, 20);
+            this.tb_Avtor.TabIndex = 40;
             // 
             // lbl3_Home_page
             // 
             this.lbl3_Home_page.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl3_Home_page.Location = new System.Drawing.Point(-1, 261);
+            this.lbl3_Home_page.Location = new System.Drawing.Point(9, 184);
             this.lbl3_Home_page.Name = "lbl3_Home_page";
-            this.lbl3_Home_page.Size = new System.Drawing.Size(252, 50);
+            this.lbl3_Home_page.Size = new System.Drawing.Size(242, 50);
             this.lbl3_Home_page.TabIndex = 39;
             this.lbl3_Home_page.Text = "Вывод в таблицу истории литературы:";
             this.lbl3_Home_page.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // radioButton5
+            // rb_IssLit
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton5.Location = new System.Drawing.Point(8, 213);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(75, 19);
-            this.radioButton5.TabIndex = 38;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "В фонде";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton4.Location = new System.Drawing.Point(8, 239);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(84, 19);
-            this.radioButton4.TabIndex = 37;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Выданной";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rb_IssLit.AutoSize = true;
+            this.rb_IssLit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rb_IssLit.Location = new System.Drawing.Point(18, 162);
+            this.rb_IssLit.Name = "rb_IssLit";
+            this.rb_IssLit.Size = new System.Drawing.Size(84, 19);
+            this.rb_IssLit.TabIndex = 37;
+            this.rb_IssLit.TabStop = true;
+            this.rb_IssLit.Text = "Выданной";
+            this.rb_IssLit.UseVisualStyleBackColor = true;
+            this.rb_IssLit.CheckedChanged += new System.EventHandler(this.ChangeSelected);
             // 
             // lbl2_Home_page
             // 
             this.lbl2_Home_page.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbl2_Home_page.Location = new System.Drawing.Point(-1, 134);
+            this.lbl2_Home_page.Location = new System.Drawing.Point(-1, 109);
             this.lbl2_Home_page.Name = "lbl2_Home_page";
             this.lbl2_Home_page.Size = new System.Drawing.Size(252, 50);
             this.lbl2_Home_page.TabIndex = 36;
             this.lbl2_Home_page.Text = "Вывод в таблицу литературы:";
             this.lbl2_Home_page.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // radioButton3
+            // rb_Dolg
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton3.Location = new System.Drawing.Point(8, 187);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(53, 19);
-            this.radioButton3.TabIndex = 35;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Всей";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton2.Location = new System.Drawing.Point(14, 87);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(91, 19);
-            this.radioButton2.TabIndex = 34;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Должников";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rb_Dolg.AutoSize = true;
+            this.rb_Dolg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rb_Dolg.Location = new System.Drawing.Point(16, 87);
+            this.rb_Dolg.Name = "rb_Dolg";
+            this.rb_Dolg.Size = new System.Drawing.Size(91, 19);
+            this.rb_Dolg.TabIndex = 34;
+            this.rb_Dolg.TabStop = true;
+            this.rb_Dolg.Text = "Должников";
+            this.rb_Dolg.UseVisualStyleBackColor = true;
+            this.rb_Dolg.CheckedChanged += new System.EventHandler(this.ChangeSelected);
             // 
             // lb1_Home_page
             // 
             this.lb1_Home_page.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lb1_Home_page.Location = new System.Drawing.Point(-1, 34);
+            this.lb1_Home_page.Location = new System.Drawing.Point(8, 34);
             this.lb1_Home_page.Name = "lb1_Home_page";
-            this.lb1_Home_page.Size = new System.Drawing.Size(252, 50);
+            this.lb1_Home_page.Size = new System.Drawing.Size(243, 50);
             this.lb1_Home_page.TabIndex = 33;
             this.lb1_Home_page.Text = "Вывод в таблицу читателей:";
             this.lb1_Home_page.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,7 +202,7 @@ namespace Biblioteka2.Forms
             this.dgv_Home_page.Name = "dgv_Home_page";
             this.dgv_Home_page.ReadOnly = true;
             this.dgv_Home_page.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Home_page.Size = new System.Drawing.Size(550, 423);
+            this.dgv_Home_page.Size = new System.Drawing.Size(550, 359);
             this.dgv_Home_page.TabIndex = 30;
             // 
             // ms_Home_page
@@ -306,27 +283,39 @@ namespace Biblioteka2.Forms
             this.tsmi6_Exit.Text = "Выход";
             this.tsmi6_Exit.Click += new System.EventHandler(this.tsmi6_Exit_Click);
             // 
+            // rb_Chitatel
+            // 
+            this.rb_Chitatel.AutoSize = true;
+            this.rb_Chitatel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rb_Chitatel.Location = new System.Drawing.Point(130, 87);
+            this.rb_Chitatel.Name = "rb_Chitatel";
+            this.rb_Chitatel.Size = new System.Drawing.Size(89, 19);
+            this.rb_Chitatel.TabIndex = 49;
+            this.rb_Chitatel.TabStop = true;
+            this.rb_Chitatel.Text = "Читателей";
+            this.rb_Chitatel.UseVisualStyleBackColor = true;
+            this.rb_Chitatel.CheckedChanged += new System.EventHandler(this.ChangeSelected);
+            // 
             // Home_pageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(822, 472);
+            this.ClientSize = new System.Drawing.Size(822, 408);
+            this.Controls.Add(this.rb_Chitatel);
             this.Controls.Add(this.lbl8_Home_page);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tb_Nam);
             this.Controls.Add(this.lbl7_Home_page);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tb_Fam);
             this.Controls.Add(this.lbl6_Home_page);
             this.Controls.Add(this.lbl5_Home_page);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_NameBook);
             this.Controls.Add(this.lb4_Home_page);
-            this.Controls.Add(this.tb1_Autorization);
+            this.Controls.Add(this.tb_Avtor);
             this.Controls.Add(this.lbl3_Home_page);
-            this.Controls.Add(this.radioButton5);
-            this.Controls.Add(this.radioButton4);
+            this.Controls.Add(this.rb_IssLit);
             this.Controls.Add(this.lbl2_Home_page);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.rb_Dolg);
             this.Controls.Add(this.lb1_Home_page);
             this.Controls.Add(this.dgv_Home_page);
             this.Controls.Add(this.ms_Home_page);
@@ -344,20 +333,18 @@ namespace Biblioteka2.Forms
         #endregion
 
         private System.Windows.Forms.Label lbl8_Home_page;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_Nam;
         private System.Windows.Forms.Label lbl7_Home_page;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tb_Fam;
         private System.Windows.Forms.Label lbl6_Home_page;
         private System.Windows.Forms.Label lbl5_Home_page;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_NameBook;
         private System.Windows.Forms.Label lb4_Home_page;
-        private System.Windows.Forms.TextBox tb1_Autorization;
+        private System.Windows.Forms.TextBox tb_Avtor;
         private System.Windows.Forms.Label lbl3_Home_page;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rb_IssLit;
         private System.Windows.Forms.Label lbl2_Home_page;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rb_Dolg;
         private System.Windows.Forms.Label lb1_Home_page;
         private System.Windows.Forms.DataGridView dgv_Home_page;
         private System.Windows.Forms.MenuStrip ms_Home_page;
@@ -369,5 +356,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem tsmi6_Exit;
+        private System.Windows.Forms.RadioButton rb_Chitatel;
     }
 }

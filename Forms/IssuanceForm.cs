@@ -189,17 +189,9 @@ namespace Biblioteka2.Forms
 
         private void bt_Return_Issuance_Click(object sender, EventArgs e)
         {
-            TrainessesForm f_ti = new TrainessesForm();
-            f_ti.ShowDialog();
+            AddReturnIssuanceForm f_ri = new AddReturnIssuanceForm();
+            f_ri.ShowDialog();
             updatData();
         }
     }
-    /*
-        if (dgv_Issuance.SelectedRows.Count > 0)
-        {
-            AddIssuanceForm f_aif = new AddIssuanceForm(dgv_Issuance.SelectedRows[0].Tag as IssuanceClass);
-            f_aif.ShowDialog();
-            updateData();
-        }*/
-
 }

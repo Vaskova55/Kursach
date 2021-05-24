@@ -22,5 +22,10 @@ namespace Biblioteka2.Classes.Entityes
         [Required]
         public DateTime date_of_plan_return { get; set; }
         public DateTime? date_of_realreturn { get; set; }
+
+        public override string ToString()
+        {
+            return literature.ToString();
+        }
     }
 }

@@ -28,6 +28,11 @@ namespace Biblioteka2.Classes.Entityes
         public virtual PurchaseAccountingClass purchaseAccounting { get; set; }
         [Required]
         public e_literature_state status { get; set; }
+        public virtual List<IssuanceClass> Issuances { get; set; }
+        public LiteratureTurnoverClass() {
+            Issuances = new List<IssuanceClass>();
+        }
+
         public override string ToString()
         {
             return book.ToString();

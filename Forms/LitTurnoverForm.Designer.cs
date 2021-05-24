@@ -39,13 +39,10 @@ namespace Biblioteka2.Forms
             this.Publisher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Publishing_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Count = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bt_import_LitTurnover = new System.Windows.Forms.Button();
-            this.Export_LitTurnover = new System.Windows.Forms.Button();
             this.lb1_SearchLitTurnover = new System.Windows.Forms.Label();
             this.tb_SearchLitTurnover = new System.Windows.Forms.TextBox();
             this.Update_LitTurnover = new System.Windows.Forms.Button();
             this.Delete_LitTurnover = new System.Windows.Forms.Button();
-            this.Edit_LitTurnover = new System.Windows.Forms.Button();
             this.Add_LitTurnover = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LitTurnover)).BeginInit();
             this.SuspendLayout();
@@ -129,32 +126,6 @@ namespace Biblioteka2.Forms
             this.Count.Name = "Count";
             this.Count.ReadOnly = true;
             // 
-            // bt_import_LitTurnover
-            // 
-            this.bt_import_LitTurnover.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.bt_import_LitTurnover.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bt_import_LitTurnover.BackgroundImage")));
-            this.bt_import_LitTurnover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.bt_import_LitTurnover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_import_LitTurnover.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_import_LitTurnover.Location = new System.Drawing.Point(294, 26);
-            this.bt_import_LitTurnover.Name = "bt_import_LitTurnover";
-            this.bt_import_LitTurnover.Size = new System.Drawing.Size(46, 43);
-            this.bt_import_LitTurnover.TabIndex = 48;
-            this.bt_import_LitTurnover.UseVisualStyleBackColor = false;
-            // 
-            // Export_LitTurnover
-            // 
-            this.Export_LitTurnover.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Export_LitTurnover.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Export_LitTurnover.BackgroundImage")));
-            this.Export_LitTurnover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Export_LitTurnover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Export_LitTurnover.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Export_LitTurnover.Location = new System.Drawing.Point(242, 26);
-            this.Export_LitTurnover.Name = "Export_LitTurnover";
-            this.Export_LitTurnover.Size = new System.Drawing.Size(46, 43);
-            this.Export_LitTurnover.TabIndex = 47;
-            this.Export_LitTurnover.UseVisualStyleBackColor = false;
-            // 
             // lb1_SearchLitTurnover
             // 
             this.lb1_SearchLitTurnover.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -182,7 +153,7 @@ namespace Biblioteka2.Forms
             this.Update_LitTurnover.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Update_LitTurnover.BackgroundImage")));
             this.Update_LitTurnover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Update_LitTurnover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Update_LitTurnover.Location = new System.Drawing.Point(34, 26);
+            this.Update_LitTurnover.Location = new System.Drawing.Point(98, 26);
             this.Update_LitTurnover.Name = "Update_LitTurnover";
             this.Update_LitTurnover.Size = new System.Drawing.Size(46, 43);
             this.Update_LitTurnover.TabIndex = 44;
@@ -196,25 +167,12 @@ namespace Biblioteka2.Forms
             this.Delete_LitTurnover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Delete_LitTurnover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Delete_LitTurnover.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Delete_LitTurnover.Location = new System.Drawing.Point(190, 26);
+            this.Delete_LitTurnover.Location = new System.Drawing.Point(202, 26);
             this.Delete_LitTurnover.Name = "Delete_LitTurnover";
             this.Delete_LitTurnover.Size = new System.Drawing.Size(46, 43);
             this.Delete_LitTurnover.TabIndex = 43;
             this.Delete_LitTurnover.UseVisualStyleBackColor = false;
             this.Delete_LitTurnover.Click += new System.EventHandler(this.Delete_LitTurnover_Click);
-            // 
-            // Edit_LitTurnover
-            // 
-            this.Edit_LitTurnover.BackColor = System.Drawing.Color.Transparent;
-            this.Edit_LitTurnover.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Edit_LitTurnover.BackgroundImage")));
-            this.Edit_LitTurnover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Edit_LitTurnover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Edit_LitTurnover.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Edit_LitTurnover.Location = new System.Drawing.Point(138, 26);
-            this.Edit_LitTurnover.Name = "Edit_LitTurnover";
-            this.Edit_LitTurnover.Size = new System.Drawing.Size(46, 43);
-            this.Edit_LitTurnover.TabIndex = 42;
-            this.Edit_LitTurnover.UseVisualStyleBackColor = false;
             // 
             // Add_LitTurnover
             // 
@@ -222,7 +180,7 @@ namespace Biblioteka2.Forms
             this.Add_LitTurnover.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Add_LitTurnover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add_LitTurnover.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Add_LitTurnover.Location = new System.Drawing.Point(86, 26);
+            this.Add_LitTurnover.Location = new System.Drawing.Point(150, 26);
             this.Add_LitTurnover.Name = "Add_LitTurnover";
             this.Add_LitTurnover.Size = new System.Drawing.Size(46, 43);
             this.Add_LitTurnover.TabIndex = 41;
@@ -234,13 +192,10 @@ namespace Biblioteka2.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(788, 426);
-            this.Controls.Add(this.bt_import_LitTurnover);
-            this.Controls.Add(this.Export_LitTurnover);
             this.Controls.Add(this.lb1_SearchLitTurnover);
             this.Controls.Add(this.tb_SearchLitTurnover);
             this.Controls.Add(this.Update_LitTurnover);
             this.Controls.Add(this.Delete_LitTurnover);
-            this.Controls.Add(this.Edit_LitTurnover);
             this.Controls.Add(this.Add_LitTurnover);
             this.Controls.Add(this.dgv_LitTurnover);
             this.Name = "LitTurnoverForm";
@@ -254,12 +209,10 @@ namespace Biblioteka2.Forms
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_LitTurnover;
-        private System.Windows.Forms.Button Export_LitTurnover;
         private System.Windows.Forms.Label lb1_SearchLitTurnover;
         private System.Windows.Forms.TextBox tb_SearchLitTurnover;
         private System.Windows.Forms.Button Update_LitTurnover;
         private System.Windows.Forms.Button Delete_LitTurnover;
-        private System.Windows.Forms.Button Edit_LitTurnover;
         private System.Windows.Forms.Button Add_LitTurnover;
         private System.Windows.Forms.DataGridViewTextBoxColumn Year;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
@@ -269,6 +222,5 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn Publisher;
         private System.Windows.Forms.DataGridViewTextBoxColumn Publishing_year;
         private System.Windows.Forms.DataGridViewTextBoxColumn Count;
-        private System.Windows.Forms.Button bt_import_LitTurnover;
     }
 }

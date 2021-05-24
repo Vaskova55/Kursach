@@ -149,7 +149,7 @@ namespace Biblioteka2.Forms
             this.dgv_Trainess.Name = "dgv_Trainess";
             this.dgv_Trainess.ReadOnly = true;
             this.dgv_Trainess.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Trainess.Size = new System.Drawing.Size(475, 262);
+            this.dgv_Trainess.Size = new System.Drawing.Size(473, 262);
             this.dgv_Trainess.TabIndex = 30;
             // 
             // Class
@@ -203,7 +203,7 @@ namespace Biblioteka2.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(499, 363);
+            this.ClientSize = new System.Drawing.Size(497, 363);
             this.Controls.Add(this.bt_Import_Trainess);
             this.Controls.Add(this.Export_Trainess);
             this.Controls.Add(this.lb1_Trainess);
