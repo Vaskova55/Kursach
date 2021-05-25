@@ -19,7 +19,6 @@ namespace Biblioteka2.Forms
             InitializeComponent();
             UpdateCombo();
 
-            
         }
 
         private void UpdateCombo()
@@ -40,10 +39,9 @@ namespace Biblioteka2.Forms
                 date_of_issue = (DateTime)dtp_Issuance.Value,
                 date_of_plan_return = (DateTime)dtp_return.Value
             };
-
+            UpdateCombo();
             DbModel.init().Issuances.Add(issuance);
             DbModel.init().SaveChanges();
-            Close();
         }
 
         private void date_info_update(object sender, EventArgs e)

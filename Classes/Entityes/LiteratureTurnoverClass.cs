@@ -21,7 +21,7 @@ namespace Biblioteka2.Classes.Entityes
         [Required, Index(IsUnique = true), MaxLength(32)]
         public string InventiryNum { get; set; }
         [Required]
-        public Int16 year { get; set; }
+        public DateTime dateActivity { get; set; }
         [Required]
         public virtual BookClass book { get; set; }
         [Required]
@@ -35,7 +35,7 @@ namespace Biblioteka2.Classes.Entityes
 
         public override string ToString()
         {
-            return book.ToString();
+            return book.ToString() + " " + InventiryNum.ToString();
         }
 
         public static List<LiteratureTurnoverClass> addNewLitherature(BookClass book, int count) {
@@ -50,8 +50,9 @@ namespace Biblioteka2.Classes.Entityes
                     book = book,
                     status = LiteratureTurnoverClass.e_literature_state.storage
                 };
-                //расчет года списания (какой сейчас год + 5 лет)
-                literature.year = Convert.ToInt16(DateTime.Now.Year + 5);
+                //расчет года списания (какая сейчас дата + 5 лет)
+              
+               literature.dateActivity = DateTime.Now.AddYears(5);
                 bool isUnique = false;
                 //пока номер уникальный....
                 while (!isUnique)

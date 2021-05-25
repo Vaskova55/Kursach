@@ -18,7 +18,7 @@ namespace Biblioteka2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            FormManager.ChangeForm(new AddReturnIssuanceForm());
+            FormManager.ChangeForm(new AddIssuanceForm());
             Application.Run();
         }
     }

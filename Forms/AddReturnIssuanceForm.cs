@@ -44,7 +44,8 @@ namespace Biblioteka2.Forms
 
         private void bt_BooksReturn_Click(object sender, EventArgs e)
         {
-            foreach (IssuanceClass issuance in lb_OkRetLit.Items) {
+            foreach (IssuanceClass issuance in lb_OkRetLit.Items)
+            {
                 issuance.date_of_realreturn = dtp_ReturnIssuance.Value;
                 issuance.literature.status = LiteratureTurnoverClass.e_literature_state.storage;
             }

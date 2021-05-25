@@ -40,7 +40,7 @@ namespace Biblioteka2.Forms
             this.bt_PlusBookListSpisanie = new System.Windows.Forms.Button();
             this.lb4_Spisanie = new System.Windows.Forms.Label();
             this.lb5_Spisanie = new System.Windows.Forms.Label();
-            this.bt_BooksReturn = new System.Windows.Forms.Button();
+            this.bt_Spisat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lb3_Spisanie
@@ -94,6 +94,7 @@ namespace Biblioteka2.Forms
             // lb_ListSpisanie
             // 
             this.lb_ListSpisanie.FormattingEnabled = true;
+            this.lb_ListSpisanie.HorizontalScrollbar = true;
             this.lb_ListSpisanie.Location = new System.Drawing.Point(16, 233);
             this.lb_ListSpisanie.Name = "lb_ListSpisanie";
             this.lb_ListSpisanie.Size = new System.Drawing.Size(179, 199);
@@ -110,6 +111,7 @@ namespace Biblioteka2.Forms
             this.bt_MinusBookListSpisanie.Size = new System.Drawing.Size(22, 21);
             this.bt_MinusBookListSpisanie.TabIndex = 103;
             this.bt_MinusBookListSpisanie.UseVisualStyleBackColor = false;
+            this.bt_MinusBookListSpisanie.Click += new System.EventHandler(this.bt_MinusBookListSpisanie_Click);
             // 
             // bt_PlusBookListSpisanie
             // 
@@ -122,6 +124,7 @@ namespace Biblioteka2.Forms
             this.bt_PlusBookListSpisanie.Size = new System.Drawing.Size(22, 21);
             this.bt_PlusBookListSpisanie.TabIndex = 102;
             this.bt_PlusBookListSpisanie.UseVisualStyleBackColor = false;
+            this.bt_PlusBookListSpisanie.Click += new System.EventHandler(this.bt_PlusBookListSpisanie_Click);
             // 
             // lb4_Spisanie
             // 
@@ -149,18 +152,18 @@ namespace Biblioteka2.Forms
             this.lb5_Spisanie.TabIndex = 105;
             this.lb5_Spisanie.Text = "Дата списания:";
             // 
-            // bt_BooksReturn
+            // bt_Spisat
             // 
-            this.bt_BooksReturn.BackColor = System.Drawing.Color.Transparent;
-            this.bt_BooksReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_BooksReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bt_BooksReturn.Location = new System.Drawing.Point(90, 490);
-            this.bt_BooksReturn.Name = "bt_BooksReturn";
-            this.bt_BooksReturn.Size = new System.Drawing.Size(105, 34);
-            this.bt_BooksReturn.TabIndex = 106;
-            this.bt_BooksReturn.Text = "Списать";
-            this.bt_BooksReturn.UseVisualStyleBackColor = false;
-            this.bt_BooksReturn.Click += new System.EventHandler(this.bt_BooksReturn_Click);
+            this.bt_Spisat.BackColor = System.Drawing.Color.Transparent;
+            this.bt_Spisat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_Spisat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bt_Spisat.Location = new System.Drawing.Point(90, 490);
+            this.bt_Spisat.Name = "bt_Spisat";
+            this.bt_Spisat.Size = new System.Drawing.Size(105, 34);
+            this.bt_Spisat.TabIndex = 106;
+            this.bt_Spisat.Text = "Списать";
+            this.bt_Spisat.UseVisualStyleBackColor = false;
+            this.bt_Spisat.Click += new System.EventHandler(this.bt_BooksReturn_Click);
             // 
             // AddLitTurnoverForm
             // 
@@ -168,7 +171,7 @@ namespace Biblioteka2.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(236, 534);
-            this.Controls.Add(this.bt_BooksReturn);
+            this.Controls.Add(this.bt_Spisat);
             this.Controls.Add(this.lb5_Spisanie);
             this.Controls.Add(this.lb4_Spisanie);
             this.Controls.Add(this.bt_MinusBookListSpisanie);
@@ -198,6 +201,6 @@ namespace Biblioteka2.Forms
         private System.Windows.Forms.Button bt_PlusBookListSpisanie;
         private System.Windows.Forms.Label lb4_Spisanie;
         private System.Windows.Forms.Label lb5_Spisanie;
-        private System.Windows.Forms.Button bt_BooksReturn;
+        private System.Windows.Forms.Button bt_Spisat;
     }
 }

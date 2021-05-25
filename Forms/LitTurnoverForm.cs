@@ -32,7 +32,7 @@ namespace Biblioteka2.Forms
                 l.book.publisher.name.StartsWith(tb_SearchLitTurnover.Text) ||
                 l.book.publishing_year.ToString().Contains(tb_SearchLitTurnover.Text) ||
                 l.purchaseAccounting.count.ToString().Contains(tb_SearchLitTurnover.Text) ||
-                l.year.ToString().Contains(tb_SearchLitTurnover.Text) )
+                l.dateActivity.ToString().Contains(tb_SearchLitTurnover.Text) )
                 )
             {
                 int r = dgv_LitTurnover.Rows.Add(

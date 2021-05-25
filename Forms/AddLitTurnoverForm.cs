@@ -1,4 +1,5 @@
 ﻿using Biblioteka2.Classes;
+using Biblioteka2.Classes.Entityes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,22 +19,48 @@ namespace Biblioteka2.Forms
         {
             InitializeComponent();
             updatCombo();
+            updatList();
         }
         private void updatCombo()
         {
             cb_LiteratureSpisanie.Items.Clear();
-            cb_LiteratureSpisanie.Items.AddRange(DbModel.init().Books.Include(l => l.literatureTurnovers).ToArray());
+
+            const int mountcount = 5;
+            DateTime datePublisher = dtp_Spisanie.Value.AddYears(-mountcount);
+            cb_LiteratureSpisanie.Items.AddRange(DbModel.init().LiteratureTurnover.Include(l => l.book).
+                Where(l => l.book.publishing_year > datePublisher.Year && l.status != LiteratureTurnoverClass.e_literature_state.remove).ToArray());
         }
 
         private void updatList()
         {
             lb_ListSpisanie.Items.Clear();
-          //  lb_ListSpisanie.Items.AddRange(DbModel.init().Books.Include(b => b.literatureTurnovers).Where(b => b.publishing_year == DateTime.Now.AddMonths(-5)).ToArray());
+            const int mountcount = 5;
+            DateTime datePublisher = dtp_Spisanie.Value.AddYears(-mountcount);
+            lb_ListSpisanie.Items.AddRange(DbModel.init().LiteratureTurnover.Include(l => l.book).
+                Where(l => l.book.publishing_year <= datePublisher.Year && l.status != LiteratureTurnoverClass.e_literature_state.remove).ToArray());
         }
 
         private void bt_BooksReturn_Click(object sender, EventArgs e)
         {
+            foreach (LiteratureTurnoverClass literatureTurnover in lb_ListSpisanie.Items)
+            {
 
+                literatureTurnover.dateActivity = dtp_Spisanie.Value;
+                literatureTurnover.status = LiteratureTurnoverClass.e_literature_state.remove;
+            }
+            DbModel.init().SaveChanges();
+        }
+
+        private void bt_PlusBookListSpisanie_Click(object sender, EventArgs e)
+        {
+            lb_ListSpisanie.Items.Add(cb_LiteratureSpisanie.SelectedItem);
+            cb_LiteratureSpisanie.Items.Remove(cb_LiteratureSpisanie.SelectedItem);
+        }
+
+        private void bt_MinusBookListSpisanie_Click(object sender, EventArgs e)
+        {
+            cb_LiteratureSpisanie.Items.Add(lb_ListSpisanie.SelectedItem);
+            lb_ListSpisanie.Items.Remove(lb_ListSpisanie.SelectedItem);
         }
     }
 }
