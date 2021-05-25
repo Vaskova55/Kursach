@@ -50,6 +50,9 @@ namespace Biblioteka2.Forms
                 issuance.literature.status = LiteratureTurnoverClass.e_literature_state.storage;
             }
             DbModel.init().SaveChanges();
+            updatCombo();
+            lb_RetLit.Items.Clear();
+            lb_OkRetLit.Items.Clear();
         }
 
         private void bt_PlusBookReturn_Click(object sender, EventArgs e)

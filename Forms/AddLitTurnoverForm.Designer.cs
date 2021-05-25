@@ -95,6 +95,8 @@ namespace Biblioteka2.Forms
             // 
             this.lb_ListSpisanie.FormattingEnabled = true;
             this.lb_ListSpisanie.HorizontalScrollbar = true;
+            this.lb_ListSpisanie.Items.AddRange(new object[] {
+            ""});
             this.lb_ListSpisanie.Location = new System.Drawing.Point(16, 233);
             this.lb_ListSpisanie.Name = "lb_ListSpisanie";
             this.lb_ListSpisanie.Size = new System.Drawing.Size(179, 199);

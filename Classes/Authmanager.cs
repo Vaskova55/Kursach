@@ -20,6 +20,7 @@ namespace Biblioteka2.Classes
             if (user != null) {
                 return true;
             }
+            MessageBox.Show("Неверный логин или пароль!");
             return false;
         }
 
@@ -37,7 +38,8 @@ namespace Biblioteka2.Classes
         }
 
         //Выход пользователя из системы и переход на форму авторизации
-        public static void DeAuth() {
+        public static void DeAuth()
+        {
             user = null;
             FormManager.ChangeForm(new AuthorizationForm());
         }

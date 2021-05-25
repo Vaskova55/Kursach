@@ -34,10 +34,14 @@ namespace Biblioteka2.Forms
         private void updatList()
         {
             lb_ListSpisanie.Items.Clear();
+            //Подсчет года публикации книгиотносительно нынешнего
             const int mountcount = 5;
             DateTime datePublisher = dtp_Spisanie.Value.AddYears(-mountcount);
+            //Заполнение ListBox "lb_ListSpisanie" литературой, удовлетворяющей выборке по статусу и году публикации
             lb_ListSpisanie.Items.AddRange(DbModel.init().LiteratureTurnover.Include(l => l.book).
-                Where(l => l.book.publishing_year <= datePublisher.Year && l.status != LiteratureTurnoverClass.e_literature_state.remove).ToArray());
+                Where(
+                l => l.book.publishing_year <= datePublisher.Year &&
+                l.status != LiteratureTurnoverClass.e_literature_state.remove).ToArray());
         }
 
         private void bt_BooksReturn_Click(object sender, EventArgs e)

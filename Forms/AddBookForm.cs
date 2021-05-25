@@ -35,19 +35,20 @@ namespace Biblioteka2.Forms
             else {
                 NUD_Class.Value = Convert.ToInt32(bookclassnum);
             }
-             
+            //вывод названия книги из импорта в соответствующее окно
             tb_bookname.Text = bookname;
 
-            //
+            //заполнение соответствующего окошка издательством из импорта
             int pI = cb_publisher.Items.Add(publisher);
             cb_publisher.SelectedIndex = pI;
             cb_publisher.Enabled = false;
             
-            //
+            //То же, что и издательство
             int tI = cb_type.Items.Add(type);
             cb_type.SelectedIndex = tI;
             cb_type.Enabled = false;
 
+            //Автор также
             lb_author.Items.AddRange(authors.ToArray());
             lb_author.Enabled = false;
             bt_add_autor.Enabled = false;
@@ -87,7 +88,8 @@ namespace Biblioteka2.Forms
             cb_Author.Items.AddRange(DbModel.init().Authors.ToArray());
         }
 
-        public BookClass GetBook() {
+        public BookClass GetBook()
+        {
             BookClass book =  new BookClass
             {
                 name_book = tb_bookname.Text,
@@ -159,17 +161,6 @@ namespace Biblioteka2.Forms
         {
             lb_author.Items.Add(cb_Author.SelectedItem);
             cb_Author.Items.Remove(cb_Author.SelectedItem);
-        }
-
-        private void cb_uchLit_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cb_NoUchLit.Checked)
-            {
-                NUD_Class.Enabled = false;
-            }
-            else {
-                NUD_Class.Enabled = true;
-            }
         }
     }
 }

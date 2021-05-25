@@ -132,6 +132,7 @@ namespace Biblioteka2.Forms
             // 
             // cb_TrainessIssRet
             // 
+            this.cb_TrainessIssRet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_TrainessIssRet.FormattingEnabled = true;
             this.cb_TrainessIssRet.Location = new System.Drawing.Point(30, 167);
             this.cb_TrainessIssRet.Name = "cb_TrainessIssRet";

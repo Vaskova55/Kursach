@@ -118,6 +118,7 @@ namespace Biblioteka2.Forms
             this.tb_NameBook.Name = "tb_NameBook";
             this.tb_NameBook.Size = new System.Drawing.Size(128, 20);
             this.tb_NameBook.TabIndex = 42;
+            this.tb_NameBook.TextChanged += new System.EventHandler(this.tb_NameBook_TextChanged);
             // 
             // lb4_Home_page
             // 
@@ -135,6 +136,7 @@ namespace Biblioteka2.Forms
             this.tb_Avtor.Name = "tb_Avtor";
             this.tb_Avtor.Size = new System.Drawing.Size(128, 20);
             this.tb_Avtor.TabIndex = 40;
+            this.tb_Avtor.TextChanged += new System.EventHandler(this.tb_Avtor_TextChanged);
             // 
             // lbl3_Home_page
             // 
@@ -321,7 +323,6 @@ namespace Biblioteka2.Forms
             this.Controls.Add(this.ms_Home_page);
             this.Name = "Home_pageForm";
             this.Text = "Главная страница";
-            this.Load += new System.EventHandler(this.Home_pageForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Home_page)).EndInit();
             this.ms_Home_page.ResumeLayout(false);
             this.ms_Home_page.PerformLayout();

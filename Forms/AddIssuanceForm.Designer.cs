@@ -88,11 +88,13 @@ namespace Biblioteka2.Forms
             // 
             this.cb_FIOTrIssuance.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_FIOTrIssuance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_FIOTrIssuance.FormattingEnabled = true;
             this.cb_FIOTrIssuance.Location = new System.Drawing.Point(43, 210);
             this.cb_FIOTrIssuance.Name = "cb_FIOTrIssuance";
             this.cb_FIOTrIssuance.Size = new System.Drawing.Size(146, 21);
             this.cb_FIOTrIssuance.TabIndex = 58;
+            this.cb_FIOTrIssuance.SelectedIndexChanged += new System.EventHandler(this.cb_FIOTrIssuance_SelectedIndexChanged);
             // 
             // lb5_AddIssuance
             // 
@@ -111,6 +113,7 @@ namespace Biblioteka2.Forms
             // 
             this.cb_LiteratureIssuance.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cb_LiteratureIssuance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_LiteratureIssuance.FormattingEnabled = true;
             this.cb_LiteratureIssuance.Location = new System.Drawing.Point(43, 257);
             this.cb_LiteratureIssuance.Name = "cb_LiteratureIssuance";

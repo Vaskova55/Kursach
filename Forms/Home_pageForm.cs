@@ -17,10 +17,10 @@ namespace Biblioteka2.Forms
         public Home_pageForm()
         {
             InitializeComponent();
-            
         }
 
-        private void LoaadTraines() {
+        private void LoaadTraines()
+        {
             dgv_Home_page.Columns.Clear();
             dgv_Home_page.Rows.Clear();
             dgv_Home_page.Columns.Add("dg_tb_fio", "FIO");
@@ -28,13 +28,16 @@ namespace Biblioteka2.Forms
 
             FillMode();
 
-            foreach (TrainessClass tirain in DbModel.init().Trainesses.Include(t=>t.issuance).Where(t=>t.issuance.Any(i=>i.date_of_realreturn==null))){
+            foreach (TrainessClass tirain in DbModel.init().Trainesses.Include(t=>t.issuance).Where(t=>t.issuance.Any(i=>i.date_of_realreturn==null)))
+            {
                 dgv_Home_page.Rows.Add(tirain.ToString(), tirain.issuance.Count(i => i.date_of_realreturn == null));
             }
         }
 
-        public void FillMode() {
-            for (int i=0; i<dgv_Home_page.Columns.Count; i++) {
+        public void FillMode()
+        {
+            for (int i=0; i<dgv_Home_page.Columns.Count; i++)
+            {
                 dgv_Home_page.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
@@ -43,8 +46,8 @@ namespace Biblioteka2.Forms
         {
             dgv_Home_page.Columns.Clear();
             dgv_Home_page.Rows.Clear();
-            int c0 = dgv_Home_page.Columns.Add("dg_tb_fio", "FIO");
-            int c1 = dgv_Home_page.Columns.Add("dg_tb_fio", "Book doljen count");
+            int c0 = dgv_Home_page.Columns.Add("dg_tb_fio", "Фамилия/Имя");
+            int c1 = dgv_Home_page.Columns.Add("dg_tb_fio", "Количество задолженных книг");
 
             FillMode();
 
@@ -57,11 +60,12 @@ namespace Biblioteka2.Forms
             }
         }
 
-        public void LoaadLiterathure() {
+        public void LoaadLiterathure()
+        {
             dgv_Home_page.Columns.Clear();
             dgv_Home_page.Rows.Clear();
-            dgv_Home_page.Columns.Add("dg_tb_bookname", "Book name");
-            dgv_Home_page.Columns.Add("dg_tb_count", "Book count");
+            dgv_Home_page.Columns.Add("dg_tb_bookname", "Название книги");
+            dgv_Home_page.Columns.Add("dg_tb_count", "Количество");
 
             FillMode();
 
@@ -72,40 +76,60 @@ namespace Biblioteka2.Forms
             }
         }
 
+        public void PoiskIstoriiLit()
+        {
+            dgv_Home_page.Columns.Clear();
+            dgv_Home_page.Rows.Clear();
+            dgv_Home_page.Columns.Add("dg_tb_bookname", "Название книги");
+            dgv_Home_page.Columns.Add("dg_tb_dateIssuance", "Дата выдачи");
+            dgv_Home_page.Columns.Add("dg_tb_dateReturn", "Дата возврата");
+            dgv_Home_page.Columns.Add("dg_tb_TrainessIssuance", "Обучающийся");
+
+            FillMode();
+
+            foreach (IssuanceClass issuance in DbModel.init().Issuances.Include(i => i.literature).Include(i => i.literature.book).Include(i => i.literature.book.Authors).Include(i => i.trainess) 
+                .Where(i => i.literature.book.name_book.StartsWith(tb_NameBook.Text)
+                || i.literature.book.Authors.Any(a => a.family_name.StartsWith(tb_Avtor.Text) || a.first_name.StartsWith(tb_Avtor.Text) || a.middle_name.StartsWith(tb_Avtor.Text))))
+            {
+                dgv_Home_page.Rows.Clear();
+                dgv_Home_page.Rows.Add(issuance.literature.book.ToString(), issuance.date_of_issue, issuance.date_of_realreturn, issuance.trainess);
+            }
+        }
+
         private void tsmi1_Issuance_Click(object sender, EventArgs e)
         {
-            FormManager.ChangeForm(new IssuanceForm());
+            IssuanceForm f_i = new IssuanceForm();
+            f_i.ShowDialog();
         }
 
         private void tsmi2_Library_Click(object sender, EventArgs e)
         {
-            FormManager.ChangeForm(new LibraryForm());
+            LibraryForm f_lf = new LibraryForm();
+            f_lf.ShowDialog();
         }
 
         private void tsmi3_Treiness_Click(object sender, EventArgs e)
         {
-            FormManager.ChangeForm(new TrainessesForm());
+            TrainessesForm f_t = new TrainessesForm();
+            f_t.ShowDialog();
         }
 
         private void tsmi4_LiteratureTurnover_Click(object sender, EventArgs e)
         {
-            FormManager.ChangeForm(new LitTurnoverForm());
+
+            LitTurnoverForm f_lt = new LitTurnoverForm();
+            f_lt.ShowDialog();
         }
 
         private void tsmi5_Accounting_book_Click(object sender, EventArgs e)
         {
-            FormManager.ChangeForm(new PurchaseForm());
+            PurchaseForm f_p = new PurchaseForm();
+            f_p.ShowDialog();
         }
 
         private void tsmi6_Exit_Click(object sender, EventArgs e)
         {
             FormManager.ChangeForm(new AuthorizationForm());
-            Close();        
-        }
-
-        private void Home_pageForm_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void ChangeSelected(object sender, EventArgs e)
@@ -122,6 +146,16 @@ namespace Biblioteka2.Forms
             {
                 LoaadLiterathure();
             }
+        }
+
+        private void tb_Avtor_TextChanged(object sender, EventArgs e)
+        {
+            PoiskIstoriiLit();
+        }
+
+        private void tb_NameBook_TextChanged(object sender, EventArgs e)
+        {
+            PoiskIstoriiLit();
         }
     }
 }
