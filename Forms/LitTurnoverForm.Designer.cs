@@ -67,6 +67,7 @@ namespace Biblioteka2.Forms
             this.dgv_LitTurnover.MultiSelect = false;
             this.dgv_LitTurnover.Name = "dgv_LitTurnover";
             this.dgv_LitTurnover.ReadOnly = true;
+            this.dgv_LitTurnover.RowHeadersVisible = false;
             this.dgv_LitTurnover.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_LitTurnover.Size = new System.Drawing.Size(764, 321);
             this.dgv_LitTurnover.TabIndex = 30;
@@ -185,6 +186,7 @@ namespace Biblioteka2.Forms
             this.Add_LitTurnover.Size = new System.Drawing.Size(46, 43);
             this.Add_LitTurnover.TabIndex = 41;
             this.Add_LitTurnover.UseVisualStyleBackColor = true;
+            this.Add_LitTurnover.Click += new System.EventHandler(this.Add_LitTurnover_Click);
             // 
             // LitTurnoverForm
             // 

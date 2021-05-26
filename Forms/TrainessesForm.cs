@@ -24,10 +24,10 @@ namespace Biblioteka2.Forms
         {
             dgv_Trainess.Rows.Clear();
             foreach (TrainessClass trainess in DbModel.init().Trainesses.Where(
-                t => t.classTrainess.ToString().Contains(tb_SearchTrainess.Text) ||
-                t.family_name.Contains(tb_SearchTrainess.Text) ||
-                t.first_name.Contains(tb_SearchTrainess.Text) ||
-                t.middle_name.Contains(tb_SearchTrainess.Text)
+                t => t.classTrainess.ToString().StartsWith(tb_SearchTrainess.Text) ||
+                t.family_name.StartsWith(tb_SearchTrainess.Text) ||
+                t.first_name.StartsWith(tb_SearchTrainess.Text) ||
+                t.middle_name.StartsWith(tb_SearchTrainess.Text)
                 ))
             {
                 int r = dgv_Trainess.Rows.Add(trainess.classTrainess, trainess.family_name, trainess.first_name, trainess.middle_name);

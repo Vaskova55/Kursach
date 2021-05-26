@@ -142,6 +142,7 @@ namespace Biblioteka2.Forms
             this.dgv_Library.MultiSelect = false;
             this.dgv_Library.Name = "dgv_Library";
             this.dgv_Library.ReadOnly = true;
+            this.dgv_Library.RowHeadersVisible = false;
             this.dgv_Library.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Library.Size = new System.Drawing.Size(575, 262);
             this.dgv_Library.TabIndex = 29;

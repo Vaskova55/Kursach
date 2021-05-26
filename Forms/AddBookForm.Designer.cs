@@ -77,6 +77,7 @@ namespace Biblioteka2.Forms
             this.bt_add_autor.Size = new System.Drawing.Size(26, 21);
             this.bt_add_autor.TabIndex = 50;
             this.bt_add_autor.UseVisualStyleBackColor = false;
+            this.bt_add_autor.Click += new System.EventHandler(this.bt_add_autor_Click);
             // 
             // lb_author
             // 
@@ -260,6 +261,7 @@ namespace Biblioteka2.Forms
             this.cb_NoUchLit.TabIndex = 72;
             this.cb_NoUchLit.Text = "Не учебная литература";
             this.cb_NoUchLit.UseVisualStyleBackColor = true;
+            this.cb_NoUchLit.CheckedChanged += new System.EventHandler(this.cb_NoAvtor_CheckedChanged);
             // 
             // AddBookForm
             // 

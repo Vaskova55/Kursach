@@ -74,6 +74,7 @@ namespace Biblioteka2.Forms
             this.tb_Nam.Name = "tb_Nam";
             this.tb_Nam.Size = new System.Drawing.Size(128, 20);
             this.tb_Nam.TabIndex = 47;
+            this.tb_Nam.TextChanged += new System.EventHandler(this.tb_Nam_TextChanged);
             // 
             // lbl7_Home_page
             // 
@@ -91,6 +92,7 @@ namespace Biblioteka2.Forms
             this.tb_Fam.Name = "tb_Fam";
             this.tb_Fam.Size = new System.Drawing.Size(128, 20);
             this.tb_Fam.TabIndex = 45;
+            this.tb_Fam.TextChanged += new System.EventHandler(this.tb_Fam_TextChanged);
             // 
             // lbl6_Home_page
             // 
