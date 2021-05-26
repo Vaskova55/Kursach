@@ -260,6 +260,7 @@ namespace Biblioteka2.Forms
             this.cb_NoUchLit.TabIndex = 72;
             this.cb_NoUchLit.Text = "Не учебная литература";
             this.cb_NoUchLit.UseVisualStyleBackColor = true;
+            this.cb_NoUchLit.CheckedChanged += new System.EventHandler(this.cb_NoAvtor_CheckedChanged);
             // 
             // AddBookForm
             // 

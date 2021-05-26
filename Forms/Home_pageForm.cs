@@ -23,8 +23,8 @@ namespace Biblioteka2.Forms
         {
             dgv_Home_page.Columns.Clear();
             dgv_Home_page.Rows.Clear();
-            dgv_Home_page.Columns.Add("dg_tb_fio", "FIO");
-            dgv_Home_page.Columns.Add("dg_tb_fio", "Book taked count");
+            dgv_Home_page.Columns.Add("dg_tb_fio", "Фамилия/Имя");
+            dgv_Home_page.Columns.Add("dg_tb_fio", "Количество выданных книг");
 
             FillMode();
 
@@ -96,6 +96,25 @@ namespace Biblioteka2.Forms
             }
         }
 
+        private void PoiskIstoriiChit()
+        {
+            dgv_Home_page.Columns.Clear();
+            dgv_Home_page.Rows.Clear();
+            dgv_Home_page.Columns.Add("dg_tb_TrainessIssuance", "Обучающийся");
+            dgv_Home_page.Columns.Add("dg_tb_bookname", "Название книги");
+            dgv_Home_page.Columns.Add("dg_tb_dateIssuance", "Дата выдачи");
+            dgv_Home_page.Columns.Add("dg_tb_dateReturn", "Дата возврата");
+
+            FillMode();
+
+            foreach (IssuanceClass issuance in DbModel.init().Issuances.Include(i => i.literature).Include(i => i.literature.book).Include(i => i.literature.book.Authors).Include(i => i.trainess)
+                .Where(i => i.trainess.family_name.StartsWith(tb_Fam.Text) && i.trainess.first_name.StartsWith(tb_Nam.Text)))
+            {
+                dgv_Home_page.Rows.Clear();
+                dgv_Home_page.Rows.Add(issuance.trainess, issuance.literature.book.ToString(), issuance.date_of_issue, issuance.date_of_realreturn);
+            }
+        }
+
         private void tsmi1_Issuance_Click(object sender, EventArgs e)
         {
             IssuanceForm f_i = new IssuanceForm();
@@ -156,6 +175,16 @@ namespace Biblioteka2.Forms
         private void tb_NameBook_TextChanged(object sender, EventArgs e)
         {
             PoiskIstoriiLit();
+        }
+
+        private void tb_Fam_TextChanged(object sender, EventArgs e)
+        {
+            PoiskIstoriiChit();
+        }
+
+        private void tb_Nam_TextChanged(object sender, EventArgs e)
+        {
+            PoiskIstoriiChit();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Biblioteka2.Forms
         private void updatData()
         {
             dgv_LitTurnover.Rows.Clear();
-            foreach (LiteratureTurnoverClass litTurnover in DbModel.init().LiteratureTurnover.Include(l => l.book).Include(l => l.purchaseAccounting)
+            foreach (LiteratureTurnoverClass litTurnover in DbModel.init().LiteratureTurnover.Include(l => l.book).Include(l=>l.book.type).Include(l=>l.book.Authors).Include(l => l.purchaseAccounting)
                 .Where(
                 l => l.book.type.type.Contains(tb_SearchLitTurnover.Text) ||
                 l.book.classnum.ToString().Contains(tb_SearchLitTurnover.Text) ||
@@ -66,6 +66,12 @@ namespace Biblioteka2.Forms
         private void tb_SearchLitTurnover_TextChanged(object sender, EventArgs e)
         {
             updatData();
+        }
+
+        private void Add_LitTurnover_Click(object sender, EventArgs e)
+        {
+            AddLitTurnoverForm addLitTurnover = new AddLitTurnoverForm();
+            addLitTurnover.ShowDialog();
         }
     }
 }

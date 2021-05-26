@@ -26,13 +26,13 @@ namespace Biblioteka2.Forms
             dgv_Issuance.Rows.Clear();
             foreach (IssuanceClass issuance in DbModel.init().Issuances.Include(i => i.trainess).Include(i => i.literature).Include(i => i.literature.book).Include(i => i.user)
                 .Where(
-                    i => i.trainess.classTrainess.ToString().Contains(tb_SearchIssuance.Text) ||
-                    i.trainess.family_name.Contains(tb_SearchIssuance.Text) ||
-                    i.trainess.first_name.Contains(tb_SearchIssuance.Text) ||
-                    i.literature.book.name_book.Contains(tb_SearchIssuance.Text) ||
-                    i.literature.InventiryNum.Contains(tb_SearchIssuance.Text) ||
-                    i.date_of_realreturn.ToString().Contains(tb_SearchIssuance.Text) ||
-                    i.date_of_issue.ToString().Contains(tb_SearchIssuance.Text)
+                    i => i.trainess.classTrainess.ToString().StartsWith(tb_SearchIssuance.Text) ||
+                    i.trainess.family_name.StartsWith(tb_SearchIssuance.Text) ||
+                    i.trainess.first_name.StartsWith(tb_SearchIssuance.Text) ||
+                    i.literature.book.name_book.StartsWith(tb_SearchIssuance.Text) ||
+                    i.literature.InventiryNum.StartsWith(tb_SearchIssuance.Text) ||
+                    i.date_of_realreturn.ToString().StartsWith(tb_SearchIssuance.Text) ||
+                    i.date_of_issue.ToString().StartsWith(tb_SearchIssuance.Text)
                 )
             )
             {

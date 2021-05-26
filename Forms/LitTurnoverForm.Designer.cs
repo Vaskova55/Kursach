@@ -185,6 +185,7 @@ namespace Biblioteka2.Forms
             this.Add_LitTurnover.Size = new System.Drawing.Size(46, 43);
             this.Add_LitTurnover.TabIndex = 41;
             this.Add_LitTurnover.UseVisualStyleBackColor = true;
+            this.Add_LitTurnover.Click += new System.EventHandler(this.Add_LitTurnover_Click);
             // 
             // LitTurnoverForm
             // 
