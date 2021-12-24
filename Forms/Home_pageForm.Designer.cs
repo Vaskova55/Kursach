@@ -271,8 +271,9 @@ namespace Biblioteka2.Forms
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(46, 34);
-            this.toolStripMenuItem1.Text = "      ";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(73, 34);
+            this.toolStripMenuItem1.Text = "Запрос";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 

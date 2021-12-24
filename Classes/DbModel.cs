@@ -26,7 +26,7 @@ namespace Biblioteka2.Classes
         // connection string in the application configuration file.
         public DbModel()
             : base("server=192.168.201.12;database=ISP333_VaskovaAN_biblioteka2;" +
-                  "user id=ISP333_VaskovaAN;port=3306;characterset=utf8;password=Vaskova333")
+                  "user id=ISP333_VaskovaAN;port=3306;characterset=utf8;password=KimBTSAlena5")
         {
         }
 

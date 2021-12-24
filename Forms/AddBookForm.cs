@@ -69,7 +69,8 @@ namespace Biblioteka2.Forms
             else
             {
                 cb_NoUchLit.Checked = true;
-                NUD_Class.Value = (decimal)bookEdit.classnum;
+                if(bookEdit.classnum != 0)
+                    NUD_Class.Value = (decimal)bookEdit.classnum;
             }
             
             tb_bookname.Text = bookEdit.name_book;

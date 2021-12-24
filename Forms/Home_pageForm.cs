@@ -186,5 +186,11 @@ namespace Biblioteka2.Forms
         {
             PoiskIstoriiChit();
         }
+
+        private void tsmi6_Inquiry_Click(object sender, EventArgs e)
+        {
+            InquiryForm f_lt = new InquiryForm();
+            f_lt.ShowDialog();
+        }
     }
 }

@@ -137,6 +137,12 @@
     <Compile Include="Forms\AuthorizationForm.Designer.cs">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InquiryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InquiryForm.Designer.cs">
+      <DependentUpon>InquiryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\IssuanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InquiryForm.resx">
+      <DependentUpon>InquiryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\IssuanceForm.resx">
       <DependentUpon>IssuanceForm.cs</DependentUpon>
