@@ -267,13 +267,7 @@ namespace Biblioteka2.Forms
             this.tsmi5_Accounting_book.Size = new System.Drawing.Size(124, 34);
             this.tsmi5_Accounting_book.Text = "Учётная книга";
             this.tsmi5_Accounting_book.Click += new System.EventHandler(this.tsmi5_Accounting_book_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(73, 34);
-            this.toolStripMenuItem1.Text = "Запрос";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            
             // 
             // toolStripMenuItem2
             // 
